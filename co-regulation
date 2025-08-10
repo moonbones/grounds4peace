@@ -1,1 +1,72 @@
-co-regulation.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somatic Co-Regulation Services - Grounds for Peace</title>
+  <link rel="stylesheet" href="styles.css"> <!-- This links to your existing styles -->
+  <style>
+    /* Additional page-specific styling */
+    .page-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: inherit; /* matches site font */
+      color: inherit; /* matches site colors */
+    }
+    .hero {
+      background-color: #f4efe9; /* soft neutral background */
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .hero h1 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+    }
+    .content-section {
+      margin-top: 40px;
+      line-height: 1.6;
+    }
+    .cta {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .cta a {
+      background-color: #6b8e23; /* earth green */
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .cta a:hover {
+      background-color: #5a7b1c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container">
+
+    <div class="hero">
+      <h1>Somatic Co-Regulation Sessions</h1>
+      <p>Grounded presence. Nervous system balance. Connection restored.</p>
+    </div>
+
+    <div class="content-section">
+      <p>Our co-regulation services support families, couples, and groups in restoring nervous system balance through shared presence, gentle movement, and attuned communication. These sessions are rooted in somatic awareness, trauma-informed practice, and body-based wisdom.</p>
+
+      <p>Whether you’re navigating stress, recovering from challenging experiences, or seeking deeper harmony in your relationships, co-regulation creates a safe space for your body to settle and reconnect with others in a healthier, more resilient way.</p>
+
+      <p>Sessions can be held in-person or online, tailored to the needs of your group, and are guided with compassion, skill, and an understanding of both physiology and emotional safety.</p>
+    </div>
+
+    <div class="cta">
+      <a href="contact.html">Book a Session</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
