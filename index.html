@@ -1,194 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grounds4Peace</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Georgia&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #2a6f6f;
-      --secondary-color: #6d4c41;
-      --background-color: #f5f5f0;
-      --text-color: #1e1e1e;
-      --accent-color: #b2dfdb;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grounds for Peace</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #fdfaf6;
+      color: #333;
+    }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 0;
-      font-size: 18px;
-      line-height: 1.75;
-    }
+    header {
+      background: #6a8e7f;
+      color: #fff;
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+    }
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-    h1, h2 {
-      font-family: 'Georgia', serif;
-      color: var(--primary-color);
-    }
+    header p {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.25em;
-      font-weight: 700;
-    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-    h2 {
-      font-size: 1.75em;
-      margin-top: 2.5em;
-      margin-bottom: 0.75em;
-    }
+    h2 {
+      color: #2f4f4f;
+      margin-bottom: 1rem;
+    }
 
-    p {
-      margin-bottom: 1.25em;
-    }
+    .initiative {
+      margin-bottom: 2rem;
+      border-left: 4px solid #6a8e7f;
+      padding-left: 1rem;
+    }
 
-    ol {
-      counter-reset: item;
-      list-style: none;
-      padding-left: 1.25em;
-    }
+    .contact {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: #dce8e3;
+    }
 
-    ol li {
-      counter-increment: item;
-      position: relative;
-      margin-bottom: 2em;
-      padding-left: 1.5em;
-      border-left: 4px solid var(--accent-color);
-    }
+    .wip-banner {
+      text-align: center;
+      background: #f7c59f;
+      color: #5a2a00;
+      padding: 1rem;
+      font-weight: bold;
+    }
 
-    ol li::before {
-      content: counter(item) ".";
-      position: absolute;
-      left: 0;
-      font-weight: 700;
-      color: var(--primary-color);
-    }
+    img, video {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
 
-    strong {
-      font-weight: 600;
-      color: var(--secondary-color);
-    }
+    a {
+      color: #6a8e7f;
+      text-decoration: none;
+    }
 
-    em {
-      font-style: italic;
-      color: var(--secondary-color);
-    }
+    a:hover {
+      text-decoration: underline;
+    }
 
-    .contact {
-      background-color: var(--accent-color);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-top: 3em;
-    }
+    .media-placeholder {
+      display: block;
+      width: 100%;
+      height: 250px;
+      background: #ccc;
+      color: #666;
+      text-align: center;
+      line-height: 250px;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
 
-    .contact a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      font-size: 0.9em;
-      color: #666;
-    }
-
-    /* New button style for Co-Regulation page link */
-    .cta-button {
-      display: inline-block;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 0.75em 1.5em;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      margin-bottom: 2rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #245d5d;
-    }
-  </style>
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>GROUNDS FOR PEACE work in progress</h1>
-    <p><strong>Restoring the Body, Restoring the Earth</strong></p>
 
-    <!-- New link/button to Co-Regulation Page -->
-    <a href="somatics-coregulation.html" class="cta-button" aria-label="Explore Somatic Co-Regulation Services">Explore Somatic Co-Regulation Services</a>
+  <div class="wip-banner">
+    WORK IN PROGRESS
+  </div>
 
-    <h2>Mission:</h2>
-    <p>
-      Grounds for Peace is a transdisciplinary initiative healing the disconnection between people, place, and possibility. We understand that widespread disregard for the body is not incidental, but woven into the built, social, and ecological fabric of a society shaped by settler violence, genocide, trafficking, torture, and the normalization of harm. This abuse has been etched into the neurological, infrastructural, and institutional patterns of life in North America. Prolonged abuse causes inner conflict, illness, and war.
-    </p>
-    <p>
-      Yet our humanity remains. We reclaim it through living design, somatic integrity, and systemic redirection. Grounds for Peace develops programs and catalyzes redesigns across ecological infrastructure, agriculture, education, somatics, built environments, and environmental remediation. Our work supports the thriving of both the Earth and the living body—not as separate, but as co-constitutive grounds of life.
-    </p>
+  <header>
+    <h1>Grounds for Peace</h1>
+    <p>Restoring the Body, Restoring the Earth</p>
+    <p>Transdisciplinary humanitarian and technological initiative</p>
+  </header>
 
-    <h2>Our Work</h2>
-    <ol>
-      <li>
-        <strong>Somatic Coregulation for Families, Couples & Groups</strong><br/>
-        In-person sessions held in nature for co-regulation, embodied healing, and integrative awareness. These sessions reject pathologizing models of health and center each participant in their inherent wisdom, sensory intelligence, and right to feel good. <em>“You are not broken. You are responding. Let’s respond together.”</em>
-      </li>
-      <li>
-        <strong>Living Infrastructure</strong><br/>
-        We facilitate cross-sector design conversations to design replacements of physically injurious, rigid urban ground—concrete sidewalks and asphalt roads—with shock-absorbent, water-conductive, tree-root-cooperative surfaces. We also advocate for the replacement of harmful auditory signals—such as sirens and vehicle backup alarms which damage human nervous systems and fetal development—with alternatives that promote rather than destroy health. Our vision is infrastructural development that supports biomechanical health, environmental resilience, and enjoying our humanity.
-      </li>
-      <li>
-        <strong>Regenerative Agriculture</strong><br/>
-        We advocate for a full transition from nutricidal–agricultural and industrial use of toxic chemicals which harm people’s health—to nutritious food systems—restoring soil, plant, and human vitality while supporting place-based agricultural wisdom and necessities.
-      </li>
-      <li>
-        <strong>Education Without Harm</strong><br/>
-        We reimagine learning environments by calling for the abolition of physical harm (including forced stillness and chronic sitting) as a basis for education. We support postural freedom, somatic learning, and sensory-responsive environments in schools.
-      </li>
-      <li>
-        <strong>Environmental Remediation & Systems Debriefing</strong><br/>
-        We convene scientists, Indigenous land stewards, and affected communities to review and refine methods of remediation for toxic soil, air, and water. Our goal is coordinated, culturally accountable, ecologically sound responses to contamination and climate collapse.
-      </li>
-      <li>
-        <strong>Rest & Mobility Innovation</strong><br/>
-        We develop ergonomic, somatically sound humane consoles for computing, rest, and transport—prototypes that free the body from lower spinal and pelvic immobilization of chairs and reclaim non-sitting forms of supported rest, navigation, and digital interface.
-      </li>
-      <li>
-        <strong>Upgrade Building & Design Codes</strong><br/>
-        We advocate for the revision of architectural, interior, and product design standards to support lifelong neuromusculoskeletal health. Emphasis is placed on accommodating transverse plane mobility in the hip joints to prevent disablement from chronic overrotation, particularly when turning or walking around corners in confined spaces such as showers, and spatial relationships between doorways and necessary pivots of turning around corners.
-        <br/><br/>
-        We also promote ergonomic reforms which normalize adjustable surface heights in domestic, educational, and workplace environments—ensuring that people of varying statures can interact safely with furniture, fixtures, and tools. This includes elevating common appliances such as ovens and dishwashers to hip height or higher, and eliminating drawers or shelving systems positioned below the hip, which require repeated forward flexion and torque at vulnerable angles. Standards should also reflect inclusive height clearances, including ceiling fans and lighting fixtures that do not pose collision risks for taller individuals.
-      </li>
-    </ol>
+  <section id="mission">
+    <h2>Mission</h2>
+    <div class="media-placeholder">[Hero Image or Short Video Placeholder]</div>
+    <p>Grounds for Peace is a transdisciplinary humanitarian and technological initiative re-engineering the interface between human bodies, public infrastructure, and planetary systems. We unite somatic intelligence, quantum materials research, and ecological design to create infrastructures that sustain life without harm. Our work bridges deep embodiment with high-level technological innovation to prototype new ground systems—moisture-conductive sidewalks, regenerative urban surfaces, trauma-free emergency signaling, and self-generating water stations.</p>
+    <p>By aligning humanitarian ethics with material science and design, we build pathways toward infrastructures that feel, breathe, and support human and planetary well-being.</p>
+  </section>
 
-    <h2>About the Founder</h2>
-    <p>
-      Milandi Mahasin Madiba is an Indigenous and Black American certified Master Somaticist™ and Chief Facilitative Leader with 22 years of experience in body-based consulting, healing, and design. Raised by a psychologist and trained across disciplines, she works from the understanding that there is often nothing wrong with you—only with the conditions you’ve adapted to. Her work offers a space to feel seen, integrate your sacred self, and build new ground together.
-    </p>
+  <section id="problem">
+    <h2>Problem Statement</h2>
+    <div class="media-placeholder">[Image: Harmful Infrastructure or Body-Environment Interaction]</div>
+    <p>The infrastructures that hold our daily lives—roads, schools, workplaces, and emergency systems—have been designed around mechanical efficiency, not biological integrity. These environments injure the spine, compress the lungs, distort gait, overload the nervous system, and contribute to the climate emergency through toxic, rigid materials.</p>
+    <p>This is not accidental. It reflects an inherited design paradigm that normalizes harm—rooted in extractive economics and disembodied science. The result is a civilization whose built environments reproduce trauma at both cellular and planetary scales.</p>
+    <p>Grounds for Peace exists to reverse this logic. We are developing a framework for Living Infrastructure: systems designed with the body as a reference point and the Earth as collaborator. Our aim is to restore somatic coherence at the infrastructural level—to make cities, tools, and materials that support life instead of degrading it.</p>
+  </section>
 
-    <h2>Inquiries & Connections</h2>
-    <div class="contact">
-      <p><strong>For collaboration, funder partnerships, or speaking engagements:</strong></p>
-      📧 <a href="mailto:grounds4peace.org@gmail.com">grounds4peace.org@gmail.com</a>
-    </div>
+  <section id="approach">
+    <h2>Transdisciplinary Approach</h2>
+    <div class="media-placeholder">[Diagram or Conceptual Image Placeholder]</div>
+    <p>We work at the intersection of somatics, physics, design, and ecology, translating principles of embodied intelligence into the language of material innovation.</p>
+    <ul>
+      <li><strong>Somatic Intelligence:</strong> The human body as sensor, feedback loop, and design guide.</li>
+      <li><strong>Quantum & Nano Inquiry:</strong> Collaboration with scientists exploring matter at micro and sub-atomic levels to identify possibilities for regenerative materials.</li>
+      <li><strong>Ecological Design:</strong> Translating micro-level coherence into macro-level infrastructure: roads, buildings, and soundscapes that integrate hydrological balance, soil health, and postural integrity.</li>
+      <li><strong>Humanitarian Alignment:</strong> Every prototype—whether a sidewalk, signal, or interface—reduces harm and increases vitality for bodies, communities, and ecosystems alike.</li>
+    </ul>
+  </section>
 
-    <footer>
-      © 2025 Milandi Mahasin Madiba. All rights reserved.
-    </footer>
-  </div>
+  <section id="initiatives">
+    <h2>Key Initiatives</h2>
+
+    <div class="initiative">
+      <h3>Somatic Coregulation Hubs</h3>
+      <div class="media-placeholder">[Photo or Video: Somatic Session]</div>
+      <p>In-person sessions for families, couples, and groups cultivating embodied awareness, co-regulation, and integrative healing. These hubs serve as living laboratories for somatic-informed infrastructure design.</p>
+    </div>
+
+    <div class="initiative">
+      <h3>Living Ground Systems</h3>
+      <div class="media-placeholder">[Image: Shock-Absorbent Sidewalk Prototype]</div>
+      <p>Development of shock-absorbent, moisture-conductive urban surfaces that support biomechanical health, tree-root cooperation, and climate resilience.</p>
+    </div>
+
+    <div class="initiative">
+      <h3>Auditory Ecology & Non-Traumatizing Signals</h3>
+      <div class="media-placeholder">[Image or Video: Sound System Prototype]</div>
+      <p>Redesign of emergency and alert systems to protect hearing and neurological health while signaling safety effectively.</p>
+    </div>
+
+    <div class="initiative">
+      <h3>Water Autonomy Technologies</h3>
+      <div class="media-placeholder">[Image: Self-Generating Water Station]</div>
+      <p>Design and development of self-generating water stations informed by quantum-level and materials science principles.</p>
+    </div>
+
+    <div class="initiative">
+      <h3>Educational Biodesign Frameworks</h3>
+      <div class="media-placeholder">[Photo: Somatic Learning / Prototype Classroom]</div>
+      <p>Reimagining learning environments to support postural freedom, somatic learning, and sensory-responsive spaces.</p>
+    </div>
+
+  </section>
+
+  <section id="collaboration">
+    <h2>Collaboration & Partnership</h2>
+    <div class="media-placeholder">[Image: Team Collaboration or Lab]</div>
+    <p>Grounds for Peace is designed for co-creation with scientists, engineers, designers, and institutions. Collaboration opportunities include:</p>
+    <ul>
+      <li>Faculty research partnerships: pilots, publications, and applied research.</li>
+      <li>Institute collaborations: developing prototypes and scaling concepts.</li>
+      <li>Student fellowships and experiential studios.</li>
+      <li>Philanthropic and foundation engagement for research and prototype development.</li>
+    </ul>
+  </section>
+
+  <section id="founder">
+    <h2>Founder</h2>
+    <div class="media-placeholder">[Portrait of Milandi Mahasin Madiba]</div>
+    <p>Milandi Mahasin Madiba is an Indigenous and Black American Master Somaticist™ and founder of Grounds for Peace. With over 22 years of experience in somatic consulting, body-based design, and ecological advocacy, Madiba bridges embodied intelligence, cross-disciplinary research, and systemic transformation.</p>
+    <p>Grounds for Peace was born to co-create infrastructures that honor life, restore ecological integrity, and empower human potential, translating profound somatic insight into practical design and technological innovation.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact & Invitation</h2>
+    <div class="media-placeholder">[Optional Video or Image: Invitation / Collaboration]</div>
+    <p>Grounds for Peace invites scientists, engineers, designers, and research institutions to collaborate on pilot projects and applied innovations that honor both biological and planetary integrity.</p>
+    <p>Email: <a href="mailto:grounds4peace.org@gmail.com">grounds4peace.org@gmail.com</a></p>
+  </section>
+
 </body>
 </html>
