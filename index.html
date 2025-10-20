@@ -61,6 +61,31 @@
       padding: 1rem;
       font-weight: bold;
     }
+.hero-video-container {
+  width: 100%;
+  max-height: 70vh; /* optional: limits vertical height */
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-video-container video {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* fills container while keeping aspect ratio */
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
 
     img, video {
       max-width: 100%;
@@ -137,7 +162,11 @@
 
     <div class="initiative">
       <h3>Somatic Coregulation Hubs</h3>
-      <div class="media-placeholder">[Photo or Video: Somatic Session]</div>
+      <div class="hero-video-container">
+  <video src="videos/banner-video.mp4" autoplay muted loop playsinline></video>
+  <div class="overlay-text">WORK IN PROGRESS</div>
+</div>
+
       <p>In-person sessions for families, couples, and groups cultivating embodied awareness, co-regulation, and integrative healing. These hubs serve as living laboratories for somatic-informed infrastructure design.</p>
     </div>
 
