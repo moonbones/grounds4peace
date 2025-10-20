@@ -1,4 +1,4 @@
-Now this is the code:  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -61,31 +61,33 @@ Now this is the code:  <!DOCTYPE html>
       padding: 1rem;
       font-weight: bold;
     }
-.hero-video-container {
-  width: 100%;
-  max-height: 70vh; /* optional: limits vertical height */
-  overflow: hidden;
-  position: relative;
-}
 
-.hero-video-container video {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* fills container while keeping aspect ratio */
-  display: block;
-}
+    .hero-video-container {
+      width: 100%;
+      max-height: 70vh; /* optional: limits vertical height */
+      overflow: hidden;
+      position: relative;
+      border-radius: 8px;
+    }
 
-.overlay-text {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  pointer-events: none;
-}
+    .hero-video-container video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      pointer-events: none;
+    }
 
     img, video {
       max-width: 100%;
@@ -115,7 +117,6 @@ Now this is the code:  <!DOCTYPE html>
       margin: 1rem 0;
       border-radius: 8px;
     }
-
   </style>
 </head>
 <body>
@@ -130,10 +131,17 @@ Now this is the code:  <!DOCTYPE html>
     <p>Transdisciplinary humanitarian and technological initiative</p>
   </header>
 
+  <!-- MISSION SECTION WITH BANNER VIDEO -->
   <section id="mission">
     <h2>Mission</h2>
-    <div class="hero-video-container">   <video src="videos/banner-video.mp4" autoplay muted loop playsinline></video>   <div class="overlay-text">WORK IN PROGRESS</div> </div>
+    <div class="hero-video-container">
+      <!-- filename with space encoded as %20 -->
+      <video src="videos/banner%20video.mp4" autoplay muted loop playsinline></video>
+      <div class="overlay-text">WORK IN PROGRESS</div>
+    </div>
+
     <p>Grounds for Peace is a transdisciplinary humanitarian and technological initiative re-engineering the interface between human bodies, public infrastructure, and planetary systems. We unite somatic intelligence, quantum materials research, and ecological design to create infrastructures that sustain life without harm. Our work bridges deep embodiment with high-level technological innovation to prototype new ground systems—moisture-conductive sidewalks, regenerative urban surfaces, trauma-free emergency signaling, and self-generating water stations.</p>
+
     <p>By aligning humanitarian ethics with material science and design, we build pathways toward infrastructures that feel, breathe, and support human and planetary well-being.</p>
   </section>
 
@@ -163,10 +171,9 @@ Now this is the code:  <!DOCTYPE html>
     <div class="initiative">
       <h3>Somatic Coregulation Hubs</h3>
       <div class="hero-video-container">
-  <video src="videos/banner-video.mp4" autoplay muted loop playsinline></video>
-  <div class="overlay-text">WORK IN PROGRESS</div>
-</div>
-
+        <video src="videos/banner%20video.mp4" autoplay muted loop playsinline></video>
+        <div class="overlay-text">WORK IN PROGRESS</div>
+      </div>
       <p>In-person sessions for families, couples, and groups cultivating embodied awareness, co-regulation, and integrative healing. These hubs serve as living laboratories for somatic-informed infrastructure design.</p>
     </div>
 
