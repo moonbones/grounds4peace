@@ -5,7 +5,7 @@
     --color-text-dark: #333333;
     --color-text-light: #ffffff;
     --color-background-light: #f7f7f7;
-    --color-wip-banner: #CC0000; /* Red for the 'WORK IN PROGRESS' banner */
+    --color-wip-banner: #6A8E7F; /* Changed to the primary sage green */ 'WORK IN PROGRESS' banner */
 
     /* Font stack prioritizing system fonts and a readable sans-serif/serif combo */
     --font-heading: 'Georgia', serif;
