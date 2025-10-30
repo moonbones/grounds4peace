@@ -1,1 +1,215 @@
+/* --- 🎨 Color Palette & Typography Variables --- */
+:root {
+    --color-primary: #6A8E7F; /* A peaceful sage green */
+    --color-secondary: #4A6055; /* Darker green for accents/buttons */
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+    --color-background-light: #f7f7f7;
+    --color-wip-banner: #CC0000; /* Red for the 'WORK IN PROGRESS' banner */
+
+    /* Font stack prioritizing system fonts and a readable sans-serif/serif combo */
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Helvetica Neue', Arial, sans-serif;
+    --font-size-base: 1.125rem; /* 18px */
+}
+
+/* --- 🧹 Global Reset and Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    padding-top: 50px; /* Space for the fixed banner */
+}
+
+/* --- 🚧 WIP Banner Styling --- */
+.wip-banner {
+    background-color: var(--color-wip-banner);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    position: fixed; /* Keeps it visible at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's on top of other content */
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+}
+
+/* --- ✍️ Typography and Headings --- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    color: var(--color-secondary);
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--color-primary);
+}
+
+header p {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-secondary);
+}
+
+h2 {
+    font-size: 2.2rem;
+    padding-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-primary); /* Subtly separates sections */
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--color-text-dark);
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    margin-left: 20px;
+    list-style: disc;
+    margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+strong {
+    color: var(--color-secondary);
+}
+
+/* --- 🧱 Layout and Sections --- */
+header, section {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center sections on large screens */
+}
+
+section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Style for the Contact section background */
+#contact {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+#contact h2 {
+    color: var(--color-text-light);
+    border-bottom-color: var(--color-text-light);
+}
+
+/* --- 🖼️ Media Containers (Images and Videos) --- */
+.hero-video-container {
+    position: relative;
+    width: 100%;
+    /* 16:9 Aspect Ratio (Height / Width * 100) */
+    padding-top: 56.25%; 
+    margin-bottom: 20px;
+}
+
+.hero-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.media-container {
+    width: 100%;
+    max-width: 600px; /* Set a max width for images/videos in sections */
+    margin: 20px auto;
+}
+
+.media-container img,
+.media-container iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific styling for the SoundCloud embed */
+.media-container iframe[src*="soundcloud"] {
+    height: 166px; /* Standard height for Soundcloud embeds */
+}
+
+/* Initiative Section Styling */
+.initiative {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--color-background-light);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* --- 📱 Media Queries for Responsiveness --- */
+
+/* Tablet and larger screens (e.g., width > 768px) */
+@media (min-width: 768px) {
+    body {
+        font-size: 1.125rem; /* 18px */
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    .media-container {
+        /* On larger screens, center the text next to the image/video */
+        float: right;
+        margin-left: 40px;
+        max-width: 45%;
+    }
+
+    /* Clear the float after the section content */
+    .initiative::after,
+    #problem::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/* Desktop and larger screens (e.g., width > 1024px) */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    header, section {
+        padding: 60px 8%;
+    }
+}
+
 
