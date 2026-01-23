@@ -5,7 +5,7 @@
     --color-text-dark: #333333;
     --color-text-light: #ffffff;
     --color-background-light: #f7f7f7;
-    --color-wip-banner: #6A8E7F; /* Changed to the primary sage green */ 'WORK IN PROGRESS' banner */
+    --color-wip-banner: #6A8E7F; 
 
     /* Font stack prioritizing system fonts and a readable sans-serif/serif combo */
     --font-heading: 'Georgia', serif;
@@ -36,11 +36,11 @@ body {
     text-align: center;
     padding: 10px 0;
     font-weight: bold;
-    position: fixed; /* Keeps it visible at the top */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensure it's on top of other content */
+    z-index: 1000; 
     letter-spacing: 0.15em;
     font-size: 0.9rem;
 }
@@ -68,7 +68,7 @@ h2 {
     font-size: 2.2rem;
     padding-top: 1.5rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--color-primary); /* Subtly separates sections */
+    border-bottom: 2px solid var(--color-primary); 
     display: inline-block;
 }
 
@@ -99,7 +99,7 @@ strong {
 header, section {
     padding: 40px 5%;
     max-width: 1200px;
-    margin: 0 auto; /* Center sections on large screens */
+    margin: 0 auto; 
 }
 
 section {
@@ -122,7 +122,6 @@ section {
 .hero-video-container {
     position: relative;
     width: 100%;
-    /* 16:9 Aspect Ratio (Height / Width * 100) */
     padding-top: 56.25%; 
     margin-bottom: 20px;
 }
@@ -138,7 +137,7 @@ section {
 
 .media-container {
     width: 100%;
-    max-width: 600px; /* Set a max width for images/videos in sections */
+    max-width: 600px; 
     margin: 20px auto;
 }
 
@@ -151,9 +150,8 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Specific styling for the SoundCloud embed */
 .media-container iframe[src*="soundcloud"] {
-    height: 166px; /* Standard height for Soundcloud embeds */
+    height: 166px; 
 }
 
 /* Initiative Section Styling */
@@ -167,10 +165,9 @@ section {
 
 /* --- 📱 Media Queries for Responsiveness --- */
 
-/* Tablet and larger screens (e.g., width > 768px) */
 @media (min-width: 768px) {
     body {
-        font-size: 1.125rem; /* 18px */
+        font-size: 1.125rem; 
     }
 
     h1 {
@@ -182,13 +179,11 @@ section {
     }
 
     .media-container {
-        /* On larger screens, center the text next to the image/video */
         float: right;
         margin-left: 40px;
         max-width: 45%;
     }
 
-    /* Clear the float after the section content */
     .initiative::after,
     #problem::after {
         content: "";
@@ -197,7 +192,6 @@ section {
     }
 }
 
-/* Desktop and larger screens (e.g., width > 1024px) */
 @media (min-width: 1024px) {
     h1 {
         font-size: 4.5rem;
@@ -212,25 +206,25 @@ section {
     }
 }
 
-/* --- 🦶 Footer Styling --- */
+/* --- 🦶 Revised Boxed Footer Styling --- */
 footer {
-    background-color: #333333; /* Dark background for professional contrast */
-    color: var(--color-text-light);
-    padding: 40px 5%;
+    background-color: var(--color-background-light); 
+    padding: 60px 5% 40px 5%;
     text-align: center;
-    font-size: 0.9rem;
 }
 
-footer p {
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.05em;
+.footer-box {
+    display: inline-block; 
+    border: 1.5px solid var(--color-primary); /* The Sage Green box */
+    padding: 12px 20px;
+    border-radius: 6px;
+    background-color: transparent;
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    border-top: 1px solid var(--color-primary); /* Thin sage green line above copyright */
-    padding-top: 20px;
+.footer-box p {
+    margin-bottom: 0;
+    font-size: 0.8rem; /* Smaller font size as requested */
+    color: var(--color-secondary); /* Darker green text for readability */
+    line-height: 1.5;
+    letter-spacing: 0.02em;
 }
-
-
