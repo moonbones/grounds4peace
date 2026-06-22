@@ -48,11 +48,9 @@ main {
     background-color: var(--color-background-light);
     border-bottom: 1px solid #e5e5e0;
     
-    /* Locks the navigation menu bar cleanly to the top of the viewport */
-    position: fixed;
+    /* Sticky ensures it stays in normal layout flow on load, but pins on scroll */
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 2000; 
 }
 
@@ -94,14 +92,14 @@ main {
 
 /* --- Anchor Offset for Nav Links --- */
 section {
-    /* Prevents header titles from clipping beneath the menu on mobile */
-    scroll-margin-top: 260px; 
+    /* Balance anchor jump destination for mobile link stacks */
+    scroll-margin-top: 200px; 
 }
 
 @media (min-width: 768px) {
     section {
-        /* Standard comfort offset for desktop screens */
-        scroll-margin-top: 160px; 
+        /* Balance anchor jump destination for desktop lines */
+        scroll-margin-top: 110px; 
     }
 }
 
