@@ -29,15 +29,13 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    /* Pushes content down significantly on cellphones to clear the fixed menu */
-    margin-top: 260px; 
+    margin-top: 20px; 
 }
 
 @media (min-width: 768px) {
     main {
         padding: 0 40px;
-        /* Desktop menu is shorter/horizontal, so it takes less space */
-        margin-top: 160px; 
+        margin-top: 40px; 
     }
 }
 
