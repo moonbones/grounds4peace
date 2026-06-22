@@ -49,3 +49,109 @@
 section {
     scroll-margin-top: 140px;
 }
+/* --- Global Content Layout Foundations --- */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Hero Brand Typography Styling --- */
+.hero-brand {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.hero-brand h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.hero-brand .hero-tagline {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 15px;
+    line-height: 1.5;
+}
+
+.hero-brand .hero-subtext {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-secondary);
+}
+
+/* --- Responsive Media Containers --- */
+.media-container {
+    width: 100%;
+    margin: 30px auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.media-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Fluid Aspect-Ratio Wrapper for Iframes (YouTube & SoundCloud) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Initiatives Section Layout --- */
+.section-lead {
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.initiative-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.initiative {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.initiative:last-child {
+    border-bottom: none;
+}
+
+/* --- Contact Section Clean Card --- */
+.contact-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.email-link {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary, #6A8E7F);
+    text-decoration: none;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
