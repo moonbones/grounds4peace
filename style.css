@@ -28,8 +28,19 @@ body {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Tighter padding for mobile screens */
+    padding: 0 20px;
+    /* This pushes the page down so it isn't hidden under the nav bar */
+    margin-top: 140px; 
 }
+
+@media (min-width: 768px) {
+    main {
+        padding: 0 40px;
+        /* This pushes the page down for desktop screens */
+        margin-top: 160px; 
+    }
+}
+
 
 @media (min-width: 768px) {
     main {
