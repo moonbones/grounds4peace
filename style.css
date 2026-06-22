@@ -43,10 +43,23 @@ main {
 .site-header {
     text-align: center;
     padding: 20px 15px;
-    position: relative;
-    z-index: 1101;
     background-color: var(--color-background-light);
     border-bottom: 1px solid #e5e5e0;
+    
+    /* ADD THESE 4 LINES TO LOCK IT TO THE TOP */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000; /* Keeps it layered safely on top of everything else */
+}
+
+@media (min-width: 768px) {
+    .site-header {
+        padding: 25px 40px;
+    }
+}
+
 }
 
 @media (min-width: 768px) {
