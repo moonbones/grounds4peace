@@ -29,17 +29,18 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    /* This pushes the page down so it isn't hidden under the nav bar */
-    margin-top: 140px; 
+    /* Pushes content down significantly further on cellphones to clear the menu */
+    margin-top: 260px; 
 }
 
 @media (min-width: 768px) {
     main {
         padding: 0 40px;
-        /* This pushes the page down for desktop screens */
+        /* Desktop menu is shorter, so it keeps the smaller 160px space */
         margin-top: 160px; 
     }
 }
+
 
 
 @media (min-width: 768px) {
