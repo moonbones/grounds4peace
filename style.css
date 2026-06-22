@@ -257,3 +257,32 @@ footer {
     color: #ffffff;
     text-decoration: none;
 }
+/* --- Navigation Menu --- */
+
+.section-nav {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.section-nav a {
+    display: inline-block;
+    margin: 5px 8px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #eef3f0;
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.section-nav a:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Prevent fixed banner from covering section titles */
+
+section {
+    scroll-margin-top: 140px;
+}
