@@ -89,11 +89,11 @@ section {
     color: #ffffff !important;
     text-align: center;
     
-    /* Scrolls away naturally with default page layout flow */
+    /* SCROLLS NATURALLY: Sits perfectly in normal page flow */
     position: relative !important;
-    z-index: 1;
+    z-index: 2;
     
-    padding: 6px 72px !important; 
+    padding: 6px 20px !important; 
     display: block !important;
     height: auto !important;
     
@@ -102,26 +102,14 @@ section {
     letter-spacing: 0.15em;
     font-weight: 700;
     line-height: 1.4;
-    
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-bottom: 10px;
-}
-
-.header-brand-block {
-    text-align: center;
-    background-color: var(--color-background-light);
-    padding-top: 10px;
-    margin-bottom: 5px;
 }
 
 .section-nav {
-    /* FIXED OVERLAY FALLBACK: Guarantees frame locking across old and new rendering engines alike */
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 9999 !important; /* Layers bar on top of image containers and grids */
+    /* FLUID STICKY WINDOW: Pins directly to top only when the banner scrolls off-screen */
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important; 
+    z-index: 9999 !important; /* Prevents text or media from overlapping the navigation text */
     
     display: flex;
     justify-content: center;
@@ -131,6 +119,13 @@ section {
     background-color: var(--color-background-light);
     padding: 12px 10px !important;
     border-bottom: 1px solid #e5e5e0;
+}
+
+.header-brand-block {
+    text-align: center;
+    background-color: var(--color-background-light);
+    padding-top: 15px; 
+    margin-bottom: 5px;
 }
 
 .section-nav a {
@@ -144,18 +139,15 @@ section {
 /* Desktop Responsive Header Adjustments */
 @media (min-width: 768px) {
     .wip-banner {
-        margin-left: -40px;
-        margin-right: -40px;
         padding: 36px 72px !important; 
     }
     
+    .header-brand-block {
+        padding-top: 10px; 
+    }
+
     .section-nav {
-        /* Restores clean sticky behavior on wider viewports if parent limits expand */
-        position: -webkit-sticky !important;
-        position: sticky !important;
-        top: 0px !important; 
         padding: 0 0 10px 0 !important;
-        border-bottom: 1px solid #e5e5e0;
     }
 }
 
