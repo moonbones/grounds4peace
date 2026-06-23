@@ -108,6 +108,7 @@ section {
    4. WORK IN PROGRESS BANNER
    ========================================================================== */
 .wip-banner {
+    .wip-banner {
     background-color: #000000 !important;
     color: #ffffff !important;
     text-align: center;
@@ -137,6 +138,7 @@ section {
         padding: 36px 72px !important; 
     }
 }
+
 /* ==========================================================================
    5. HERO COVER SCREEN BRANDING
    ========================================================================== */
