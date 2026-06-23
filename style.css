@@ -107,13 +107,32 @@ section {
 /* ==========================================================================
    4. WORK IN PROGRESS BANNER
    ========================================================================== */
+/* ==========================================================================
+   HEADER & NAVIGATION STRUCTURE
+   ========================================================================== */
+
+.site-header {
+    /* 1. Keeps the menu container acting as the main sticky anchor point */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* Ensures text stays legible over scrolling content */
+    
+    /* 2. Uses flex column rendering to manage the internal layout stack */
+    display: flex;
+    flex-direction: column;
+}
+
 .wip-banner {
-    .wip-banner {
     background-color: #000000 !important;
     color: #ffffff !important;
     text-align: center;
     
-    /* NO VERTICAL PADDING ON CELLPHONE: Minimal space top/bottom, 72px keeps side margins */
+    /* 3. SCROLLING FIX: Tells the banner to move naturally and never lock to the viewports */
+    position: relative !important;
+    
+    /* Keeps your cell phone vs desktop height preferences locked in */
     padding: 6px 72px !important; 
     display: block !important;
     height: auto !important;
@@ -128,14 +147,43 @@ section {
     margin-right: -15px;
 }
 
-/* This section controls what happens on desktop screens (768px and wider) */
+.header-brand-block {
+    /* 4. PINNING FIX: Forces your title branding block to lock smoothly when the banner rolls away */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    z-index: 10;
+}
+
+.section-nav {
+    /* 5. MENU FIX: Guarantees your dark blue links menu stays pinned right below the title */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px; /* Adjusts offset so links don't visually overlap the title text */
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    z-index: 10;
+}
+
+/* ==========================================================================
+   DESKTOP RESPONSIVE SCALING (768px and wider)
+   ========================================================================== */
+
 @media (min-width: 768px) {
     .wip-banner {
         margin-left: -40px;
         margin-right: -40px;
-        
-        /* DEEP PADDING RESTORED ONLY ON DESKTOP: 36px top and bottom */
+        /* Restores deep black spacing on desktop viewports */
         padding: 36px 72px !important; 
+    }
+    
+    .section-nav {
+        /* Adjusts link positioning slightly lower down for larger desktop typography */
+        top: 85px; 
     }
 }
 
