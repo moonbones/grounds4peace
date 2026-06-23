@@ -108,12 +108,14 @@ section {
    4. WORK IN PROGRESS BANNER
    ========================================================================== */
 .wip-banner {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000000 !important;
+    color: #ffffff !important;
     text-align: center;
     
-    /* VERTICAL SPACE RESTORED: 32px adds deep black space above and below, 72px keeps the side margins */
-    padding: 32px 72px; 
+    /* NO VERTICAL PADDING ON CELLPHONE: Minimal space top/bottom, 72px keeps side margins */
+    padding: 6px 72px !important; 
+    display: block !important;
+    height: auto !important;
     
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -125,13 +127,14 @@ section {
     margin-right: -15px;
 }
 
+/* This section controls what happens on desktop screens (768px and wider) */
 @media (min-width: 768px) {
     .wip-banner {
-        /* Maintains the edge-to-edge layout on desktop views */
         margin-left: -40px;
         margin-right: -40px;
-        /* Slightly increases vertical space on larger screens if desired, or keep at 32px */
-        padding: 36px 72px; 
+        
+        /* DEEP PADDING RESTORED ONLY ON DESKTOP: 36px top and bottom */
+        padding: 36px 72px !important; 
     }
 }
 /* ==========================================================================
