@@ -48,12 +48,12 @@ main {
 }
 
 section {
-    scroll-margin-top: 140px; /* Offset ensures elements don't scroll under the sticky bar */
+    scroll-margin-top: 150px; /* Offset ensures elements don't scroll under the sticky bar on mobile */
 }
 
 @media (min-width: 768px) {
     section {
-        scroll-margin-top: 180px; 
+        scroll-margin-top: 230px; /* Taller offset for the expanded desktop navigation container */
     }
 }
 
