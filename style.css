@@ -108,9 +108,11 @@ section {
    4. WORK IN PROGRESS BANNER
    ========================================================================== */
 .wip-banner {
-    background-color: var(--color-wip-banner);
+    /* Changed from sage green to deep black */
+    background-color: #000000;
     color: #ffffff;
     text-align: center;
+...
     /* 12px top/bottom padding, 72px (1 inch) left/right padding */
     padding: 12px 72px; 
     font-size: 0.7rem;
