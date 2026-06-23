@@ -83,7 +83,8 @@ main {
 }
 
 .section-nav a {
-    color: var(--color-secondary);
+    /* Changed from secondary forest to primary dark green sage */
+    color: var(--color-primary);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
