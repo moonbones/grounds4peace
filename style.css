@@ -1,6 +1,6 @@
 /* ==========================================================================
    1. COLOR PALETTE & TYPOGRAPHY VARIABLES
-   ========================================================================== */
+   ========================================================================= */
 :root {
     --color-primary: #6A8E7F;        /* Deep Sage Green */
     --color-secondary: #4A6055;      /* Dark Forest Accent */
@@ -29,7 +29,7 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    margin-top: 50px; /* Added spacing buffer to prevent fixed mobile navigation from clipping top elements */
+    margin-top: 10px; 
 }
 
 @media (min-width: 768px) {
@@ -40,63 +40,32 @@ main {
 }
 
 /* ==========================================================================
-   3. PROFESSIONAL HEADER & NAVIGATION (FIXED STACK)
+   3 & 4. COMBINED HEADER, BRAND TITLE, & PINNING BEHAVIORS
    ========================================================================== */
 .site-header {
-    text-align: center;
-    padding: 10px 15px 0 15px;
-    background-color: var(--color-background-light);
-    border-bottom: 1px solid #e5e5e0;
     position: static !important; 
     display: block !important;
 }
 
-@media (min-width: 768px) {
-    .site-header {
-        padding: 15px 40px 0 40px;
-    }
-}
-
-.site-header .site-link {
-    display: inline-block;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #1f5fbf;
-    text-decoration: none;
-    margin-bottom: 5px;
-}
-
-.site-header .site-link:hover {
-    text-decoration: underline;
-}
-
-/* --- Anchor Offset for Nav Links --- */
 section {
-    scroll-margin-top: 70px; 
+    scroll-margin-top: 140px; /* Offset ensures elements don't scroll under the sticky bar */
 }
 
 @media (min-width: 768px) {
     section {
-        scroll-margin-top: 110px; 
+        scroll-margin-top: 180px; 
     }
 }
 
-/* ==========================================================================
-   4. WORK IN PROGRESS BANNER & PINNING BEHAVIORS
-   ========================================================================== */
 .wip-banner {
     background-color: #000000 !important;
     color: #ffffff !important;
     text-align: center;
-    
-    /* SCROLLS NATURALLY: Sits perfectly in normal page flow */
     position: relative !important;
     z-index: 2;
-    
     padding: 6px 20px !important; 
     display: block !important;
     height: auto !important;
-    
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -104,28 +73,44 @@ section {
     line-height: 1.4;
 }
 
-.section-nav {
-    /* FLUID STICKY WINDOW: Pins directly to top only when the banner scrolls off-screen */
+/* STICKY STACK CONTAINER: Holds brand title and navigation fixed together on scroll */
+.sticky-header-container {
     position: -webkit-sticky !important;
     position: sticky !important;
-    top: 0 !important; 
-    z-index: 9999 !important; /* Prevents text or media from overlapping the navigation text */
-    
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px 20px;
-    font-size: 0.8rem;
+    top: 0 !important;
+    z-index: 9999 !important; 
     background-color: var(--color-background-light);
-    padding: 12px 10px !important;
     border-bottom: 1px solid #e5e5e0;
 }
 
 .header-brand-block {
     text-align: center;
     background-color: var(--color-background-light);
-    padding-top: 15px; 
-    margin-bottom: 5px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.header-brand-block h1 {
+    font-size: 1.8rem; 
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+    .header-brand-block h1 {
+        font-size: 2.5rem; 
+    }
+}
+
+.section-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    font-size: 0.8rem;
+    background-color: var(--color-background-light);
+    padding: 8px 10px 12px 10px !important;
 }
 
 .section-nav a {
@@ -136,18 +121,17 @@ section {
     letter-spacing: 0.1em;
 }
 
-/* Desktop Responsive Header Adjustments */
 @media (min-width: 768px) {
     .wip-banner {
         padding: 36px 72px !important; 
     }
     
     .header-brand-block {
-        padding-top: 10px; 
+        padding-top: 20px;
     }
-
+    
     .section-nav {
-        padding: 0 0 10px 0 !important;
+        padding: 10px 0 15px 0 !important;
     }
 }
 
