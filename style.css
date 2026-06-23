@@ -108,32 +108,32 @@ section {
    4. WORK IN PROGRESS BANNER
    ========================================================================== */
 .wip-banner {
-    /* Changed from sage green to deep black */
     background-color: #000000;
     color: #ffffff;
     text-align: center;
-...
-    /* 12px top/bottom padding, 72px (1 inch) left/right padding */
-    padding: 12px 72px; 
-    font-size: 0.7rem;
+    
+    /* VERTICAL SPACE RESTORED: 32px adds deep black space above and below, 72px keeps the side margins */
+    padding: 32px 72px; 
+    
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: 700;
     line-height: 1.4;
     
-    /* Forces the green block to ignore inner header padding and touch the screen edges */
     margin-left: -15px;
     margin-right: -15px;
 }
 
 @media (min-width: 768px) {
     .wip-banner {
-        /* Adjusts edge margins to match the wider desktop header container padding */
+        /* Maintains the edge-to-edge layout on desktop views */
         margin-left: -40px;
         margin-right: -40px;
+        /* Slightly increases vertical space on larger screens if desired, or keep at 32px */
+        padding: 36px 72px; 
     }
 }
-
 /* ==========================================================================
    5. HERO COVER SCREEN BRANDING
    ========================================================================== */
