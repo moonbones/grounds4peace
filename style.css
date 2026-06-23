@@ -29,7 +29,7 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    margin-top: 10px; /* Reduced to pull layout closer to header */
+    margin-top: 50px; /* Added spacing buffer to prevent fixed mobile navigation from clipping top elements */
 }
 
 @media (min-width: 768px) {
@@ -47,8 +47,6 @@ main {
     padding: 10px 15px 0 15px;
     background-color: var(--color-background-light);
     border-bottom: 1px solid #e5e5e0;
-    
-    /* Document flow is set to static so elements can move independently */
     position: static !important; 
     display: block !important;
 }
@@ -74,7 +72,7 @@ main {
 
 /* --- Anchor Offset for Nav Links --- */
 section {
-    scroll-margin-top: 70px; /* Aligns page scroll cleanly under pinned menu */
+    scroll-margin-top: 70px; 
 }
 
 @media (min-width: 768px) {
@@ -91,11 +89,10 @@ section {
     color: #ffffff !important;
     text-align: center;
     
-    /* SCROLLS NATURALLY: Banner stays at the top and rolls away */
+    /* Scrolls away naturally with default page layout flow */
     position: relative !important;
     z-index: 1;
     
-    /* Tight mobile padding height configuration */
     padding: 6px 72px !important; 
     display: block !important;
     height: auto !important;
@@ -119,26 +116,25 @@ section {
 }
 
 .section-nav {
-    /* FIXED NAVIGATION WINDOW: Menu locks to top edge of viewport on scroll */
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 0 !important; 
-    z-index: 9999 !important; /* Layers menu over scrolling body elements */
+    /* FIXED OVERLAY FALLBACK: Guarantees frame locking across old and new rendering engines alike */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important; /* Layers bar on top of image containers and grids */
     
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px 20px;
-    margin-top: 0px;
     font-size: 0.8rem;
     background-color: var(--color-background-light);
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding: 12px 10px !important;
     border-bottom: 1px solid #e5e5e0;
 }
 
 .section-nav a {
-    color: #0A2540; /* Dark Blue Links */
+    color: #0A2540; 
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
@@ -150,11 +146,16 @@ section {
     .wip-banner {
         margin-left: -40px;
         margin-right: -40px;
-        padding: 36px 72px !important; /* Restores deep padding only on desktop screen views */
+        padding: 36px 72px !important; 
     }
     
     .section-nav {
+        /* Restores clean sticky behavior on wider viewports if parent limits expand */
+        position: -webkit-sticky !important;
+        position: sticky !important;
         top: 0px !important; 
+        padding: 0 0 10px 0 !important;
+        border-bottom: 1px solid #e5e5e0;
     }
 }
 
@@ -163,7 +164,7 @@ section {
    ========================================================================== */
 .hero-brand {
     text-align: left;
-    padding: 20px 0; /* Tightened padding to pull layouts closely together */
+    padding: 20px 0; 
     border-bottom: 1px solid #e5e5e0;
 }
 
@@ -216,7 +217,7 @@ section {
    6. ASYMMETRIC CONTENT GRIDS (MISSION, PROBLEM, APPROACH)
    ========================================================================== */
 section {
-    padding: 25px 0; /* Tight vertical layout spacing */
+    padding: 25px 0; 
     border-bottom: 1px solid #e5e5e0;
     display: flex;
     flex-direction: column;
@@ -280,8 +281,8 @@ section p:last-of-type {
    ========================================================================== */
 .media-container {
     width: 100%;
-    max-width: 500px !important; /* Constrains layouts down to roughly half size */
-    margin: 10px auto !important; /* Centers block alignment */
+    max-width: 500px !important; 
+    margin: 10px auto !important; 
     background-color: #f0efe9;
     border-radius: 4px;
     overflow: hidden;
@@ -298,7 +299,7 @@ section p:last-of-type {
 .video-wrapper,
 .media-container:has(iframe) {
     position: relative;
-    padding-bottom: 28.125%; /* Halved aspect footprint ratio */
+    padding-bottom: 28.125%; 
     height: 0;
     max-width: 500px !important;
     margin: 10px auto !important;
