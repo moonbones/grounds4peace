@@ -48,10 +48,10 @@ main {
     background-color: var(--color-background-light);
     border-bottom: 1px solid #e5e5e0;
     
-    /* Sticky ensures it stays in normal layout flow on load, but pins on scroll */
-    position: sticky;
-    top: 0;
-    z-index: 2000; 
+    /* REMOVED STICKY FROM CONTAINER: Allows parent block to flow naturally */
+    position: static; 
+    display: flex;
+    flex-direction: column;
 }
 
 @media (min-width: 768px) {
@@ -73,6 +73,55 @@ main {
     text-decoration: underline;
 }
 
+/* --- Anchor Offset for Nav Links --- */
+section {
+    scroll-margin-top: 200px; 
+}
+
+@media (min-width: 768px) {
+    section {
+        scroll-margin-top: 110px; 
+    }
+}
+
+/* ==========================================================================
+   4. WORK IN PROGRESS BANNER & STICKY CONTROLS
+   ========================================================================== */
+
+.wip-banner {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-align: center;
+    
+    /* SCROLLS NATURALLY: Banner stays at the very top and rolls away */
+    position: relative !important;
+    
+    padding: 6px 72px !important; 
+    display: block !important;
+    height: auto !important;
+    
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    line-height: 1.4;
+    
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.header-brand-block {
+    /* STICKY BRANDING: Title pins to top after black box scrolls away */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background-light);
+    padding-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    z-index: 1010;
+}
+
 .section-nav {
     display: flex;
     justify-content: center;
@@ -80,10 +129,17 @@ main {
     gap: 12px 20px;
     margin-top: 5px;
     font-size: 0.8rem;
+    
+    /* STICKY MENU LINKS: Pins directly beneath the title block during scroll */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px; 
+    background-color: var(--color-background-light);
+    padding-bottom: 15px;
+    z-index: 1000;
 }
 
 .section-nav a {
-    /* Changed to a premium, high-contrast dark blue */
     color: #0A2540;
     text-decoration: none;
     text-transform: uppercase;
@@ -91,6 +147,21 @@ main {
     letter-spacing: 0.1em;
 }
 
+/* ==========================================================================
+   DESKTOP RESPONSIVE SCALING (768px and wider)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .wip-banner {
+        margin-left: -40px;
+        margin-right: -40px;
+        padding: 36px 72px !important; 
+    }
+    
+    .section-nav {
+        /* Desktop alignment offset below title */
+        top: 65px; 
+    }
+}
 /* --- Anchor Offset for Nav Links --- */
 section {
     /* Balance anchor jump destination for mobile link stacks */
