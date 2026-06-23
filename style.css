@@ -111,12 +111,25 @@ section {
     background-color: var(--color-wip-banner);
     color: #ffffff;
     text-align: center;
-    padding: 12px 15px;
+    /* 12px top/bottom padding, 72px (1 inch) left/right padding */
+    padding: 12px 72px; 
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: 700;
     line-height: 1.4;
+    
+    /* Forces the green block to ignore inner header padding and touch the screen edges */
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+@media (min-width: 768px) {
+    .wip-banner {
+        /* Adjusts edge margins to match the wider desktop header container padding */
+        margin-left: -40px;
+        margin-right: -40px;
+    }
 }
 
 /* ==========================================================================
