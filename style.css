@@ -44,14 +44,13 @@ main {
    ========================================================================== */
 .site-header {
     text-align: center;
-    padding: 10px 15px 0 15px; /* Tightened padding to eliminate vertical spacing gaps */
+    padding: 10px 15px 0 15px;
     background-color: var(--color-background-light);
     border-bottom: 1px solid #e5e5e0;
     
-    /* REMOVED STICKY FROM WRAPPER: Allows parent container to scroll away naturally */
-    position: static; 
-    display: flex;
-    flex-direction: column;
+    /* Document flow is set to static so elements can move independently */
+    position: static !important; 
+    display: block !important;
 }
 
 @media (min-width: 768px) {
@@ -66,7 +65,7 @@ main {
     font-weight: 700;
     color: #1f5fbf;
     text-decoration: none;
-    margin-bottom: 5px; /* Collapsed margin space */
+    margin-bottom: 5px;
 }
 
 .site-header .site-link:hover {
@@ -75,7 +74,7 @@ main {
 
 /* --- Anchor Offset for Nav Links --- */
 section {
-    scroll-margin-top: 140px; /* Recalibrated for tighter pinned menu block */
+    scroll-margin-top: 70px; /* Aligns page scroll cleanly under pinned menu */
 }
 
 @media (min-width: 768px) {
@@ -92,10 +91,11 @@ section {
     color: #ffffff !important;
     text-align: center;
     
-    /* SCROLLS NATURALLY: Banner moves up out of viewport immediately */
+    /* SCROLLS NATURALLY: Banner stays at the top and rolls away */
     position: relative !important;
+    z-index: 1;
     
-    /* Tight mobile padding */
+    /* Tight mobile padding height configuration */
     padding: 6px 72px !important; 
     display: block !important;
     height: auto !important;
@@ -112,37 +112,33 @@ section {
 }
 
 .header-brand-block {
-    /* STICKY BRANDING: Pins title to top when banner scrolls away */
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+    text-align: center;
     background-color: var(--color-background-light);
     padding-top: 10px;
-    margin-bottom: 5px; /* Reduced gap */
-    text-align: center;
-    z-index: 1010;
+    margin-bottom: 5px;
 }
 
 .section-nav {
+    /* FIXED NAVIGATION WINDOW: Menu locks to top edge of viewport on scroll */
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important; 
+    z-index: 9999 !important; /* Layers menu over scrolling body elements */
+    
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px 20px;
     margin-top: 0px;
     font-size: 0.8rem;
-    
-    /* STICKY MENU LINKS: Locks cleanly right under title during scroll */
-    position: -webkit-sticky;
-    position: sticky;
-    top: 45px; 
     background-color: var(--color-background-light);
     padding-bottom: 10px;
     margin-bottom: 10px;
-    z-index: 1000;
+    border-bottom: 1px solid #e5e5e0;
 }
 
 .section-nav a {
-    color: #0A2540; /* Verified dark blue links */
+    color: #0A2540; /* Dark Blue Links */
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
@@ -154,11 +150,11 @@ section {
     .wip-banner {
         margin-left: -40px;
         margin-right: -40px;
-        padding: 36px 72px !important; /* Restores deep padding only on desktop views */
+        padding: 36px 72px !important; /* Restores deep padding only on desktop screen views */
     }
     
     .section-nav {
-        top: 50px; 
+        top: 0px !important; 
     }
 }
 
@@ -167,7 +163,7 @@ section {
    ========================================================================== */
 .hero-brand {
     text-align: left;
-    padding: 20px 0; /* Reduced to bring text fields tightly together */
+    padding: 20px 0; /* Tightened padding to pull layouts closely together */
     border-bottom: 1px solid #e5e5e0;
 }
 
@@ -220,7 +216,7 @@ section {
    6. ASYMMETRIC CONTENT GRIDS (MISSION, PROBLEM, APPROACH)
    ========================================================================== */
 section {
-    padding: 25px 0; /* Tightened layout vertical spacing gap */
+    padding: 25px 0; /* Tight vertical layout spacing */
     border-bottom: 1px solid #e5e5e0;
     display: flex;
     flex-direction: column;
@@ -284,8 +280,8 @@ section p:last-of-type {
    ========================================================================== */
 .media-container {
     width: 100%;
-    max-width: 500px !important; /* Forces layout boxes down to half desktop scale */
-    margin: 10px auto !important; /* Centers block and balances surrounding space */
+    max-width: 500px !important; /* Constrains layouts down to roughly half size */
+    margin: 10px auto !important; /* Centers block alignment */
     background-color: #f0efe9;
     border-radius: 4px;
     overflow: hidden;
@@ -302,16 +298,15 @@ section p:last-of-type {
 .video-wrapper,
 .media-container:has(iframe) {
     position: relative;
-    padding-bottom: 28.125%; /* Halved aspect footprint layout ratio */
+    padding-bottom: 28.125%; /* Halved aspect footprint ratio */
     height: 0;
-    max-width: 500px !important; /* Restricts video frame container expansion */
+    max-width: 500px !important;
     margin: 10px auto !important;
     overflow: hidden;
     background-color: #f0efe9;
     border-radius: 4px;
 }
 
-/* Overrides structural settings for video rendering frames */
 .video-wrapper iframe,
 .media-container iframe {
     position: absolute;
