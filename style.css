@@ -83,8 +83,8 @@ main {
 }
 
 .section-nav a {
-    /* Changed from secondary forest to primary dark green sage */
-    color: var(--color-primary);
+    /* Changed to a premium, high-contrast dark blue */
+    color: #0A2540;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
