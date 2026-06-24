@@ -435,3 +435,32 @@ footer {
     color: #777776;
     margin: 4px 0;
 }
+
+
+
+
+
+/* ==========================================================================
+   12. DESKTOP ONLY OVERHAUL (PROTECTED MOBILE FIREWALL)
+   ========================================================================== */
+@media (min-width: 1024px) {
+
+    /* ALL DESKTOP STRUCTURAL EXPERIMENTS GO INSIDE THESE BRACKETS.
+       The code below only executes on viewports 1024px and wider.
+       Your mobile layout is completely isolated and locked.
+    */
+
+    /* Example Placeholder: We can change alignment, width, or colors here safely */
+    .sticky-header-container {
+        
+    }
+
+    .header-brand-block h1 {
+        
+    }
+
+    main {
+        
+    }
+
+}
