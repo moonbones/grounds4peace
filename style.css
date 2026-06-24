@@ -436,31 +436,137 @@ footer {
     margin: 4px 0;
 }
 
-
-
-
-
 /* ==========================================================================
    12. DESKTOP ONLY OVERHAUL (PROTECTED MOBILE FIREWALL)
    ========================================================================== */
 @media (min-width: 1024px) {
 
-    /* ALL DESKTOP STRUCTURAL EXPERIMENTS GO INSIDE THESE BRACKETS.
-       The code below only executes on viewports 1024px and wider.
-       Your mobile layout is completely isolated and locked.
-    */
-
-    /* Example Placeholder: We can change alignment, width, or colors here safely */
-    .sticky-header-container {
-        
+    /* Navigation Row Optimization: Adjusts menu gaps fluidly across laptop sizes */
+    .section-nav {
+        font-size: clamp(0.7rem, 0.8vw, 0.85rem) !important;
+        gap: 10px clamp(10px, 1.5vw, 25px) !important;
+        padding: 12px 0 18px 0 !important;
     }
 
-    .header-brand-block h1 {
-        
+    /* Structural Block Safety: Switched sections to standard block behavior. 
+       This allows individual paragraphs to flow naturally, completely preventing overlapping bugs. */
+    section {
+        scroll-margin-top: 250px !important;
+        display: block !important;
+        padding: clamp(40px, 5vw, 80px) 0 !important;
+        clear: both !important;
     }
 
-    main {
-        
+    /* Section Titles span cleanly across the full top width */
+    section h2 {
+        display: block !important;
+        width: 100% !important;
+        font-size: clamp(1.8rem, 2.5vw, 2.4rem) !important;
+        margin-bottom: 25px !important;
+        clear: both !important;
     }
 
+    /* Column Sizing and Safety Limits for paragraphs, lists, and cards */
+    section p, 
+    section ul, 
+    section .contact-card {
+        max-width: calc(100% - 440px) !important; 
+        font-size: clamp(1rem, 1.1vw, 1.15rem) !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Media Container Isolation: Using floating tracks to guarantee text stacks properly next to media layout targets */
+    section .media-container {
+        float: right !important;
+        width: 380px !important;
+        max-width: 380px !important;
+        margin: 0 0 20px 40px !important;
+        position: relative !important;
+        top: 0 !important;
+    }
+
+    section .media-container img {
+        width: 100% !important;
+        max-height: 480px !important;
+        object-fit: cover !important; 
+        object-position: center 25% !important; 
+    }
+
+    /* 16:9 Aspect Ratio Safety Box for Widescreen Video Elements */
+    section .video-wrapper,
+    section .media-container:has(iframe) {
+        padding-bottom: 56.25% !important; 
+        width: 100% !important;
+    }
+
+    /* --- THE ASYMMETRIC FLIP --- */
+    section:nth-of-type(even) .media-container {
+        float: left !important;
+        margin: 0 40px 20px 0 !important;
+    }
+
+    section:nth-of-type(even) p,
+    section:nth-of-type(even) ul,
+    section:nth-of-type(even) .contact-card {
+        margin-left: auto !important;
+        max-width: calc(100% - 440px) !important;
+    }
+
+    /* --- GLOBAL LAYOUT EXCEPTIONS & STRUCTURAL RESETS --- */
+    section:not(:has(.media-container)),
+    #contact,
+    #initiatives {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Center-align non-media zones */
+    section:not(:has(.media-container)) p,
+    section:not(:has(.media-container)) ul {
+        max-width: 850px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    #contact {
+        text-align: center !important;
+    }
+
+    #contact p {
+        max-width: 750px !important;
+        margin: 0 auto 15px auto !important;
+    }
+
+    #contact .contact-card {
+        margin: 30px auto 0 auto !important;
+        max-width: 600px !important;
+    }
+
+    /* Grid layout configurations specifically for the key initiatives zone */
+    .initiative-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; 
+        gap: 50px !important;
+        margin-top: 30px !important;
+        clear: both !important;
+    }
+
+    .initiative {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .initiative h3 {
+        font-size: clamp(1.4rem, 1.8vw, 1.75rem) !important;
+    }
+
+    .initiative .media-container {
+        float: none !important;
+        flex: none !important;
+        margin: 15px 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
 }
