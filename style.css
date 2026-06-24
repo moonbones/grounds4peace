@@ -26,12 +26,11 @@ body {
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
-
 @media (min-width: 768px) {
     main {
         padding: 0 40px;
