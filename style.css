@@ -40,7 +40,7 @@ main {
 }
 
 /* ==========================================================================
-   3 & 4. COMBINED HEADER, BRAND TITLE, & PINNING BEHAVIORS
+   3 & 4. HEADER, NAV, BANNER & PINNING
    ========================================================================== */
 .site-header {
     position: static !important; 
@@ -49,6 +49,11 @@ main {
 
 section {
     scroll-margin-top: 150px; 
+    padding: 25px 0; 
+    border-bottom: 1px solid #e5e5e0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 @media (min-width: 768px) {
@@ -135,83 +140,8 @@ section {
 }
 
 /* ==========================================================================
-   5. HERO COVER SCREEN BRANDING
+   5. TEXT & LIST TYPOGRAPHY
    ========================================================================== */
-.hero-brand {
-    text-align: left;
-    padding: 20px 0; 
-    border-bottom: 1px solid #e5e5e0;
-}
-
-@media (min-width: 850px) {
-    .hero-brand {
-        padding: 40px 0;
-        max-width: 850px;
-    }
-}
-
-.hero-brand h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin: 0 0 10px 0;
-    color: #1a1a1a;
-}
-
-@media (min-width: 768px) {
-    .hero-brand h1 {
-        font-size: 4.5rem;
-        letter-spacing: -0.04em;
-    }
-}
-
-.hero-brand .hero-tagline {
-    font-size: 1.25rem;
-    line-height: 1.4;
-    color: #333333;
-    margin-bottom: 10px;
-    font-weight: 400;
-}
-
-@media (min-width: 768px) {
-    .hero-brand .hero-tagline {
-        font-size: 1.6rem;
-    }
-}
-
-.hero-brand .hero-subtext {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--color-primary);
-    font-weight: 700;
-}
-
-/* ==========================================================================
-   6. ASYMMETRIC CONTENT GRIDS (MISSION, PROBLEM, APPROACH)
-   ========================================================================== */
-section {
-    padding: 25px 0; 
-    border-bottom: 1px solid #e5e5e0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-@media (min-width: 850px) {
-    section {
-        display: grid;
-        padding: 40px 0;
-        grid-template-columns: 300px 1fr;
-        gap: 40px;
-    }
-    
-    #initiatives {
-        grid-template-columns: 1fr;
-    }
-}
-
 section h2 {
     font-size: 1.6rem;
     text-transform: uppercase;
@@ -252,7 +182,7 @@ section p:last-of-type {
 }
 
 /* ==========================================================================
-   7. FLUID RESPONSIVE MEDIA WRAPPERS
+   6. RESPONSIVE MEDIA CONTAINERS
    ========================================================================== */
 .media-container {
     width: 100%;
@@ -292,7 +222,7 @@ section p:last-of-type {
 }
 
 /* ==========================================================================
-   8. EDITORIAL INITIATIVES BLOCK
+   7. INITIATIVES GRID ARRANGEMENT
    ========================================================================== */
 .section-lead {
     font-size: 1.3rem;
@@ -300,24 +230,10 @@ section p:last-of-type {
     margin: -5px 0 20px 0;
 }
 
-@media (min-width: 850px) {
-    .section-lead {
-        font-size: 1.6rem;
-        margin: -10px 0 40px 0;
-        max-width: 800px;
-    }
-}
-
 .initiative-grid {
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
-
-@media (min-width: 850px) {
-    .initiative-grid {
-        gap: 40px;
-    }
 }
 
 .initiative {
@@ -337,84 +253,243 @@ section p:last-of-type {
     letter-spacing: -0.01em;
 }
 
-@media (min-width: 850px) {
-    .initiative h3 {
-        font-size: 1.85rem;
-        margin-bottom: 15px;
-        letter-spacing: -0.02em;
-    }
-}
-
 .initiative p {
     color: #333333;
     margin-bottom: 10px;
     font-size: 1.05rem;
 }
 
-@media (min-width: 850px) {
-    .initiative {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        align-items: center;
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .initiative:nth-child(even) {
-        direction: rtl;
-    }
-    .initiative:nth-child(even) * {
-        direction: ltr;
-    }
-}
-
 /* ==========================================================================
-   9. MINIMALIST CONTACT CARD
+   8. PREMIUM CONTACT PLATFORM DESIGN
    ========================================================================== */
-.contact-card {
+.premium-contact-layout {
+    border-bottom: 1px solid #e5e5e0;
+    padding: 40px 0;
+}
+
+.premium-contact-layout .contact-card {
     border: 1px solid #1a1a1a;
-    padding: 20px;
-    margin-top: 15px;
-    background-color: transparent;
+    padding: 30px;
+    background-color: #fdfdfb;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-    .contact-card {
-        padding: 30px 40px;
-        margin-top: 20px;
-    }
+.premium-contact-layout h2 {
+    margin-bottom: 15px;
+    color: #1a1a1a;
 }
 
-.contact-card p {
-    font-size: 1.05rem;
-    margin-bottom: 10px;
+.premium-contact-layout p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #222222;
+}
+
+.contact-action-block {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e0;
+}
+
+.contact-action-block p {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
 }
 
 .email-link {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #0A2540;
     text-decoration: underline;
-    text-underline-offset: 5px;
+    text-underline-offset: 6px;
     word-break: break-all;
+    transition: color 0.2s ease;
 }
 
-@media (min-width: 768px) {
+.email-link:hover {
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   9. DESKTOP ADVANCED MEDIA & GRID CONTROLS
+   ========================================================================== */
+@media (min-width: 1024px) {
+
+    .section-nav {
+        font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+        gap: 12px 24px;
+        padding: 12px 0 18px 0 !important;
+    }
+
+    /* Asymmetric Sidebar Configurations */
+    section {
+        display: grid !important;
+        grid-template-columns: 1fr 360px !important;
+        gap: 15px 40px !important;
+        align-items: start !important;
+        padding: 30px 0 !important; 
+        scroll-margin-top: 250px !important;
+    }
+
+    section h2 {
+        grid-column: 1 / -1 !important;
+        font-size: clamp(1.8rem, 2.2vw, 2.2rem) !important;
+        margin-bottom: 5px !important;
+    }
+
+    section p,
+    section ul,
+    section .styled-list {
+        grid-column: 1 !important;
+        max-width: 720px !important;
+        font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
+    }
+
+    section > .media-container,
+    section > .video-wrapper {
+        grid-column: 2 !important;
+        grid-row: 2 / span 12 !important;
+        width: 100% !important;
+        max-width: 360px !important;
+        margin: 0 !important;
+    }
+
+    section .media-container img {
+        width: 100% !important;
+        height: auto !important; 
+        max-height: 480px !important; 
+        object-fit: contain !important; 
+    }
+
+    /* Full-Width Row Resets for Major Visual Graphics */
+    .full-width-layout {
+        display: block !important;
+        padding: 35px 0 !important;
+    }
+
+    .full-width-layout h2 {
+        width: 100% !important;
+        margin-bottom: 25px !important;
+    }
+
+    .approach-content-grid,
+    .education-content-grid,
+    .collaboration-content-grid {
+        display: grid !important;
+        grid-template-columns: 380px 1fr !important;
+        gap: 45px !important;
+        align-items: start !important;
+    }
+
+    .approach-content-grid .media-container,
+    .education-content-grid .media-container,
+    .collaboration-content-grid .media-container {
+        width: 100% !important;
+        max-width: 380px !important;
+        margin: 0 !important;
+    }
+
+    .approach-content-grid .media-container img,
+    .education-content-grid .media-container img,
+    .collaboration-content-grid .media-container img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    .approach-content-grid .text-block,
+    .education-content-grid .text-block,
+    .collaboration-content-grid .text-block {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .approach-content-grid .text-block p,
+    .education-content-grid .text-block p,
+    .collaboration-content-grid .text-block p {
+        max-width: 760px !important;
+        font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
+        margin: 0 !important;
+    }
+
+    /* Key Initiatives Dual Column Multi-card Grid */
+    #initiatives {
+        display: block !important;
+        max-width: 1200px !important;
+    }
+
+    #initiatives h2,
+    #initiatives .section-lead {
+        width: 100% !important;
+    }
+
+    .initiative-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 40px 50px !important; 
+        margin-top: 20px !important;
+    }
+
+    .initiative {
+        display: flex !important;
+        flex-direction: column !important;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+
+    .initiative h3 {
+        font-size: clamp(1.3rem, 1.6vw, 1.6rem) !important;
+        margin-bottom: 12px !important;
+    }
+
+    .initiative .media-container {
+        width: 100% !important;
+        margin-top: 12px !important;
+    }
+
+    .initiative .media-container img {
+        height: 250px !important;
+        object-fit: cover !important;
+    }
+
+    /* Premium Contact Multi-column Centering */
+    .premium-contact-layout .contact-card {
+        padding: 40px 60px;
+    }
+
     .email-link {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
+    }
+
+    /* Founder Framework Structural Proportions */
+    .founder-layout .founder-content-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 340px !important;
+        gap: 50px !important;
+        align-items: start !important;
+    }
+
+    .founder-layout .founder-content-grid .media-container {
+        max-width: 340px !important;
+        margin: 0 !important;
+    }
+
+    .founder-layout .founder-content-grid .media-container img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        border-radius: 4px;
     }
 }
 
 /* ==========================================================================
-   10. FOUNDER NARRATIVE BLOCK
-   ========================================================================== */
-.founder-section {
-    max-width: 850px;
-}
-
-/* ==========================================================================
-   11. FOOTER MINIMALISM
+   10. FOOTER STYLING
    ========================================================================== */
 footer {
     padding: 30px 20px;
@@ -431,200 +506,4 @@ footer {
     font-size: 0.85rem;
     color: #777776;
     margin: 4px 0;
-}
-
-/* ==========================================================================
-   12. DESKTOP LAYOUT REFINEMENT (FIREWALL PROTECTED)
-   ========================================================================== */
-@media (min-width: 1024px) {
-
-    .section-nav {
-        font-size: clamp(0.75rem, 0.8vw, 0.9rem);
-        gap: 12px 24px;
-        padding: 12px 0 18px 0 !important;
-    }
-
-    /* Omit excessive vertical space across all layout sections */
-    section {
-        display: grid !important;
-        grid-template-columns: 1fr 360px !important;
-        gap: 15px 40px !important;
-        align-items: start !important;
-        padding: 20px 0 !important; 
-        border-bottom: 1px solid #e5e5e0 !important;
-        scroll-margin-top: 250px !important;
-    }
-
-    section h2 {
-        grid-column: 1 / -1 !important;
-        font-size: clamp(1.8rem, 2.2vw, 2.2rem) !important;
-        margin-bottom: 5px !important;
-    }
-
-    /* Content grouping configuration */
-    section p,
-    section ul,
-    section .styled-list,
-    section .contact-card {
-        grid-column: 1 !important;
-        max-width: 720px !important;
-        font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
-    }
-
-    /* Tight sidebar media constraints */
-    section > .media-container,
-    section > .video-wrapper {
-        grid-column: 2 !important;
-        grid-row: 2 / span 12 !important;
-        width: 100% !important;
-        max-width: 360px !important;
-        margin: 0 !important;
-    }
-
-    /* Prevent clipping on critical portrait images (e.g., Problem Statement) */
-    section .media-container img {
-        width: 100% !important;
-        height: auto !important; /* Allow natural aspect scaling to prevent cropping */
-        max-height: 480px !important; 
-        object-fit: contain !important; /* Keeps the whole image visible gracefully */
-    }
-
-    .video-wrapper {
-        padding-bottom: 56.25% !important;
-        height: 0 !important;
-    }
-
-    .video-wrapper iframe,
-    .media-container iframe {
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    /* --- SLEEK FULL-WIDTH EDUCATION GRID RESET --- */
-    .full-width-layout {
-        display: block !important;
-        padding: 20px 0 !important;
-    }
-
-    .full-width-layout h2 {
-        width: 100% !important;
-        margin-bottom: 20px !important;
-    }
-
-    .education-content-grid {
-        display: grid !important;
-        grid-template-columns: 360px 1fr !important; /* Balanced layout tracking */
-        gap: 40px !important;
-        align-items: start !important;
-    }
-
-    .education-content-grid .media-container {
-        width: 100% !important;
-        max-width: 360px !important;
-        margin: 0 !important;
-    }
-
-    .education-content-grid .media-container img {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-    }
-
-    .education-content-grid .text-block {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
-    }
-
-    .education-content-grid .text-block p {
-        max-width: 720px !important;
-        font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
-        margin: 0 !important;
-    }
-
-    /* --- KEY INITIATIVES TWO-COLUMN RESET --- */
-    #initiatives {
-        display: block !important;
-        max-width: 1200px !important;
-        padding: 20px 0 !important;
-    }
-
-    #initiatives h2,
-    #initiatives .section-lead {
-        width: 100% !important;
-    }
-
-    .initiative-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 35px 40px !important; 
-        margin-top: 20px !important;
-        align-items: start !important;
-    }
-
-    .initiative {
-        display: flex !important;
-        flex-direction: column !important;
-        border-bottom: none !important;
-        padding-bottom: 0 !important;
-    }
-
-    .initiative h3 {
-        font-size: clamp(1.3rem, 1.6vw, 1.6rem) !important;
-        margin-bottom: 10px !important;
-    }
-
-    .initiative p {
-        max-width: 100% !important;
-        margin-bottom: 10px !important;
-    }
-
-    .initiative .media-container {
-        grid-column: auto !important;
-        grid-row: auto !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-top: 10px !important;
-    }
-
-    .initiative .media-container img {
-        height: 240px !important;
-        object-fit: cover !important;
-    }
-
-    /* --- SIDE-BY-SIDE SIDEBAR SPLIT: COLLABORATION & CONTACT --- */
-    .footer-grid-wrapper {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 40px !important;
-        align-items: start !important;
-        border-bottom: 1px solid #e5e5e0 !important;
-    }
-
-    .footer-grid-wrapper section {
-        display: block !important;
-        border-bottom: none !important;
-        padding: 20px 0 !important;
-    }
-
-    .footer-grid-wrapper section .media-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 15px 0 !important;
-    }
-
-    .footer-grid-wrapper section .media-container img {
-        height: 250px !important;
-        width: 100% !important;
-        object-fit: cover !important;
-    }
-
-    /* --- FOUNDER NARRATIVE BLOCK --- */
-    .founder-section {
-        max-width: 850px !important;
-        margin: 0 auto !important;
-        padding: 20px 0 !important;
-    }
 }
