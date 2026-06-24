@@ -48,12 +48,12 @@ main {
 }
 
 section {
-    scroll-margin-top: 150px; /* Offset ensures elements don't scroll under the sticky bar on mobile */
+    scroll-margin-top: 150px; 
 }
 
 @media (min-width: 768px) {
     section {
-        scroll-margin-top: 230px; /* Taller offset for the expanded desktop navigation container */
+        scroll-margin-top: 230px; 
     }
 }
 
@@ -73,7 +73,6 @@ section {
     line-height: 1.4;
 }
 
-/* STICKY STACK CONTAINER: Holds brand title and navigation fixed together on scroll */
 .sticky-header-container {
     position: -webkit-sticky !important;
     position: sticky !important;
@@ -253,7 +252,7 @@ section p:last-of-type {
 }
 
 /* ==========================================================================
-   7. FLUID RESPONSIVE MEDIA WRAPPERS (HALVED LAYOUT FOOTPRINTS)
+   7. FLUID RESPONSIVE MEDIA WRAPPERS
    ========================================================================== */
 .media-container {
     width: 100%;
@@ -275,7 +274,7 @@ section p:last-of-type {
 .video-wrapper,
 .media-container:has(iframe) {
     position: relative;
-    padding-bottom: 28.125%; 
+    padding-bottom: 56.25%; 
     height: 0;
     max-width: 500px !important;
     margin: 10px auto !important;
@@ -441,114 +440,92 @@ footer {
    ========================================================================== */
 @media (min-width: 1024px) {
 
-    /* Navigation Row Optimization: Adjusts menu gaps fluidly across laptop sizes */
     .section-nav {
         font-size: clamp(0.7rem, 0.8vw, 0.85rem) !important;
         gap: 10px clamp(10px, 1.5vw, 25px) !important;
         padding: 12px 0 18px 0 !important;
     }
 
-    /* Structural Block Safety: Switched sections to standard block behavior. 
-       This allows individual paragraphs to flow naturally, completely preventing overlapping bugs. */
+    /* Fixed Layout: Clean asymmetric column system using explicit CSS Grid coordinates */
     section {
         scroll-margin-top: 250px !important;
-        display: block !important;
-        padding: clamp(40px, 5vw, 80px) 0 !important;
-        clear: both !important;
+        display: grid !important;
+        grid-template-columns: 1fr 420px !important;
+        gap: 20px 50px !important;
+        align-items: start !important;
+        padding: 60px 0 !important;
     }
 
-    /* Section Titles span cleanly across the full top width */
     section h2 {
-        display: block !important;
-        width: 100% !important;
+        grid-column: 1 / -1 !important;
         font-size: clamp(1.8rem, 2.5vw, 2.4rem) !important;
-        margin-bottom: 25px !important;
-        clear: both !important;
+        margin-bottom: 10px !important;
     }
 
-    /* Column Sizing and Safety Limits for paragraphs, lists, and cards */
+    /* Target all standard content to safely pool into column 1 */
     section p, 
-    section ul, 
+    section ul,
+    section .styled-list,
     section .contact-card {
-        max-width: calc(100% - 440px) !important; 
+        grid-column: 1 !important;
+        max-width: 700px !important; 
         font-size: clamp(1rem, 1.1vw, 1.15rem) !important;
-        margin-bottom: 15px !important;
     }
 
-    /* Media Container Isolation: Using floating tracks to guarantee text stacks properly next to media layout targets */
+    /* Force Media Element securely into column 2, matching row positions elegantly */
     section .media-container {
-        float: right !important;
-        width: 380px !important;
-        max-width: 380px !important;
-        margin: 0 0 20px 40px !important;
-        position: relative !important;
-        top: 0 !important;
+        grid-column: 2 !important;
+        grid-row: 2 / span 20 !important;
+        width: 100% !important;
+        max-width: 420px !important; 
+        margin: 0 !important;
     }
 
     section .media-container img {
         width: 100% !important;
-        max-height: 480px !important;
+        max-height: 520px !important;
         object-fit: cover !important; 
         object-position: center 25% !important; 
     }
 
-    /* 16:9 Aspect Ratio Safety Box for Widescreen Video Elements */
     section .video-wrapper,
     section .media-container:has(iframe) {
         padding-bottom: 56.25% !important; 
         width: 100% !important;
     }
 
-    /* --- THE ASYMMETRIC FLIP --- */
+    /* --- THE ASYMMETRIC FLIP FOR EVEN SECTIONS --- */
+    section:nth-of-type(even):has(.media-container) {
+        grid-template-columns: 420px 1fr !important;
+    }
+
     section:nth-of-type(even) .media-container {
-        float: left !important;
-        margin: 0 40px 20px 0 !important;
+        grid-column: 1 !important;
     }
 
     section:nth-of-type(even) p,
     section:nth-of-type(even) ul,
+    section:nth-of-type(even) .styled-list,
     section:nth-of-type(even) .contact-card {
-        margin-left: auto !important;
-        max-width: calc(100% - 440px) !important;
+        grid-column: 2 !important;
     }
 
-    /* --- GLOBAL LAYOUT EXCEPTIONS & STRUCTURAL RESETS --- */
-    section:not(:has(.media-container)),
-    #contact,
+    /* --- INITIATIVES RESET ZONE --- */
     #initiatives {
+        display: block !important;
         max-width: 1200px !important;
-        margin: 0 auto !important;
     }
 
-    /* Center-align non-media zones */
-    section:not(:has(.media-container)) p,
-    section:not(:has(.media-container)) ul {
-        max-width: 850px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+    #initiatives h2,
+    #initiatives .section-lead {
+        width: 100% !important;
     }
 
-    #contact {
-        text-align: center !important;
-    }
-
-    #contact p {
-        max-width: 750px !important;
-        margin: 0 auto 15px auto !important;
-    }
-
-    #contact .contact-card {
-        margin: 30px auto 0 auto !important;
-        max-width: 600px !important;
-    }
-
-    /* Grid layout configurations specifically for the key initiatives zone */
     .initiative-grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important; 
-        gap: 50px !important;
-        margin-top: 30px !important;
-        clear: both !important;
+        gap: 60px 40px !important;
+        margin-top: 40px !important;
     }
 
     .initiative {
@@ -560,13 +537,40 @@ footer {
 
     .initiative h3 {
         font-size: clamp(1.4rem, 1.8vw, 1.75rem) !important;
+        margin-bottom: 15px !important;
+    }
+
+    .initiative p {
+        font-size: 1rem !important;
+        max-width: 100% !important;
     }
 
     .initiative .media-container {
-        float: none !important;
-        flex: none !important;
-        margin: 15px 0 !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        margin: 20px 0 0 0 !important;
         width: 100% !important;
         max-width: 100% !important;
+    }
+
+    /* --- STRUCTURAL RESETS FOR CENTERING ZONE --- */
+    section:not(:has(.media-container)),
+    #contact {
+        display: block !important;
+        max-width: 850px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    section:not(:has(.media-container)) p,
+    section:not(:has(.media-container)) ul,
+    #contact p {
+        max-width: 750px !important;
+        margin: 0 auto 15px auto !important;
+    }
+
+    #contact .contact-card {
+        margin: 30px auto 0 auto !important;
+        max-width: 600px !important;
     }
 }
