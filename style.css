@@ -483,7 +483,7 @@ footer {
 
     section .media-container img {
         width: 100% !important;
-        max-height: 520px !important;
+        height: 480px !important; /* Forces uniform aspect ratio bounding on desktop */
         object-fit: cover !important; 
         object-position: center 25% !important; 
     }
@@ -492,6 +492,7 @@ footer {
     section .media-container:has(iframe) {
         padding-bottom: 56.25% !important; 
         width: 100% !important;
+        height: 0 !important;
     }
 
     /* --- THE ASYMMETRIC FLIP FOR EVEN SECTIONS --- */
@@ -524,8 +525,9 @@ footer {
     .initiative-grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important; 
-        gap: 60px 40px !important;
+        gap: 60px 50px !important;
         margin-top: 40px !important;
+        align-items: start !important; /* Aligns side-by-side components to the upper edge */
     }
 
     .initiative {
@@ -533,6 +535,7 @@ footer {
         padding-bottom: 0 !important;
         display: flex !important;
         flex-direction: column !important;
+        justify-content: flex-start !important;
     }
 
     .initiative h3 {
@@ -543,14 +546,19 @@ footer {
     .initiative p {
         font-size: 1rem !important;
         max-width: 100% !important;
+        margin-bottom: 15px !important;
     }
 
     .initiative .media-container {
         grid-column: auto !important;
         grid-row: auto !important;
-        margin: 20px 0 0 0 !important;
+        margin: auto 0 0 0 !important; /* Pushes images uniformly to the bottom of the track card */
         width: 100% !important;
         max-width: 100% !important;
+    }
+    
+    .initiative .media-container img {
+        height: 300px !important; /* Clean uniform footprint for initiative card views */
     }
 
     /* --- STRUCTURAL RESETS FOR CENTERING ZONE --- */
