@@ -444,23 +444,24 @@ footer {
         padding: 12px 0 18px 0 !important;
     }
 
-    /* Asymmetric sidebar grid setup */
+    /* Omit excessive vertical space across all layout sections */
     section {
         display: grid !important;
         grid-template-columns: 1fr 360px !important;
-        gap: 20px 40px !important;
+        gap: 15px 40px !important;
         align-items: start !important;
-        padding: 50px 0 !important;
+        padding: 20px 0 !important; /* Maximized compression of empty whitespace */
+        border-bottom: 1px solid #e5e5e0 !important;
         scroll-margin-top: 250px !important;
     }
 
     section h2 {
         grid-column: 1 / -1 !important;
         font-size: clamp(1.8rem, 2.2vw, 2.2rem) !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 5px !important;
     }
 
-    /* Pool content elements cleanly into column one */
+    /* Content grouping configuration */
     section p,
     section ul,
     section .styled-list,
@@ -470,7 +471,7 @@ footer {
         font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
     }
 
-    /* Bind section media to strict side column layout tracks */
+    /* Tight sidebar media constraints */
     section > .media-container,
     section > .video-wrapper {
         grid-column: 2 !important;
@@ -503,6 +504,7 @@ footer {
     #initiatives {
         display: block !important;
         max-width: 1200px !important;
+        padding: 20px 0 !important;
     }
 
     #initiatives h2,
@@ -513,8 +515,8 @@ footer {
     .initiative-grid {
         display: grid !important;
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 50px 40px !important;
-        margin-top: 40px !important;
+        gap: 35px 40px !important; /* Tight spacing layout */
+        margin-top: 20px !important;
         align-items: start !important;
     }
 
@@ -527,12 +529,12 @@ footer {
 
     .initiative h3 {
         font-size: clamp(1.3rem, 1.6vw, 1.6rem) !important;
-        margin-bottom: 15px !important;
+        margin-bottom: 10px !important;
     }
 
     .initiative p {
         max-width: 100% !important;
-        margin-bottom: 15px !important;
+        margin-bottom: 10px !important;
     }
 
     .initiative .media-container {
@@ -540,7 +542,7 @@ footer {
         grid-row: auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        margin-top: 15px !important;
+        margin-top: 10px !important;
     }
 
     .initiative .media-container img {
@@ -548,16 +550,37 @@ footer {
         object-fit: cover !important;
     }
 
-    /* --- CENTERED SECTIONS --- */
-    .founder-section,
-    #collaboration,
-    #contact {
-        max-width: 850px !important;
-        margin: 0 auto !important;
+    /* --- SIDE-BY-SIDE SIDEBAR SPLIT: COLLABORATION & CONTACT --- */
+    .footer-grid-wrapper {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 40px !important;
+        align-items: start !important;
+        border-bottom: 1px solid #e5e5e0 !important;
     }
 
-    #contact .contact-card {
-        max-width: 650px !important;
-        margin: 30px auto 0 auto !important;
+    .footer-grid-wrapper section {
+        display: block !important;
+        border-bottom: none !important;
+        padding: 20px 0 !important;
+    }
+
+    .footer-grid-wrapper section .media-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 15px 0 !important;
+    }
+
+    .footer-grid-wrapper section .media-container img {
+        height: 250px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* --- FOUNDER NARRATIVE BLOCK --- */
+    .founder-section {
+        max-width: 850px !important;
+        margin: 0 auto !important;
+        padding: 20px 0 !important;
     }
 }
