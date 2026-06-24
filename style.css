@@ -256,14 +256,13 @@ section p:last-of-type {
    ========================================================================== */
 .media-container {
     width: 100%;
-    max-width: 500px !important; 
-    margin: 10px auto !important; 
+    max-width: 100%;
+    margin: 10px auto;
     background-color: #f0efe9;
     border-radius: 4px;
     overflow: hidden;
     position: relative;
 }
-
 .media-container img {
     width: 100%;
     height: auto;
@@ -272,7 +271,7 @@ section p:last-of-type {
 }
 
 .video-wrapper,
-.media-container:has(iframe) {
+.media-container iframe {
     position: relative;
     padding-bottom: 56.25%; 
     height: 0;
@@ -434,151 +433,121 @@ footer {
     color: #777776;
     margin: 4px 0;
 }
-
 /* ==========================================================================
-   12. DESKTOP ONLY OVERHAUL (PROTECTED MOBILE FIREWALL)
+   12. DESKTOP LAYOUT REFINEMENT
    ========================================================================== */
+
 @media (min-width: 1024px) {
 
     .section-nav {
-        font-size: clamp(0.7rem, 0.8vw, 0.85rem) !important;
-        gap: 10px clamp(10px, 1.5vw, 25px) !important;
+        font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+        gap: 12px 24px;
         padding: 12px 0 18px 0 !important;
     }
 
-    /* Fixed Layout: Clean asymmetric column system using explicit CSS Grid coordinates */
     section {
-        scroll-margin-top: 250px !important;
         display: grid !important;
-        grid-template-columns: 1fr 420px !important;
-        gap: 20px 50px !important;
-        align-items: start !important;
-        padding: 60px 0 !important;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+        gap: 50px;
+        align-items: start;
+        padding: 60px 0;
+        scroll-margin-top: 250px;
     }
 
     section h2 {
-        grid-column: 1 / -1 !important;
-        font-size: clamp(1.8rem, 2.5vw, 2.4rem) !important;
-        margin-bottom: 10px !important;
+        grid-column: 1 / -1;
+        font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+        margin-bottom: 10px;
     }
 
-    /* Target all standard content to safely pool into column 1 */
-    section p, 
+    section p,
     section ul,
     section .styled-list,
     section .contact-card {
-        grid-column: 1 !important;
-        max-width: 700px !important; 
-        font-size: clamp(1rem, 1.1vw, 1.15rem) !important;
+        grid-column: 1;
+        max-width: 720px;
+        font-size: clamp(1rem, 1.05vw, 1.15rem);
     }
 
-    /* Force Media Element securely into column 2, matching row positions elegantly */
-    section .media-container {
-        grid-column: 2 !important;
-        grid-row: 2 / span 20 !important;
-        width: 100% !important;
-        max-width: 420px !important; 
-        margin: 0 !important;
+    section .media-container,
+    section .video-wrapper {
+        grid-column: 2;
+        width: 100%;
+        max-width: 420px;
+        margin: 0;
+        align-self: start;
     }
 
     section .media-container img {
-        width: 100% !important;
-        height: 480px !important; /* Forces uniform aspect ratio bounding on desktop */
-        object-fit: cover !important; 
-        object-position: center 25% !important; 
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
     }
 
-    section .video-wrapper,
-    section .media-container:has(iframe) {
-        padding-bottom: 56.25% !important; 
-        width: 100% !important;
-        height: 0 !important;
+    .video-wrapper {
+        padding-bottom: 56.25%;
+        height: 0;
     }
 
-    /* --- THE ASYMMETRIC FLIP FOR EVEN SECTIONS --- */
-    section:nth-of-type(even):has(.media-container) {
-        grid-template-columns: 420px 1fr !important;
+    .video-wrapper iframe,
+    .media-container iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
     }
 
-    section:nth-of-type(even) .media-container {
-        grid-column: 1 !important;
-    }
-
-    section:nth-of-type(even) p,
-    section:nth-of-type(even) ul,
-    section:nth-of-type(even) .styled-list,
-    section:nth-of-type(even) .contact-card {
-        grid-column: 2 !important;
-    }
-
-    /* --- INITIATIVES RESET ZONE --- */
     #initiatives {
         display: block !important;
-        max-width: 1200px !important;
-    }
-
-    #initiatives h2,
-    #initiatives .section-lead {
-        width: 100% !important;
+        max-width: 1200px;
     }
 
     .initiative-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; 
-        gap: 60px 50px !important;
-        margin-top: 40px !important;
-        align-items: start !important; /* Aligns side-by-side components to the upper edge */
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 60px;
+        margin-top: 40px;
+        align-items: start;
     }
 
     .initiative {
-        border-bottom: none !important;
-        padding-bottom: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
+        display: flex;
+        flex-direction: column;
+        border-bottom: none;
+        padding-bottom: 0;
     }
 
     .initiative h3 {
-        font-size: clamp(1.4rem, 1.8vw, 1.75rem) !important;
-        margin-bottom: 15px !important;
+        font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+        margin-bottom: 15px;
     }
 
     .initiative p {
-        font-size: 1rem !important;
-        max-width: 100% !important;
-        margin-bottom: 15px !important;
+        max-width: 100%;
+        margin-bottom: 15px;
     }
 
     .initiative .media-container {
-        grid-column: auto !important;
-        grid-row: auto !important;
-        margin: auto 0 0 0 !important; /* Pushes images uniformly to the bottom of the track card */
-        width: 100% !important;
-        max-width: 100% !important;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
     }
-    
+
     .initiative .media-container img {
-        height: 300px !important; /* Clean uniform footprint for initiative card views */
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
-    /* --- STRUCTURAL RESETS FOR CENTERING ZONE --- */
-    section:not(:has(.media-container)),
+    .founder-section,
     #contact {
-        display: block !important;
-        max-width: 850px !important;
-        margin: 0 auto !important;
-        text-align: center !important;
-    }
-
-    section:not(:has(.media-container)) p,
-    section:not(:has(.media-container)) ul,
-    #contact p {
-        max-width: 750px !important;
-        margin: 0 auto 15px auto !important;
+        max-width: 850px;
+        margin: 0 auto;
     }
 
     #contact .contact-card {
-        margin: 30px auto 0 auto !important;
-        max-width: 600px !important;
+        max-width: 650px;
+        margin: 30px auto 0 auto;
     }
 }
