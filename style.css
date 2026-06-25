@@ -40,13 +40,14 @@ main {
 }
 
 /* ==========================================================================
-   3 & 4. HEADER, NAV, BANNER & PINNING
+   3 & 4. HEADER, NAV, BANNER & FIXED VIEWPORT PINNING
    ========================================================================== */
 .site-header {
     position: static !important; 
     display: block !important;
 }
 
+/* Base adjustment so content scrolls cleanly below fixed bar components */
 section {
     scroll-margin-top: 150px; 
     padding: 25px 0; 
@@ -56,9 +57,17 @@ section {
     gap: 15px;
 }
 
+/* Clear top offset gap to prevent overlap on initial load */
+#problem {
+    padding-top: 140px !important;
+}
+
 @media (min-width: 768px) {
     section {
         scroll-margin-top: 230px; 
+    }
+    #problem {
+        padding-top: 160px !important;
     }
 }
 
@@ -78,18 +87,23 @@ section {
     line-height: 1.4;
 }
 
+/* Locked Header Container System */
 .sticky-header-container {
-    position: -webkit-sticky !important;
-    position: sticky !important;
+    position: fixed !important;
     top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
     z-index: 9999 !important; 
-    background-color: var(--color-background-light);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid #e5e5e0;
+    box-sizing: border-box !important;
 }
 
 .header-brand-block {
     text-align: center;
-    background-color: var(--color-background-light);
+    background-color: transparent;
     padding-top: 15px;
     padding-bottom: 5px;
 }
@@ -113,11 +127,12 @@ section {
     flex-wrap: wrap;
     gap: 10px 20px;
     font-size: 0.8rem;
-    background-color: var(--color-background-light);
+    background-color: transparent;
     padding: 8px 10px 12px 10px !important;
 }
 
-.section-nav a {
+.section-nav a,
+.section-nav .site-link {
     color: #0A2540; 
     text-decoration: none;
     text-transform: uppercase;
@@ -320,6 +335,10 @@ section p:last-of-type {
    ========================================================================== */
 @media (min-width: 1024px) {
 
+    #problem {
+        padding-top: 180px !important;
+    }
+
     .section-nav {
         font-size: clamp(0.75rem, 0.8vw, 0.9rem);
         gap: 12px 24px;
@@ -333,7 +352,7 @@ section p:last-of-type {
         gap: 15px 40px !important;
         align-items: start !important;
         padding: 30px 0 !important; 
-        scroll-margin-top: 250px !important;
+        scroll-margin-top: 220px !important;
     }
 
     section h2 {
@@ -359,7 +378,7 @@ section p:last-of-type {
         max-width: 360px !important;
         margin: 0 !important;
         position: sticky !important;
-        top: 240px !important; 
+        top: 210px !important; 
         z-index: 10;
     }
     section .media-container img {
@@ -382,7 +401,8 @@ section p:last-of-type {
 
     .approach-content-grid,
     .education-content-grid,
-    .collaboration-content-grid {
+    .collaboration-content-grid,
+    .reports-content-grid {
         display: grid !important;
         grid-template-columns: 380px 1fr !important;
         gap: 45px !important;
@@ -391,7 +411,8 @@ section p:last-of-type {
 
     .approach-content-grid .media-container,
     .education-content-grid .media-container,
-    .collaboration-content-grid .media-container {
+    .collaboration-content-grid .media-container,
+    .reports-content-grid .media-container {
         width: 100% !important;
         max-width: 380px !important;
         margin: 0 !important;
@@ -399,7 +420,8 @@ section p:last-of-type {
 
     .approach-content-grid .media-container img,
     .education-content-grid .media-container img,
-    .collaboration-content-grid .media-container img {
+    .collaboration-content-grid .media-container img,
+    .reports-content-grid .media-container img {
         width: 100% !important;
         height: auto !important;
         object-fit: contain !important;
@@ -407,7 +429,8 @@ section p:last-of-type {
 
     .approach-content-grid .text-block,
     .education-content-grid .text-block,
-    .collaboration-content-grid .text-block {
+    .collaboration-content-grid .text-block,
+    .reports-content-grid .text-block {
         display: flex !important;
         flex-direction: column !important;
         gap: 15px !important;
@@ -415,14 +438,15 @@ section p:last-of-type {
 
     .approach-content-grid .text-block p,
     .education-content-grid .text-block p,
-    .collaboration-content-grid .text-block p {
+    .collaboration-content-grid .text-block p,
+    .reports-content-grid .text-block p {
         max-width: 760px !important;
         font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
         margin: 0 !important;
     }
 
     /* Key Initiatives Dual Column Multi-card Grid */
-#initiatives {
+    #initiatives {
         display: block !important;
         max-width: 1400px !important;
     }
@@ -474,6 +498,7 @@ section p:last-of-type {
         height: 380px !important;
         object-fit: cover !important;
     }
+
     /* Premium Contact Multi-column Centering */
     .premium-contact-layout .contact-card {
         padding: 40px 60px;
@@ -481,44 +506,3 @@ section p:last-of-type {
 
     .email-link {
         font-size: 1.7rem;
-    }
-
-    /* Founder Framework Structural Proportions */
-    .founder-layout .founder-content-grid {
-        display: grid !important;
-        grid-template-columns: 2fr 280px !important;
-        gap: 60px !important;
-        align-items: start !important;
-    }
-    .founder-layout .founder-content-grid .media-container {
-        max-width: 340px !important;
-        margin: 0 !important;
-    }
-
-    .founder-layout .founder-content-grid .media-container img {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-        border-radius: 4px;
-    }
-}
-
-/* ==========================================================================
-   10. FOOTER STYLING
-   ========================================================================== */
-footer {
-    padding: 30px 20px;
-    border-top: 1px solid #e5e5e0;
-}
-
-@media (min-width: 768px) {
-    footer {
-        padding: 50px 40px;
-    }
-}
-
-.footer-box p {
-    font-size: 0.85rem;
-    color: #777776;
-    margin: 4px 0;
-}
