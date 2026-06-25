@@ -486,11 +486,10 @@ section p:last-of-type {
     /* Founder Framework Structural Proportions */
     .founder-layout .founder-content-grid {
         display: grid !important;
-        grid-template-columns: 1fr 340px !important;
-        gap: 50px !important;
+        grid-template-columns: 2fr 280px !important;
+        gap: 60px !important;
         align-items: start !important;
     }
-
     .founder-layout .founder-content-grid .media-container {
         max-width: 340px !important;
         margin: 0 !important;
