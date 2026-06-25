@@ -62,12 +62,13 @@ section {
     }
 }
 
+/* Forces the black banner to sit on top of the layout flow */
 .wip-banner {
     background-color: #000000 !important;
     color: #ffffff !important;
     text-align: center;
     position: relative !important;
-    z-index: 10000 !important;
+    z-index: 10001 !important;
     padding: 6px 20px !important; 
     display: block !important;
     height: auto !important;
@@ -78,6 +79,7 @@ section {
     line-height: 1.4;
 }
 
+/* Sits stickily right below the banner line */
 .sticky-header-container {
     position: -webkit-sticky !important;
     position: sticky !important;
@@ -128,7 +130,7 @@ section {
 
 @media (min-width: 768px) {
     .wip-banner {
-        padding: 36px 72px !important; 
+        padding: 12px 24px !important; /* Balanced for readability above the title */
     }
     
     .header-brand-block {
@@ -139,7 +141,6 @@ section {
         padding: 10px 0 15px 0 !important;
     }
 }
-
 /* ==========================================================================
    5. TEXT & LIST TYPOGRAPHY
    ========================================================================== */
