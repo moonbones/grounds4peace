@@ -422,9 +422,9 @@ section p:last-of-type {
     }
 
     /* Key Initiatives Dual Column Multi-card Grid */
-    #initiatives {
+#initiatives {
         display: block !important;
-        max-width: 1200px !important;
+        max-width: 1400px !important;
     }
 
     #initiatives h2,
@@ -433,34 +433,47 @@ section p:last-of-type {
     }
 
     .initiative-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 40px 50px !important; 
-        margin-top: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 70px !important;
+        margin-top: 30px !important;
     }
 
     .initiative {
-        display: flex !important;
-        flex-direction: column !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 50px !important;
+        align-items: center !important;
         border-bottom: none !important;
         padding-bottom: 0 !important;
     }
 
+    /* Creates the elegant editorial alternating zigzag flow */
+    .initiative:nth-child(even) {
+        direction: rtl !important;
+    }
+    .initiative:nth-child(even) * {
+        direction: ltr !important;
+    }
+
     .initiative h3 {
-        font-size: clamp(1.3rem, 1.6vw, 1.6rem) !important;
+        font-size: clamp(1.4rem, 1.8vw, 1.85rem) !important;
+        margin-bottom: 15px !important;
+    }
+
+    .initiative p {
         margin-bottom: 12px !important;
     }
 
     .initiative .media-container {
         width: 100% !important;
-        margin-top: 12px !important;
+        margin: 0 !important;
     }
 
     .initiative .media-container img {
-        height: 250px !important;
+        height: 380px !important;
         object-fit: cover !important;
     }
-
     /* Premium Contact Multi-column Centering */
     .premium-contact-layout .contact-card {
         padding: 40px 60px;
