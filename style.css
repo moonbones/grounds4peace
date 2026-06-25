@@ -350,6 +350,7 @@ section p:last-of-type {
         font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
     }
 
+    /* Tight sidebar media constraints with vertical layout pinning */
     section > .media-container,
     section > .video-wrapper {
         grid-column: 2 !important;
@@ -357,8 +358,10 @@ section p:last-of-type {
         width: 100% !important;
         max-width: 360px !important;
         margin: 0 !important;
+        position: sticky !important;
+        top: 240px !important; 
+        z-index: 10;
     }
-
     section .media-container img {
         width: 100% !important;
         height: auto !important; 
