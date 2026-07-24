@@ -493,3 +493,13 @@ section p:last-of-type {
 
     .email-link {
         font-size: 1.7rem;
+
+   /* ==========================================================================
+   10. FOOTER ATTRIBUTION
+   ========================================================================== */
+.ai-credit {
+    font-size: 0.8rem;
+    color: #777777;
+    margin-top: 6px;
+    font-style: italic;
+}
