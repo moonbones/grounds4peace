@@ -503,3 +503,5 @@ section p:last-of-type {
     margin-top: 6px;
     font-style: italic;
 }
+
+/* ========================================================================== SPECIAL NOTE BOX ========================================================================== */.special-note { margin: 40px auto; padding: 20px; border: 3px solid SkyBlue; border-radius: 8px; background-color: #f0f8ff; /* A very light blue tint to complement the border */ text-align: center; max-width: 800px; } .special-note p {font-size: 1.1rem; font-weight: 600; color: #333; margin: 0; }
