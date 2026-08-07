@@ -1,10 +1,503 @@
 /* ==========================================================================
-   9. DESKTOP ADVANCED MEDIA & GRID CONTROLS (Closing)
+   1. COLOR PALETTE & TYPOGRAPHY VARIABLES
+   ========================================================================= */
+:root {
+    --color-primary: #6A8E7F;        /* Deep Sage Green */
+    --color-secondary: #4A6055;      /* Dark Forest Accent */
+    --color-background-light: #faf9f6; /* Premium Gallery Off-White */
+    --color-wip-banner: #6A8E7F;     /* Sage banner background */
+}
+
+/* ==========================================================================
+   2. GLOBAL EDITORIAL FOUNDATIONS
    ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-background-light);
+    color: #1a1a1a;
+    font-family: Verdana, Calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    main {
+        padding: 0 40px;
+        margin-top: 20px; 
+    }
+}
+
+/* ==========================================================================
+   3 & 4. HEADER, NAV, BANNER & STICKY PINNING
+   ========================================================================== */
+.site-header {
+    position: static !important; 
+    display: block !important;
+}
+
+section {
+    scroll-margin-top: 140px; 
+    padding: 25px 0; 
+    border-bottom: 1px solid #e5e5e0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    section {
+        scroll-margin-top: 180px; 
+    }
+}
+
+/* Forces the black banner to sit on top of the layout flow */
+.wip-banner {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-align: center;
+    position: relative !important;
+    z-index: 10001 !important;
+    padding: 6px 20px !important; 
+    display: block !important;
+    height: auto !important;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Sits stickily right below the banner line */
+.sticky-header-container {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important; 
+    background-color: var(--color-background-light);
+    border-bottom: 1px solid #e5e5e0;
+}
+
+.header-brand-block {
+    text-align: center;
+    background-color: var(--color-background-light);
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.header-brand-block h1 {
+    font-size: 1.8rem; 
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+    .header-brand-block h1 {
+        font-size: 2.5rem; 
+    }
+}
+
+.section-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    font-size: 0.8rem;
+    background-color: var(--color-background-light);
+    padding: 8px 10px 12px 10px !important;
+}
+
+.section-nav a,
+.section-nav .site-link {
+    color: #0A2540; 
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+    .wip-banner {
+        padding: 12px 24px !important;
+    }
+    
+    .header-brand-block {
+        padding-top: 20px;
+    }
+    
+    .section-nav {
+        padding: 10px 0 15px 0 !important;
+    }
+}
+
+/* ==========================================================================
+   5. TEXT & LIST TYPOGRAPHY
+   ========================================================================== */
+section h2 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+section p {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: #222222;
+}
+
+section p:last-of-type {
+    margin-bottom: 0;
+}
+
+.styled-list {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.styled-list li {
+    padding: 10px 0;
+    border-top: 1px solid #e5e5e0;
+    font-size: 1.05rem;
+}
+
+.styled-list li:last-child {
+    border-bottom: 1px solid #e5e5e0;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE MEDIA CONTAINERS
+   ========================================================================== */
+.media-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px auto;
+    background-color: #f0efe9;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.media-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    max-width: 100%;
+    margin: 10px auto;
+    overflow: hidden;
+    background-color: #f0efe9;
+    border-radius: 4px;
+}
+
+.video-wrapper iframe,
+.media-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==========================================================================
+   7. INITIATIVES GRID ARRANGEMENT
+   ========================================================================== */
+.section-lead {
+    font-size: 1.3rem;
+    color: #4a4a4a;
+    margin: -5px 0 20px 0;
+}
+
+.initiative-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.initiative {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e0;
+}
+
+.initiative:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.initiative h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+.initiative p {
+    color: #333333;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   8. PREMIUM CONTACT PLATFORM DESIGN
+   ========================================================================== */
+.premium-contact-layout {
+    border-bottom: 1px solid #e5e5e0;
+    padding: 40px 0;
+}
+
+.premium-contact-layout .contact-card {
+    border: 1px solid #1a1a1a;
+    padding: 30px;
+    background-color: #fdfdfb;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.premium-contact-layout h2 {
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.premium-contact-layout p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #222222;
+}
+
+.contact-action-block {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e0;
+}
+
+.contact-action-block p {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.email-link {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0A2540;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    word-break: break-all;
+    transition: color 0.2s ease;
+}
+
+.email-link:hover {
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   9. DESKTOP ADVANCED MEDIA & GRID CONTROLS
+   ========================================================================== */
+@media (min-width: 1024px) {
+
+    #problem {
+        padding-top: 180px !important;
+    }
+
+    .section-nav {
+        font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+        gap: 12px 24px;
+        padding: 12px 0 18px 0 !important;
+    }
+
+    /* Asymmetric Sidebar Configurations */
+    section {
+        display: grid !important;
+        grid-template-columns: 1fr 360px !important;
+        gap: 15px 40px !important;
+        align-items: start !important;
+        padding: 30px 0 !important; 
+        scroll-margin-top: 220px !important;
+    }
+
+    section h2 {
+        grid-column: 1 / -1 !important;
+        font-size: clamp(1.8rem, 2.2vw, 2.2rem) !important;
+        margin-bottom: 5px !important;
+    }
+
+    section p,
+    section ul,
+    section .styled-list {
+        grid-column: 1 !important;
+        max-width: 720px !important;
+        font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
+    }
+
+    /* Tight sidebar media constraints with vertical layout pinning */
+    section > .media-container,
+    section > .video-wrapper {
+        grid-column: 2 !important;
+        grid-row: 2 / span 12 !important;
+        width: 100% !important;
+        max-width: 360px !important;
+        margin: 0 !important;
+        position: sticky !important;
+        top: 210px !important; 
+        z-index: 10;
+    }
+    
+    section .media-container img {
+        width: 100% !important;
+        height: auto !important; 
+        max-height: 480px !important; 
+        object-fit: contain !important; 
+    }
+
+    /* Full-Width Row Resets for Major Visual Graphics */
+    .full-width-layout {
+        display: block !important;
+        padding: 35px 0 !important;
+    }
+
+    .full-width-layout h2 {
+        width: 100% !important;
+        margin-bottom: 25px !important;
+    }
+
+    .approach-content-grid,
+    .education-content-grid,
+    .collaboration-content-grid,
+    .reports-content-grid {
+        display: grid !important;
+        grid-template-columns: 380px 1fr !important;
+        gap: 45px !important;
+        align-items: start !important;
+    }
+
+    .approach-content-grid .media-container,
+    .education-content-grid .media-container,
+    .collaboration-content-grid .media-container,
+    .reports-content-grid .media-container {
+        width: 100% !important;
+        max-width: 380px !important;
+        margin: 0 !important;
+    }
+
+    .approach-content-grid .media-container img,
+    .education-content-grid .media-container img,
+    .collaboration-content-grid .media-container img,
+    .reports-content-grid .media-container img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    .approach-content-grid .text-block,
+    .education-content-grid .text-block,
+    .collaboration-content-grid .text-block,
+    .reports-content-grid .text-block {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .approach-content-grid .text-block p,
+    .education-content-grid .text-block p,
+    .collaboration-content-grid .text-block p,
+    .reports-content-grid .text-block p {
+        max-width: 760px !important;
+        font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
+        margin: 0 !important;
+    }
+
+    /* Key Initiatives Dual Column Multi-card Grid */
+    #initiatives {
+        display: block !important;
+        max-width: 1400px !important;
+    }
+
+    #initiatives h2,
+    #initiatives .section-lead {
+        width: 100% !important;
+    }
+
+    .initiative-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 70px !important;
+        margin-top: 30px !important;
+    }
+
+    .initiative {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 50px !important;
+        align-items: center !important;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Creates the elegant editorial alternating zigzag flow */
+    .initiative:nth-child(even) {
+        direction: rtl !important;
+    }
+    
+    .initiative:nth-child(even) * {
+        direction: ltr !important;
+    }
+
+    .initiative h3 {
+        font-size: clamp(1.4rem, 1.8vw, 1.85rem) !important;
+        margin-bottom: 15px !important;
+    }
+
+    .initiative p {
+        margin-bottom: 12px !important;
+    }
+
+    .initiative .media-container {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .initiative .media-container img {
+        height: 380px !important;
+        object-fit: cover !important;
+    }
+
+    /* Premium Contact Multi-column Centering */
+    .premium-contact-layout .contact-card {
+        padding: 40px 60px;
+    }
+
     .email-link {
         font-size: 1.7rem;
     }
-} /* <--- This correctly closes the @media (min-width: 1024px) block */
+} 
 
 /* ==========================================================================
    10. FOOTER ATTRIBUTION
