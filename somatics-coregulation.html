@@ -1,4 +1,4 @@
-Code:
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,8 +37,30 @@ Code:
             padding: 40px;
             border-bottom: 1px solid var(--border-color);
             display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .profile-img-container {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--secondary-color);
+            background-color: var(--secondary-color);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-text {
+            display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
         }
 
         h1 {
@@ -68,11 +90,16 @@ Code:
         }
 
         @media (max-width: 768px) {
-            .content-grid {
-                grid-template-columns: 1fr;
+            header {
+                flex-direction: column;
+                text-align: center;
                 padding: 20px;
             }
-            header {
+            .profile-img-container {
+                margin: 0 auto;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
                 padding: 20px;
             }
         }
@@ -155,9 +182,14 @@ Code:
 
     <div class="container">
         <header>
-            <h1>Milandi Mahasin Madiba</h1>
-            <div class="credentials">Master Somaticist | Facilitator | Somatic Consultant</div>
-            <div class="tagline">Your body is always responding. Your relationships with yourself and others follow.</div>
+            <div class="profile-img-container">
+                <img src="your-photo.jpg" alt="Milandi Mahasin Madiba">
+            </div>
+            <div class="header-text">
+                <h1>Milandi Mahasin Madiba</h1>
+                <div class="credentials">Master Somaticist | Facilitator | Somatic Consultant</div>
+                <div class="tagline">Your body is always responding. Your relationships with yourself and others follow</div>
+            </div>
         </header>
 
         <div class="content-grid">
@@ -280,3 +312,5 @@ Code:
 
 </body>
 </html>
+
+```
