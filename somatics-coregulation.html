@@ -1,378 +1,281 @@
+Code:
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milandi Mahasin Madiba - Master Somaticist & Consultant</title>
+    <title>Milandi Mahasin Madiba - Somatic Consultant</title>
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --background-light: #f8f9fa;
-            --background-dark: #ecf0f1;
-            --text-color: #333;
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --primary-color: #2c5e50;
+            --secondary-color: #eaf2ef;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            --bg-light: #f9f9f9;
         }
 
         body {
-            font-family: var(--font-family);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: var(--text-color);
-            background-color: var(--background-light);
-            text-align: center;
+            background-color: var(--bg-light);
         }
 
         .container {
-            max-width: 960px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            background-color: #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
             border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
         }
 
         header {
-            padding: 2rem 0;
-            border-bottom: 2px solid var(--primary-color);
-            margin-bottom: 2rem;
+            padding: 40px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         h1 {
-            font-size: 2.8rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-        
-        .section {
-            padding: 2rem 0;
-            text-align: left;
-        }
-
-        .section-separator {
-            width: 50%;
-            height: 1px;
-            background-color: var(--background-dark);
-            margin: 2rem auto;
-            border: none;
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--background-dark);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50%;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-        
-        h3 {
-            font-size: 1.4rem;
-            color: var(--secondary-color);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-details {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-details a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .core-competencies ul {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            padding: 0;
-            list-style: none;
-        }
-        
-        .core-competencies li {
-            background-color: var(--background-dark);
-            padding: 1rem;
-            border-radius: 5px;
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-
-        .experience-item {
-            margin-bottom: 2rem;
-            border-left: 3px solid var(--primary-color);
-            padding-left: 1.5rem;
-        }
-        
-        .experience-item h4 {
-            font-size: 1.2rem;
+            font-size: 2.2rem;
             margin: 0;
             color: var(--primary-color);
         }
-        
-        .experience-item p {
-            margin: 0.5rem 0;
-            font-size: 1rem;
+
+        .credentials {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .tagline {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            header {
+                padding: 20px;
+            }
+        }
+
+        main section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
         }
 
         ul {
-            list-style: none;
-            padding: 0;
+            padding-left: 20px;
+            margin-bottom: 15px;
         }
 
         li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 8px;
         }
 
-        strong {
-            color: var(--secondary-color);
+        aside {
+            background-color: var(--secondary-color);
+            padding: 25px;
+            border-radius: 8px;
+            height: fit-content;
         }
 
-        .call-to-action {
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            font-size: 1.2rem;
-            color: #fff;
-            background-color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-        }
-
-        .contact-info {
-            padding: 2rem 0;
-            border-top: 1px solid var(--background-dark);
-            margin-top: 2rem;
-            text-align: center;
-        }
-        
-        .contact-info a {
+        aside h3 {
+            margin-top: 0;
             color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #d0e2db;
+            padding-bottom: 8px;
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
+        .contact-btn {
+            display: block;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.2s;
         }
-        
-        .press-list, .awards-list, .education-list, .professional-development-list {
-            list-style: disc;
-            padding-left: 2rem;
+
+        .contact-btn:hover {
+            background-color: #20453c;
+        }
+
+        .focus-area, .training-item {
+            margin-bottom: 15px;
+        }
+
+        .focus-area strong {
+            color: var(--primary-color);
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-left: 3px solid var(--primary-color);
+            padding-left: 15px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-
         <header>
-            <h1 class="headline">Ready to Heal and Reclaim Your Sacred Self?</h1>
-            <p>I am Milandi Mahasin Madiba, Master Somaticist & Consultant.</p>
+            <h1>Milandi Mahasin Madiba</h1>
+            <div class="credentials">Master Somaticist | Facilitator | Somatic Consultant</div>
+            <div class="tagline">Your body is always responding.</div>
         </header>
 
-        <section class="section">
-            <h2>Introduction</h2>
-            <p>I'm Milandi Mahasin Madiba, Indigenous Black North American Master Somaticist & Consultant. My work is for those who are ready to move beyond the limiting norms of a status quo that has caused pain. I am here to help you fully enjoy your life. My approach is rooted in the belief that your body, mind, and emotions are not separate, but a sacred, integrated whole. When we heal the inner conflict caused by this false separation, we can move from stress and pain toward feeling good and living a more joyful, authentic life.</p>
-        </section>
-        
-        <hr class="section-separator">
+        <div class="content-grid">
+            <main>
+                <section>
+                    <p>Stress. Pain. Disconnection. Conflict. Overwhelm. Sometimes the problem is not that something is wrong with you. Sometimes your body is responding intelligently to the conditions around you.</p>
+                    <p>I am Milandi Mahasin Madiba, a Master Somaticist, facilitator, multidisciplinary artist, and consultant with more than 22 years of experience working at the intersection of body, movement, relationship, environment, and human well-being.</p>
+                    <p>My work begins with a simple understanding: there is nothing inherently wrong with you.</p>
+                    <p>Together, we explore what you are sensing, feeling, and responding to—and what your body may need to experience greater comfort, connection, possibility, and vitality.</p>
+                </section>
 
-        <section class="section">
-            <h2>Approach</h2>
-            <p>In-person sessions, which take place in nature. I facilitate a space where families, couples, and groups can witness, hear, encourage, and support each other. My focus is on helping you deepen your awareness through sensing, feeling, and action—the tools you need to "win" at living your unique life, on your own terms.</p>
-        </section>
+                <section>
+                    <h2>How I Can Help</h2>
+                    <p>I work with people who want to develop a deeper relationship with themselves, their bodies, their environments, and one another. Our work may support you in:</p>
+                    <ul>
+                        <li>Understanding stress, tension, discomfort, or overwhelm</li>
+                        <li>Developing greater body awareness</li>
+                        <li>Exploring movement as a source of information and possibility</li>
+                        <li>Feeling more connected to yourself</li>
+                        <li>Understanding how your environment affects your well-being</li>
+                        <li>Navigating relationships and communication</li>
+                        <li>Exploring boundaries, consent, and physical autonomy</li>
+                        <li>Reconnecting with pleasure, joy, and vitality</li>
+                        <li>Exploring individual or collective patterns and conflict</li>
+                        <li>Discovering what conditions genuinely support your well-being</li>
+                    </ul>
+                    <p>I do not approach you as someone who needs to be fixed. I approach our work with curiosity, attention, and respect for the intelligence of your living body.</p>
+                </section>
 
-        <hr class="section-separator">
+                <section>
+                    <h2>What Sessions Are Like</h2>
+                    <p>Sessions are collaborative, responsive, and individualized. Depending on what is relevant to you, our work may include conversation, sensing, movement, breath awareness, attention to your surroundings, relational exercises, creative exploration, or simply taking time to notice what is happening in the present moment.</p>
+                    <p>My work is grounded in sensing, feeling, and action. Rather than beginning with a predetermined formula, we begin with what is actually happening for you.</p>
+                    <p>When appropriate, I also facilitate sessions outdoors and in natural environments. Nature can offer important opportunities for movement, sensing, spaciousness, and connection.</p>
+                </section>
 
-        <section class="section">
-            <h2>Why My Clients Succeed</h2>
-            <p>After 22 years of practice and growing up with a psychologist mother, I believe there is nothing wrong with you. The issues you face are often a response to the circumstances of your life. My role is to help you shift your perspective and improve your experience, not to fix you.</p>
-        </section>
+                <section>
+                    <h2>My Approach</h2>
+                    <p>Somatic work recognizes that our experiences are not limited to thoughts alone. Our bodies are continually responding to our relationships, histories, environments, movement patterns, sounds, physical surroundings, and daily conditions. The emotions, mind, and relationships follow.</p>
+                    <p>This means that sometimes greater well-being begins not with trying harder to change yourself, but with asking different questions:</p>
+                    <ul>
+                        <li>What am I sensing?</li>
+                        <li>What is my body responding to?</li>
+                        <li>What do I actually need?</li>
+                        <li>What conditions help me feel well?</li>
+                        <li>What becomes possible when I tune in?</li>
+                    </ul>
+                    <p>These questions can open new possibilities for how we live.</p>
+                </section>
 
-        <hr class="section-separator">
+                <section>
+                    <h2>Areas of Focus</h2>
+                    <div class="focus-area">
+                        <strong>Somatic Awareness:</strong> Developing greater awareness of sensation, movement, physical responses, and the ways your body communicates information.
+                    </div>
+                    <div class="focus-area">
+                        <strong>Movement and Embodiment:</strong> Exploring movement as a way of learning about yourself and expanding possibilities.
+                    </div>
+                    <div class="focus-area">
+                        <strong>Stress and Environmental Overwhelm:</strong> Understanding how sound, physical spaces, air, surroundings, and other environmental conditions may affect your experience.
+                    </div>
+                    <div class="focus-area">
+                        <strong>Relationships and Communication:</strong> Supporting individuals, couples, families, and groups in developing greater awareness, communication, witnessing, and mutual support.
+                    </div>
+                    <div class="focus-area">
+                        <strong>Body and Environment:</strong> Exploring the relationship between your physical body and the spaces, systems, and environments in which you live.
+                    </div>
+                    <div class="focus-area">
+                        <strong>Boundaries and Consent:</strong> Developing greater awareness of your needs, boundaries, physical autonomy, and communication.
+                    </div>
+                    <div class="focus-area">
+                        <strong>Individual and Collective Well-Being:</strong> Recognizing that our individual experiences are connected to our relationships, communities, environments, and larger social conditions.
+                    </div>
+                </section>
 
-        <section class="section">
-            <h2>Who I Serve</h2>
-            <p>I am dedicated to serving a diverse range of individuals and communities, and I am an ally to all. My practice is a safe and empowering space for everyone.</p>
-            <ul>
-                <li><strong>Participants:</strong> Couples, Families, Groups</li>
-                <li><strong>Communities:</strong> Aviation Professionals, LGBTQ+ Allied (Bisexual, Gay, Intersex, Lesbian, Non-Binary, Queer, Transgender), Racial Justice Allied (Indigenous, Black and African American, BIPOC), Blind Allied, Deaf Allied, HIV / AIDS Allied, Immuno-disorders, Little Person Allied, Sex Worker Allied, Single Parents.</li>
-            </ul>
-        </section>
-        
-        <hr class="section-separator">
+                <section>
+                    <h2>Who I Work With</h2>
+                    <p>I work with Individuals, Couples, Families, Groups, and Communities and organizations.</p>
+                    <p>My practice welcomes people from diverse backgrounds and life experiences. I am particularly committed to creating respectful and affirming space for LGBTQ+ people; Indigenous, Black, African American, and other BIPOC communities; people living with HIV/AIDS; people navigating immune-related conditions; little people; sex workers; and single parents.</p>
+                </section>
 
-        <section class="section">
-            <h2>Profile</h2>
-            <p class="contact-details">Milandi Mahasin Madiba<br><a href="mailto:ms.milandimadiba@gmail.com">ms.milandimadiba@gmail.com</a></p>
-            <p>Cultural Minister of North America</p>
-            <p>Chief Facilitative leader and Master Somaticist with 20+ years of experience driving strategic operations, organizational transformation, and equity-centered leadership across nonprofit, philanthropic, entrepreneurial, arts, educational and holistic wellness sectors. Proven expertise in shared services oversight (finance, HR, IT, legal), risk mitigation, budget management, and change management. Adept at partnering with CEOs, boards, and cross-functional teams to implement scalable systems, digital modernization, and performance dashboards that advance mission alignment, transparency, and sustainable impact.</p>
+                <section>
+                    <h2>My Background</h2>
+                    <p>My work is informed by more than 22 years of experience in somatics, dance and movement, holistic wellness, facilitation, conflict resolution, and interdisciplinary arts.</p>
+                    <p>I am a Master Somaticist, bestowed by Shirley Mordine, founder of the Dance Center of Columbia College Chicago and Mordine & Company.</p>
+                    <p><strong>My training includes:</strong></p>
+                    <ul>
+                        <li>BFA in Dance Choreography, Columbia College Chicago</li>
+                        <li>Extensive study of Anatomy and Kinesiology</li>
+                        <li>200-Hour Yoga Teacher Certification</li>
+                        <li>100-Hour Tantric Yoga Certification</li>
+                        <li>Comprehensive Contemporary Pilates Mat and Apparatus Certification</li>
+                        <li>267 Hours of Zen Shiatsu Training</li>
+                        <li>Reiki Level 1 and Level 2</li>
+                        <li>Cook County Court Approved Conflict Resolution Certification in Facilitative Mediation</li>
+                        <li>Extensive training in movement improvisation, Authentic Movement, Body-Mind Centering, Contact Improvisation, Skinner Releasing, Feldenkrais, Continuum Movement, modern dance, partnering, vocal improvisation, meditation, Neuro Linguistic Programming, and other embodied practices.</li>
+                    </ul>
+                    <p>I have worked with individuals, artists, leaders, teams, communities, and organizations and have facilitated individual and group experiences across artistic, wellness, educational, community, nonprofit, and organizational settings.</p>
+                </section>
 
-            <div class="core-competencies">
-                <h3>Core Competencies</h3>
-                <ul>
-                    <li>Strategic Operations & Infrastructure Design</li>
-                    <li>Enterprise Transformation & Change Leadership</li>
-                    <li>Financial Governance & Risk Leadership</li>
-                    <li>Human Capital Strategy & Culture Optimization</li>
-                    <li>Digital Innovation & Systems Integration</li>
-                    <li>Equity-Centered Leadership & Inclusion</li>
-                    <li>Complex Program & Project Management</li>
-                    <li>Strategic Partnerships & Resource Development</li>
-                </ul>
-            </div>
-            
-            <h3>Professional Experience</h3>
-            
-            <div class="experience-item">
-                <h4>Entrepreneurial Leadership & Cultural Innovation</h4>
-                <p>Founder & President | QNT LLC – Chicago, IL | October 2021–Present (currently on hiatus)</p>
-                <p>Professional Artist & Cultural Strategist | Independent Contractor – Chicago, IL | National & International | 2005 – Present</p>
-                <ul>
-                    <li>Pioneered QNT LLC, personally forging and optimizing its comprehensive operational infrastructure, demonstrating unparalleled acumen in managing a lean, high-impact enterprise from conception to execution.</li>
-                    <li>Delivered bespoke, high-impact performance and well-being consulting to senior leaders, leveraging profound expertise in somatic practices to elevate leadership presence, strategic resilience, and decision-making.</li>
-                    <li>Cultivated a high-value client portfolio for QNT LLC, establishing strategic relationships with senior leaders and organizations through a reputation for impactful, customized solutions and thought leadership.</li>
-                    <li>Innovated by integrating cultural strategy and artistic methodologies into core business consulting, challenging conventional approaches to leadership development and organizational wellness for enhanced organizational agility.</li>
-                    <li>Orchestrated the comprehensive financial planning and oversight for QNT LLC, managing its P&L, optimizing revenue streams, and ensuring fiscal prudence for sustained operational viability.</li>
-                    <li>Developed and continually refined QNT LLC's strategic business model, adapting offerings and operational strategies in response to market dynamics and client needs to sustain growth and competitive differentiation.</li>
-                    <li>Exercised decisive operational leadership across the consulting firm and 40+ large-scale interdisciplinary projects, mobilizing and empowering diverse teams and collaborators to achieve exceptional outcomes in strategic planning, execution, and resource allocation within budget (up to $25K per project).</li>
-                    <li>Directed all facets of business operations with high proficiency, including legal compliance, robust enterprise risk management, and comprehensive business insurance administration.</li>
-                    <li>Successfully secured over $100K in competitive grants and cultivated strategic partnerships, leveraging resources to advocate for underrepresented creative voices and expand community access.</li>
-                    <li>Authored impactful narratives and released critically acclaimed original music/performance audio, demonstrating strategic communication, intellectual property creation, and thought leadership.</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <h4>Strategic Financial Operations & Risk Governance</h4>
-                <p>Community Development Credit Analyst and Floater | IFF Community Development Financial Institution – Chicago, IL | 2022 – 2023</p>
-                <ul>
-                    <li>Co-stewarded the approval of $123.2 Million in community development loans for underserved communities, driving meticulous financial analysis, due diligence, and stringent regulatory compliance to ensure equitable capital allocation.</li>
-                    <li>Directed intensive financial and legal document analysis, preparing comprehensive reports that decisively informed strategic lending decisions and proactively mitigated institutional risk.</li>
-                    <li>Strategically identified and navigated complex financial risks associated with multi-million dollar loan portfolios, rigorously ensuring long-term fiscal health and embedding a culture of operational discipline and unwavering accountability.</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <h4>Human Capital Development & Transformative Leadership</h4>
-                <p>Lead Facilitator & Executive Coach | Various Engagements | 2006–Present</p>
-                <ul>
-                    <li>Provided transformative executive and team coaching using somatic practices, expertly diagnosing individual and collective strengths and growth areas to elevate leadership presence, strategic resilience, and overall organizational effectiveness for over 30 senior leaders and their teams.</li>
-                    <li>Co-Led and championed pioneering community-based research and program development, integrating community input and culturally sensitive methodologies to inform arts-based development and collective well-being initiatives.</li>
-                    <li>Architected and facilitated holistic organizational well-being and performance programs, fostering dynamic collaborations and cultivating inclusive, high-trust environments where individual talents are maximized for collective results.</li>
-                    <li>Forged and empowered high-performing cross-functional teams across academic, professional, and community settings, driving professional growth and maximizing collective impact through equitable communication and collaboration.</li>
-                </ul>
-            </div>
-            
-            <hr class="section-separator">
-            
-            <h3>Press</h3>
-            <ul class="press-list">
-                <li><a href="https://icareifyoulisten.com/2022/02/listn-up-julian-terrell-otis-february-18-2022/">https://icareifyoulisten.com/2022/02/listn-up-julian-terrell-otis-february-18-2022/</a></li>
-                <li><a href="https://elasticarts.org/dark-matter-residency">https://elasticarts.org/dark-matter-residency</a> 2021</li>
-                <li><a href="https://www.discogs.com/artist/5819323-Margaret-Morris?srsltid=AfmBOoo9z256MPxTn_Ifa1m3asAmIxo2qZUnNFSqgDJUK8X9rLPYSj9w">https://www.discogs.com/artist/5819323-Margaret-Morris?srsltid=AfmBOoo9z256MPxTn_Ifa1m3asAmIxo2qZUnNFSqgDJUK8X9rLPYSj9w</a></li>
-                <li><a href="https://thevisualist.org/2021/01/quantum-negress-video-works">https://thevisualist.org/2021/01/quantum-negress-video-works</a></li>
-                <li><a href="https://www.icareifyoulisten.com/2020/03/katinka-kleijn-julian-otis-conclude-chicago-frequency-festival-2020/">https://www.icareifyoulisten.com/2020/03/katinka-kleijn-julian-otis-conclude-chicago-frequency-festival-2020/</a> | Meg Huskin | March 11, 2020</li>
-                <li><a href="https://afropunk.com/2020/03/the-world-according-to-heroes-are-gang-leaders/">https://afropunk.com/2020/03/the-world-according-to-heroes-are-gang-leaders/</a> | Piotr Orlov | March 20, 2020</li>
-                <li><a href="https://gallery400.uic.edu/event/moving-out-of-reach/">https://gallery400.uic.edu/event/moving-out-of-reach/</a> 2018</li>
-                <li><a href="https://www.jazzmagazine.com/jazzlive/jazz-fest-berlin-2017-1/">https://www.jazzmagazine.com/jazzlive/jazz-fest-berlin-2017-1/</a> | David Cristol | November 18, 2017</li>
-                <li><a href="http://bandwidth.wamu.org/index.html%3Fp=53244.html">http://bandwidth.wamu.org/index.html?p=53244.html</a> | Steve Kiviat, June 11, 2016</li>
-                <li><a href="https://news.allaboutjazz.com/black-earth-ensemble-new-sci-fi-inspired-cd">https://news.allaboutjazz.com/black-earth-ensemble-new-sci-fi-inspired-cd</a> | June 16, 2008</li>
-                <li>One to watch, Lauren Viera, November 7, 2008, Chicago Tribune</li>
-                <li>Talented young choreographer…, Asimina Chremos, October 9-15, 2008, Time Out Chicago</li>
-                <li>Margaret Morris explores zeitgeist of fear and trembling, Sid Smith, July 8, 2007, www.metromix.chicagotribune.com/reviews/critics</li>
-                <li>TimeOut Chicago Healing Hands, Asimina Chremos, July 5-11, 2007 *Issue No. 123</li>
-                <li><a href="https://chicagoreader.com/arts-culture/margaret-morris-dance/">https://chicagoreader.com/arts-culture/margaret-morris-dance/</a> Critics Choice, Laura Molzahn, July 6, 2007 Chicago Reader</li>
-                <li>Healing Hands, Asimina Chremos, July 5-11, 2007, TimeOut Chicago Issue No. 123</li>
-                <li>Double Vision, Sarah Best, March 30-April 6, 2006 TimeOut Chicago Issue No. 57</li>
-                <li>Margaret in Motion, Lucia Mauro, Fall/Winter 2006-2007 Demo Magazine</li>
-            </ul>
+                <div class="disclaimer">
+                    <strong>A Note About My Practice:</strong><br>
+                    My work is somatic consulting and facilitation. I support clients through body awareness, movement, sensing, relationship, environment, and other embodied practices. Somatic consulting is not a substitute for medical, psychological, psychiatric, or emergency care when those services are needed, but it can mitigate challenges which, detected in time, can prevent those services.
+                </div>
+            </main>
 
-            <hr class="section-separator">
-            
-            <h3>Awards & Honors</h3>
-            <ul class="awards-list">
-                <li>American Book Award for Oral Literature – The Amiri Baraka Sessions (2018)</li>
-                <li>DanceWEB Artist, Impuls Tanz, Vienna, Austria (2006)</li>
-                <li>Lab Artist Grant – Chicago Dancemakers' Forum (2006)</li>
-                <li>Multiple innovation and project grants from High Concept Labs, Links Hall, Weasel Fund Foundation, and Richard H. Driehaus Foundation, Illinois Arts Council, Chicago Community Arts Assistance Program and others.</li>
-            </ul>
-            
-            <hr class="section-separator">
-            
-            <h3>Education & Professional Development</h3>
-            <h4>Professional Development & Certifications</h4>
-            <ul class="professional-development-list">
-                <li>Completed Cook County Court Approved Conflict Resolution Certification Training Program in Facilitative Mediation at Center for Conflict Resolution, 2022</li>
-                <li>Completed Cuddlist Training with focus Communications of physical touch Boundaries and Consent, 2020</li>
-                <li>The Lab Chicago | 200 hour Yoga Teacher Certification, 2016</li>
-                <li>The Fitness Guru NYC | Comprehensive Contemporary Pilates Apparatus Certification & Pilates Mat Certification, 2013-14</li>
-                <li>Five Directions Wellness with Dr. Gerryl Robinson, Usui Shiki Ryoho Reiki Level 2, 2012</li>
-                <li>Abhaya Yoga Brooklyn | 100 hour Anusara Immersions cycle, 2011</li>
-                <li>Zen Shiatsu Chicago | 267 Hours Zen Shiatsu Extensive Formal Shiatsu Study, 2007-08</li>
-                <li>Ouvre’s Samaya Sacred Practice Space with Miles Miaeda, Usui Ryoho Reiki Level 1, 2006</li>
-                <li>Extensive Workshops Trainings at various locations on Body Mind Centering, Contact Improvisation, Skinner Releasing, Feldenkreis, and more, 2003-2007</li>
-                <li>Afro-Modern technique with Germaine Acogny, Delicious Movement with Eiko, and various other dance techniques, 2003-2007</li>
-            </ul>
-
-            <h4>Education</h4>
-            <ul class="education-list">
-                <li>Master Somaticist, Bestowed by the Founder of the Dance Center of Columbia College Chicago and Mordine & Company, Shirley Mordine, Chicago, IL 2002-2024</li>
-                <li>Columbia College, BFA in Dance Choreography with extensive study of Not For Profit Business/Anatomy and Kinesiology/Pedagogy, Chicago, IL 2002-2005</li>
-                <li>Mills College, Liberal Arts, Vocal Improvisation with Molly Holm, Oakland, CA 2001-2002</li>
-                <li>Illinois Wesleyan University, Liberal Arts and Classical Vocal Performance, Bloomington, IL 1998-2000</li>
-                <li>Merit School of Music Scholarship Student | Chicago, IL | Classical Vocal Performance 1997-1998</li>
-                <li>Whitney M. Young Internationally Award Winning Concert Choir | Chicago, IL | 1994-1998</li>
-                <li>Interlochen School of Arts | Soprano Vocal Scholarship Student | Interlochen, Michigan 1997</li>
-                <li>Ted Lenart Regional Gifted Center | Accelerated elementary education | Chicago, IL, graduated 1994</li>
-                <li>Meditation taught by father from the age of 4</li>
-            </ul>
-        </section>
-
-        <div class="call-to-action">
-            <h3>Ready to Begin?</h3>
-            <p>I am accepting new clients and look forward to meeting you and helping you along your journey. My sessions are offered on weekdays.</p>
-            <a href="mailto:Ms.milandimadiba@gmail.com" class="btn">Email to Book a Session</a>
+            <aside>
+                <h3>Practice Details</h3>
+                <p><strong>Sessions:</strong><br>In-person and by arrangement</p>
+                <p><strong>Availability:</strong><br>Weekdays</p>
+                <p><strong>Accepting Clients:</strong><br>Currently accepting new clients for individual, couples, family, and group sessions.</p>
+                
+                <h3>Contact</h3>
+                <p>Ready to Begin?<br>If you are interested in exploring your relationship with your body, your environment, and what supports your well-being, I welcome you to reach out.</p>
+                
+                <a href="mailto:ms.milandimadiba@gmail.com" class="contact-btn">Email Me</a>
+            </aside>
         </div>
-        
-        <footer class="contact-info">
-            <p>Email: <a href="mailto:Ms.milandimadiba@gmail.com">Ms.milandimadiba@gmail.com</a></p>
-        </footer>
-
     </div>
 
 </body>
