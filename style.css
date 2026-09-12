@@ -1,11 +1,11 @@
 /* ==========================================================================
    1. COLOR PALETTE & TYPOGRAPHY VARIABLES
-   ========================================================================= */
+   ========================================================================== */
 :root {
     --color-primary: #6A8E7F;        /* Deep Sage Green */
-    --color-secondary: #4A6055;      /* Dark Forest Accent */
+    --color-secondary: #4A6055;     /* Dark Forest Accent */
     --color-background-light: #faf9f6; /* Premium Gallery Off-White */
-    --color-wip-banner: #6A8E7F;     /* Sage banner background */
+    --color-wip-banner: #6A8E7F;    /* Sage banner background */
 }
 
 /* ==========================================================================
@@ -25,6 +25,7 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+
 main {
     max-width: 1400px;
     margin: 0 auto;
@@ -35,7 +36,7 @@ main {
 @media (min-width: 768px) {
     main {
         padding: 0 40px;
-        margin-top: 20px; 
+        margin-top: 20px;
     }
 }
 
@@ -43,13 +44,13 @@ main {
    3 & 4. HEADER, NAV, BANNER & STICKY PINNING
    ========================================================================== */
 .site-header {
-    position: static !important; 
+    position: static !important;
     display: block !important;
 }
 
 section {
-    scroll-margin-top: 140px; 
-    padding: 25px 0; 
+    scroll-margin-top: 200px;
+    padding: 25px 0;
     border-bottom: 1px solid #e5e5e0;
     display: flex;
     flex-direction: column;
@@ -58,7 +59,7 @@ section {
 
 @media (min-width: 768px) {
     section {
-        scroll-margin-top: 180px; 
+        scroll-margin-top: 220px;
     }
 }
 
@@ -69,7 +70,7 @@ section {
     text-align: center;
     position: relative !important;
     z-index: 10001 !important;
-    padding: 6px 20px !important; 
+    padding: 6px 20px !important;
     display: block !important;
     height: auto !important;
     font-size: 0.75rem;
@@ -84,7 +85,7 @@ section {
     position: -webkit-sticky !important;
     position: sticky !important;
     top: 0 !important;
-    z-index: 9999 !important; 
+    z-index: 9999 !important;
     background-color: var(--color-background-light);
     border-bottom: 1px solid #e5e5e0;
 }
@@ -97,7 +98,7 @@ section {
 }
 
 .header-brand-block h1 {
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
     font-weight: 800;
     color: #1a1a1a;
     letter-spacing: -0.02em;
@@ -105,7 +106,7 @@ section {
 
 @media (min-width: 768px) {
     .header-brand-block h1 {
-        font-size: 2.5rem; 
+        font-size: 2.5rem;
     }
 }
 
@@ -121,7 +122,7 @@ section {
 
 .section-nav a,
 .section-nav .site-link {
-    color: #0A2540; 
+    color: #0A2540;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
@@ -132,11 +133,11 @@ section {
     .wip-banner {
         padding: 12px 24px !important;
     }
-    
+
     .header-brand-block {
         padding-top: 20px;
     }
-    
+
     .section-nav {
         padding: 10px 0 15px 0 !important;
     }
@@ -184,6 +185,12 @@ section p:last-of-type {
     border-bottom: 1px solid #e5e5e0;
 }
 
+/* Problem Statement poem keeps its line breaks */
+.poetry-layout {
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
 /* ==========================================================================
    6. RESPONSIVE MEDIA CONTAINERS
    ========================================================================== */
@@ -225,7 +232,7 @@ section p:last-of-type {
 }
 
 /* ==========================================================================
-   7. INITIATIVES GRID ARRANGEMENT
+   7. LINES OF INQUIRY GRID ARRANGEMENT
    ========================================================================== */
 .section-lead {
     font-size: 1.3rem;
@@ -233,30 +240,30 @@ section p:last-of-type {
     margin: -5px 0 20px 0;
 }
 
-.initiative-grid {
+.lines-of-inquiry-grid {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.initiative {
+.line-of-inquiry {
     padding-bottom: 20px;
     border-bottom: 1px solid #e5e5e0;
 }
 
-.initiative:last-child {
+.line-of-inquiry:last-child {
     border-bottom: none;
     padding-bottom: 0;
 }
 
-.initiative h3 {
+.line-of-inquiry h3 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 10px;
     letter-spacing: -0.01em;
 }
 
-.initiative p {
+.line-of-inquiry p {
     color: #333333;
     margin-bottom: 10px;
     font-size: 1.05rem;
@@ -339,7 +346,7 @@ section p:last-of-type {
         grid-template-columns: 1fr 360px !important;
         gap: 15px 40px !important;
         align-items: start !important;
-        padding: 30px 0 !important; 
+        padding: 30px 0 !important;
         scroll-margin-top: 220px !important;
     }
 
@@ -366,15 +373,15 @@ section p:last-of-type {
         max-width: 360px !important;
         margin: 0 !important;
         position: sticky !important;
-        top: 210px !important; 
+        top: 210px !important;
         z-index: 10;
     }
-    
+
     section .media-container img {
         width: 100% !important;
-        height: auto !important; 
-        max-height: 480px !important; 
-        object-fit: contain !important; 
+        height: auto !important;
+        max-height: 480px !important;
+        object-fit: contain !important;
     }
 
     /* Full-Width Row Resets for Major Visual Graphics */
@@ -391,7 +398,9 @@ section p:last-of-type {
     .approach-content-grid,
     .education-content-grid,
     .collaboration-content-grid,
-    .reports-content-grid {
+    .reports-content-grid,
+    .movement-freedom-environments-grid,
+    .founder-content-grid {
         display: grid !important;
         grid-template-columns: 380px 1fr !important;
         gap: 45px !important;
@@ -401,7 +410,8 @@ section p:last-of-type {
     .approach-content-grid .media-container,
     .education-content-grid .media-container,
     .collaboration-content-grid .media-container,
-    .reports-content-grid .media-container {
+    .reports-content-grid .media-container,
+    .movement-freedom-environments-grid .media-container {
         width: 100% !important;
         max-width: 380px !important;
         margin: 0 !important;
@@ -410,16 +420,24 @@ section p:last-of-type {
     .approach-content-grid .media-container img,
     .education-content-grid .media-container img,
     .collaboration-content-grid .media-container img,
-    .reports-content-grid .media-container img {
+    .reports-content-grid .media-container img,
+    .movement-freedom-environments-grid .media-container img {
         width: 100% !important;
         height: auto !important;
         object-fit: contain !important;
     }
 
+    .founder-content-grid .video-wrapper {
+        max-width: 380px !important;
+        margin: 0 !important;
+    }
+
     .approach-content-grid .text-block,
     .education-content-grid .text-block,
     .collaboration-content-grid .text-block,
-    .reports-content-grid .text-block {
+    .reports-content-grid .text-block,
+    .movement-freedom-environments-grid .text-block,
+    .founder-content-grid .text-block {
         display: flex !important;
         flex-direction: column !important;
         gap: 15px !important;
@@ -428,65 +446,56 @@ section p:last-of-type {
     .approach-content-grid .text-block p,
     .education-content-grid .text-block p,
     .collaboration-content-grid .text-block p,
-    .reports-content-grid .text-block p {
+    .reports-content-grid .text-block p,
+    .movement-freedom-environments-grid .text-block p,
+    .founder-content-grid .text-block p {
         max-width: 760px !important;
         font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
         margin: 0 !important;
     }
 
-    /* Key Initiatives Dual Column Multi-card Grid */
-    #initiatives {
+    /* Lines of Inquiry dual-column multi-card grid */
+    #lines-of-inquiry {
         display: block !important;
         max-width: 1400px !important;
     }
 
-    #initiatives h2,
-    #initiatives .section-lead {
+    #lines-of-inquiry h2,
+    #lines-of-inquiry .section-lead {
         width: 100% !important;
     }
 
-    .initiative-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 70px !important;
+    .lines-of-inquiry-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 60px 70px !important;
         margin-top: 30px !important;
     }
 
-    .initiative {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 50px !important;
-        align-items: center !important;
+    .line-of-inquiry {
         border-bottom: none !important;
         padding-bottom: 0 !important;
     }
 
-    /* Creates the elegant editorial alternating zigzag flow */
-    .initiative:nth-child(even) {
-        direction: rtl !important;
-    }
-    
-    .initiative:nth-child(even) * {
-        direction: ltr !important;
-    }
-
-    .initiative h3 {
-        font-size: clamp(1.4rem, 1.8vw, 1.85rem) !important;
+    .line-of-inquiry h3 {
+        font-size: clamp(1.25rem, 1.5vw, 1.5rem) !important;
         margin-bottom: 15px !important;
     }
 
-    .initiative p {
+    .line-of-inquiry p {
         margin-bottom: 12px !important;
     }
 
-    .initiative .media-container {
+    .line-of-inquiry .media-container {
         width: 100% !important;
-        margin: 0 !important;
+        max-width: 100% !important;
+        margin: 0 0 15px 0 !important;
     }
 
-    .initiative .media-container img {
-        height: 380px !important;
-        object-fit: cover !important;
+    .line-of-inquiry .media-container img {
+        width: 100% !important;
+        height: 320px !important;
+        object-fit: contain !important;
     }
 
     /* Premium Contact Multi-column Centering */
@@ -497,7 +506,7 @@ section p:last-of-type {
     .email-link {
         font-size: 1.7rem;
     }
-} 
+}
 
 /* ==========================================================================
    10. FOOTER ATTRIBUTION
@@ -539,3 +548,5 @@ footer {
     color: #333333;
     margin: 0;
 }
+
+
