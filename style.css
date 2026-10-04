@@ -1,6 +1,6 @@
 /* ==========================================================================
    GROUNDS 4 PEACE
-   Contemporary editorial / institutional visual system
+   Dark editorial / institutional visual system
    ========================================================================== */
 
 /* ==========================================================================
@@ -8,17 +8,18 @@
    ========================================================================== */
 
 :root {
-  --color-primary: #587669;
-  --color-secondary: #34483f;
-  --color-background-light: #f8f8f5;
-  --color-paper: #fcfcfa;
-  --color-wip-banner: #161817;
-  --color-text: #1d211f;
-  --color-muted: #5a615d;
-  --color-rule: #d9ddd8;
-  --color-media-background: #eef0eb;
-  --color-link: #294f45;
-  --color-note-background: #f2f7f5;
+  --color-primary: #a9c9b8;
+  --color-secondary: #d5e4da;
+  --color-background-light: #111312;
+  --color-paper: #191c1a;
+  --color-wip-banner: #000000;
+  --color-text: #f3f4ef;
+  --color-muted: #c4cbc5;
+  --color-rule: #536058;
+  --color-media-background: #202522;
+  --color-link: #c5e5d2;
+  --color-link-hover: #ffffff;
+  --color-note-background: #18221d;
   --color-note-border: #8fb6a6;
 
   --font-sans: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -50,6 +51,7 @@
 }
 
 html {
+  background-color: var(--color-background-light);
   scroll-behavior: smooth;
 }
 
@@ -118,7 +120,7 @@ main {
   position: sticky;
   top: 0;
   z-index: 9999;
-  background-color: rgba(248, 248, 245, 0.97);
+  background-color: rgba(17, 19, 18, 0.96);
   border-bottom: 1px solid var(--color-rule);
   backdrop-filter: blur(10px);
 }
@@ -249,11 +251,12 @@ main p:last-child {
 }
 
 .question strong {
+  color: #ffffff;
   font-weight: 500;
 }
 
 .poetry-layout {
-  color: #27302c;
+  color: #e4e9e4;
   font-family: var(--font-serif);
   font-size: clamp(1.05rem, 0.4vw + 0.98rem, 1.2rem);
   line-height: 1.7;
@@ -261,11 +264,13 @@ main p:last-child {
 }
 
 .poetry-layout i {
+  color: #ffffff;
   font-style: italic;
 }
 
 strong,
 b {
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -279,6 +284,7 @@ b {
   margin: var(--space-3) auto;
   overflow: hidden;
   background-color: var(--color-media-background);
+  border: 1px solid #3c463f;
   border-radius: var(--radius-small);
 }
 
@@ -300,6 +306,7 @@ b {
   margin: var(--space-3) auto;
   overflow: hidden;
   background-color: var(--color-media-background);
+  border: 1px solid #3c463f;
   border-radius: var(--radius-small);
 }
 
@@ -317,6 +324,7 @@ b {
   margin: var(--space-3) auto;
   overflow: hidden;
   background-color: var(--color-media-background);
+  border: 1px solid #3c463f;
   border-radius: var(--radius-small);
 }
 
@@ -358,7 +366,7 @@ b {
 }
 
 .line-of-inquiry p {
-  color: #29302d;
+  color: #e8ece7;
 }
 
 
@@ -420,7 +428,7 @@ b {
   width: min(100%, 900px);
   margin: 0 auto;
   padding: clamp(1.5rem, 5vw, 3.75rem);
-  border: 1px solid var(--color-secondary);
+  border: 1px solid #74867b;
   background-color: var(--color-paper);
 }
 
@@ -430,6 +438,7 @@ b {
 }
 
 .premium-contact-layout p {
+  color: var(--color-text);
   font-size: clamp(1rem, 0.5vw + 0.95rem, 1.1rem);
 }
 
@@ -461,7 +470,7 @@ b {
 }
 
 .email-link:hover {
-  color: var(--color-primary);
+  color: var(--color-link-hover);
 }
 
 
@@ -481,7 +490,7 @@ b {
 
 .special-note p {
   margin: 0;
-  color: var(--color-secondary);
+  color: #f1f6f0;
   font-family: var(--font-serif);
   font-size: clamp(1.05rem, 0.5vw + 1rem, 1.18rem);
   font-weight: 400;
