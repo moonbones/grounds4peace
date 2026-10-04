@@ -1,552 +1,667 @@
 /* ==========================================================================
-   1. COLOR PALETTE & TYPOGRAPHY VARIABLES
+   GROUNDS 4 PEACE
+   Contemporary editorial / institutional visual system
    ========================================================================== */
-:root {
-    --color-primary: #6A8E7F;        /* Deep Sage Green */
-    --color-secondary: #4A6055;     /* Dark Forest Accent */
-    --color-background-light: #faf9f6; /* Premium Gallery Off-White */
-    --color-wip-banner: #6A8E7F;    /* Sage banner background */
-}
 
 /* ==========================================================================
-   2. GLOBAL EDITORIAL FOUNDATIONS
+   1. VARIABLES
    ========================================================================== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+:root {
+  --color-primary: #587669;
+  --color-secondary: #34483f;
+  --color-background-light: #f8f8f5;
+  --color-paper: #fcfcfa;
+  --color-wip-banner: #161817;
+  --color-text: #1d211f;
+  --color-muted: #5a615d;
+  --color-rule: #d9ddd8;
+  --color-media-background: #eef0eb;
+  --color-link: #294f45;
+  --color-note-background: #f2f7f5;
+  --color-note-border: #8fb6a6;
+
+  --font-sans: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  --page-gutter: clamp(1rem, 4vw, 3.5rem);
+  --site-width: 1400px;
+  --reading-width: 70ch;
+  --standard-media-width: 760px;
+  --feature-media-width: 1120px;
+
+  --space-1: clamp(0.75rem, 1.25vw, 1rem);
+  --space-2: clamp(1.25rem, 2.5vw, 2rem);
+  --space-3: clamp(2.5rem, 5vw, 4.5rem);
+  --space-4: clamp(4rem, 8vw, 7rem);
+
+  --radius-small: 0.2rem;
+}
+
+
+/* ==========================================================================
+   2. GLOBAL FOUNDATION
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--color-background-light);
-    color: #1a1a1a;
-    font-family: Georgia, serif;
-    line-height: 1.65;
-    -webkit-text-size-adjust: 100%;
+  margin: 0;
+  background-color: var(--color-background-light);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
+img,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: var(--color-link);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
 
 main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-    margin-top: 10px;
+  width: min(100%, var(--site-width));
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+  margin-top: 0.75rem;
 }
 
-@media (min-width: 768px) {
-    main {
-        padding: 0 40px;
-        margin-top: 20px;
-    }
-}
 
 /* ==========================================================================
-   3 & 4. HEADER, NAV, BANNER & STICKY PINNING
+   3. BANNER, HEADER, AND NAVIGATION
    ========================================================================== */
-.site-header {
-    position: static !important;
-    display: block !important;
-}
 
-section {
-    scroll-margin-top: 200px;
-    padding: 25px 0;
-    border-bottom: 1px solid #e5e5e0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-@media (min-width: 768px) {
-    section {
-        scroll-margin-top: 220px;
-    }
-}
-
-/* Forces the black banner to sit on top of the layout flow */
 .wip-banner {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    text-align: center;
-    position: relative !important;
-    z-index: 10001 !important;
-    padding: 6px 20px !important;
-    display: block !important;
-    height: auto !important;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-weight: 700;
-    line-height: 1.4;
+  position: relative;
+  z-index: 10001;
+  display: block;
+  margin: 0;
+  padding: 0.55rem 1.25rem;
+  background-color: var(--color-wip-banner);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-/* Sits stickily right below the banner line */
 .sticky-header-container {
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 9999 !important;
-    background-color: var(--color-background-light);
-    border-bottom: 1px solid #e5e5e0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(248, 248, 245, 0.97);
+  border-bottom: 1px solid var(--color-rule);
+  backdrop-filter: blur(10px);
 }
 
 .header-brand-block {
-    text-align: center;
-    background-color: var(--color-background-light);
-    padding-top: 15px;
-    padding-bottom: 5px;
+  padding: 1.15rem 1rem 0.35rem;
+  text-align: center;
 }
 
 .header-brand-block h1 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #1a1a1a;
-    letter-spacing: -0.02em;
-}
-
-@media (min-width: 768px) {
-    .header-brand-block h1 {
-        font-size: 2.5rem;
-    }
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: clamp(1.7rem, 3.5vw, 2.45rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
 }
 
 .section-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-    font-size: 0.8rem;
-    background-color: var(--color-background-light);
-    padding: 8px 10px 12px 10px !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem 1.25rem;
+  padding: 0.6rem 1rem 0.9rem;
+  font-family: var(--font-sans);
+  font-size: clamp(0.69rem, 0.8vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.09em;
 }
 
 .section-nav a,
 .section-nav .site-link {
-    color: #0A2540;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+  color: var(--color-text);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
-    .wip-banner {
-        padding: 12px 24px !important;
-    }
-
-    .header-brand-block {
-        padding-top: 20px;
-    }
-
-    .section-nav {
-        padding: 10px 0 15px 0 !important;
-    }
+.section-nav a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28rem;
 }
+
 
 /* ==========================================================================
-   5. TEXT & LIST TYPOGRAPHY
+   4. SECTIONS AND TEXT
    ========================================================================== */
-section h2 {
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 700;
-    line-height: 1.1;
+
+section {
+  scroll-margin-top: 11rem;
 }
 
-@media (min-width: 768px) {
-    section h2 {
-        font-size: 2rem;
-    }
+main > section,
+.special-note {
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-rule);
 }
 
-section p {
-    font-size: 1.05rem;
-    margin-bottom: 1.5rem !important;
-    color: #222222;
+main h2 {
+  width: min(100%, 980px);
+  margin: 0 auto var(--space-2);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: clamp(1.7rem, 2.6vw, 2.45rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+  text-transform: none;
 }
 
-section p:last-of-type {
-    margin-bottom: 0;
+main h3 {
+  width: min(100%, var(--reading-width));
+  margin: var(--space-3) auto var(--space-2);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
-.styled-list {
-    list-style: none;
-    margin: 10px 0;
+main > section > p,
+.text-block,
+.poetry-layout,
+.lines-of-inquiry-grid,
+.line-of-inquiry {
+  width: min(100%, var(--reading-width));
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.styled-list li {
-    padding: 10px 0;
-    border-top: 1px solid #e5e5e0;
-    font-size: 1.05rem;
+main p {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: clamp(1.04rem, 0.35vw + 0.98rem, 1.16rem);
+  font-weight: 400;
+  letter-spacing: 0.002em;
+  line-height: 1.72;
 }
 
-.styled-list li:last-child {
-    border-bottom: 1px solid #e5e5e0;
+main p:last-child {
+  margin-bottom: 0;
 }
 
-/* Problem Statement poem keeps its line breaks */
+.section-lead {
+  width: min(100%, var(--reading-width));
+  margin: 0 auto var(--space-3);
+  color: var(--color-muted);
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 0.7vw + 1rem, 1.45rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.question {
+  margin-top: var(--space-2);
+  color: var(--color-secondary);
+  font-family: var(--font-serif);
+  font-size: clamp(1.12rem, 0.5vw + 1rem, 1.28rem);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.question strong {
+  font-weight: 500;
+}
+
 .poetry-layout {
-    white-space: pre-wrap;
-    line-height: 1.5;
+  color: #27302c;
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 0.4vw + 0.98rem, 1.2rem);
+  line-height: 1.7;
+  white-space: pre-wrap;
 }
 
+.poetry-layout i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+
 /* ==========================================================================
-   6. RESPONSIVE MEDIA CONTAINERS
+   5. MEDIA SIZING
    ========================================================================== */
+
 .media-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 10px auto;
-    background-color: #f0efe9;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
+  width: min(100%, var(--standard-media-width));
+  margin: var(--space-3) auto;
+  overflow: hidden;
+  background-color: var(--color-media-background);
+  border-radius: var(--radius-small);
 }
 
 .media-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    mix-blend-mode: multiply;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.media-container--feature,
+.video-wrapper--feature {
+  width: min(100%, var(--feature-media-width));
 }
 
 .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    max-width: 100%;
-    margin: 10px auto;
-    overflow: hidden;
-    background-color: #f0efe9;
-    border-radius: 4px;
+  position: relative;
+  width: min(100%, 900px);
+  aspect-ratio: 16 / 9;
+  margin: var(--space-3) auto;
+  overflow: hidden;
+  background-color: var(--color-media-background);
+  border-radius: var(--radius-small);
 }
 
-.video-wrapper iframe,
-.media-container iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
+
+.audio-wrapper {
+  width: min(100%, var(--standard-media-width));
+  height: clamp(210px, 30vw, 360px);
+  margin: var(--space-3) auto;
+  overflow: hidden;
+  background-color: var(--color-media-background);
+  border-radius: var(--radius-small);
+}
+
+.audio-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 
 /* ==========================================================================
-   7. LINES OF INQUIRY GRID ARRANGEMENT
+   6. LINES OF INQUIRY
    ========================================================================== */
-.section-lead {
-    font-size: 1.3rem;
-    color: #4a4a4a;
-    margin: -5px 0 20px 0;
-}
 
 .lines-of-inquiry-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .line-of-inquiry {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e5e5e0;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.line-of-inquiry:first-child {
+  padding-top: 0;
 }
 
 .line-of-inquiry:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .line-of-inquiry h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
+  width: 100%;
+  margin-top: 0;
 }
 
 .line-of-inquiry p {
-    color: #333333;
-    margin-bottom: 10px;
-    font-size: 1.05rem;
+  color: #29302d;
 }
 
+
 /* ==========================================================================
-   8. PREMIUM CONTACT PLATFORM DESIGN
+   7. SIDE-BY-SIDE EDITORIAL SECTIONS
    ========================================================================== */
+
+.approach-content-grid,
+.movement-freedom-environments-grid,
+.collaboration-content-grid,
+.founder-content-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.35fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+  width: min(100%, 1240px);
+  margin: var(--space-3) auto 0;
+}
+
+.approach-content-grid .media-container,
+.movement-freedom-environments-grid .media-container,
+.collaboration-content-grid .media-container,
+.founder-content-grid .video-wrapper {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.approach-content-grid .text-block,
+.movement-freedom-environments-grid .text-block,
+.collaboration-content-grid .text-block,
+.founder-content-grid .text-block {
+  width: 100%;
+  max-width: 68ch;
+  margin: 0;
+}
+
+.approach-content-grid .text-block p,
+.movement-freedom-environments-grid .text-block p,
+.collaboration-content-grid .text-block p,
+.founder-content-grid .text-block p {
+  margin-bottom: var(--space-2);
+}
+
+.founder-content-grid .video-wrapper {
+  aspect-ratio: 4 / 5;
+}
+
+
+/* ==========================================================================
+   8. CONTACT
+   ========================================================================== */
+
 .premium-contact-layout {
-    border-bottom: 1px solid #e5e5e0;
-    padding: 40px 0;
+  padding-top: 0;
 }
 
 .premium-contact-layout .contact-card {
-    border: 1px solid #1a1a1a;
-    padding: 30px;
-    background-color: #fdfdfb;
-    max-width: 900px;
-    margin: 0 auto;
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3.75rem);
+  border: 1px solid var(--color-secondary);
+  background-color: var(--color-paper);
 }
 
 .premium-contact-layout h2 {
-    margin-bottom: 15px;
-    color: #1a1a1a;
+  width: 100%;
+  margin-bottom: var(--space-2);
 }
 
 .premium-contact-layout p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #222222;
+  font-size: clamp(1rem, 0.5vw + 0.95rem, 1.1rem);
 }
 
 .contact-action-block {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid #e5e5e0;
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-rule);
 }
 
 .contact-action-block p {
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 8px;
+  margin-bottom: 0.75rem;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .email-link {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #0A2540;
-    text-decoration: underline;
-    text-underline-offset: 6px;
-    word-break: break-all;
-    transition: color 0.2s ease;
+  color: var(--color-link);
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 2vw, 1.65rem);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35rem;
+  transition: color 0.2s ease;
 }
 
 .email-link:hover {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
+
 
 /* ==========================================================================
-   9. DESKTOP ADVANCED MEDIA & GRID CONTROLS
+   9. SPECIAL NOTE
    ========================================================================== */
-@media (min-width: 1024px) {
 
-    #problem {
-        padding-top: 180px !important;
-    }
-
-    .section-nav {
-        font-size: clamp(0.75rem, 0.8vw, 0.9rem);
-        gap: 12px 24px;
-        padding: 12px 0 18px 0 !important;
-    }
-
-    /* Asymmetric Sidebar Configurations */
-    section {
-        display: grid !important;
-        grid-template-columns: 1fr 360px !important;
-        gap: 15px 40px !important;
-        align-items: start !important;
-        padding: 30px 0 !important;
-        scroll-margin-top: 220px !important;
-    }
-
-    section h2 {
-        grid-column: 1 / -1 !important;
-        font-size: clamp(1.8rem, 2.2vw, 2.2rem) !important;
-        margin-bottom: 5px !important;
-    }
-
-    section p,
-    section ul,
-    section .styled-list {
-        grid-column: 1 !important;
-        max-width: 720px !important;
-        font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
-    }
-
-    /* Tight sidebar media constraints with vertical layout pinning */
-    section > .media-container,
-    section > .video-wrapper {
-        grid-column: 2 !important;
-        grid-row: 2 / span 12 !important;
-        width: 100% !important;
-        max-width: 360px !important;
-        margin: 0 !important;
-        position: sticky !important;
-        top: 210px !important;
-        z-index: 10;
-    }
-
-    section .media-container img {
-        width: 100% !important;
-        height: auto !important;
-        max-height: 480px !important;
-        object-fit: contain !important;
-    }
-
-    /* Full-Width Row Resets for Major Visual Graphics */
-    .full-width-layout {
-        display: block !important;
-        padding: 35px 0 !important;
-    }
-
-    .full-width-layout h2 {
-        width: 100% !important;
-        margin-bottom: 25px !important;
-    }
-
-    .approach-content-grid,
-    .education-content-grid,
-    .collaboration-content-grid,
-    .reports-content-grid,
-    .movement-freedom-environments-grid,
-    .founder-content-grid {
-        display: grid !important;
-        grid-template-columns: 380px 1fr !important;
-        gap: 45px !important;
-        align-items: start !important;
-    }
-
-    .approach-content-grid .media-container,
-    .education-content-grid .media-container,
-    .collaboration-content-grid .media-container,
-    .reports-content-grid .media-container,
-    .movement-freedom-environments-grid .media-container {
-        width: 100% !important;
-        max-width: 380px !important;
-        margin: 0 !important;
-    }
-
-    .approach-content-grid .media-container img,
-    .education-content-grid .media-container img,
-    .collaboration-content-grid .media-container img,
-    .reports-content-grid .media-container img,
-    .movement-freedom-environments-grid .media-container img {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-    }
-
-    .founder-content-grid .video-wrapper {
-        max-width: 380px !important;
-        margin: 0 !important;
-    }
-
-    .approach-content-grid .text-block,
-    .education-content-grid .text-block,
-    .collaboration-content-grid .text-block,
-    .reports-content-grid .text-block,
-    .movement-freedom-environments-grid .text-block,
-    .founder-content-grid .text-block {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
-    }
-
-    .approach-content-grid .text-block p,
-    .education-content-grid .text-block p,
-    .collaboration-content-grid .text-block p,
-    .reports-content-grid .text-block p,
-    .movement-freedom-environments-grid .text-block p,
-    .founder-content-grid .text-block p {
-        max-width: 760px !important;
-        font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
-        margin: 0 !important;
-    }
-
-    /* Lines of Inquiry dual-column multi-card grid */
-    #lines-of-inquiry {
-        display: block !important;
-        max-width: 1400px !important;
-    }
-
-    #lines-of-inquiry h2,
-    #lines-of-inquiry .section-lead {
-        width: 100% !important;
-    }
-
-    .lines-of-inquiry-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 60px 70px !important;
-        margin-top: 30px !important;
-    }
-
-    .line-of-inquiry {
-        border-bottom: none !important;
-        padding-bottom: 0 !important;
-    }
-
-    .line-of-inquiry h3 {
-        font-size: clamp(1.25rem, 1.5vw, 1.5rem) !important;
-        margin-bottom: 15px !important;
-    }
-
-    .line-of-inquiry p {
-        margin-bottom: 12px !important;
-    }
-
-    .line-of-inquiry .media-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 0 15px 0 !important;
-    }
-
-    .line-of-inquiry .media-container img {
-        width: 100% !important;
-        height: 320px !important;
-        object-fit: contain !important;
-    }
-
-    /* Premium Contact Multi-column Centering */
-    .premium-contact-layout .contact-card {
-        padding: 40px 60px;
-    }
-
-    .email-link {
-        font-size: 1.7rem;
-    }
-}
-
-/* ==========================================================================
-   10. FOOTER ATTRIBUTION
-   ========================================================================== */
-footer {
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.footer-box p {
-    font-size: 0.85rem;
-    color: #555555;
-    margin-bottom: 5px;
-}
-
-.ai-credit {
-    font-size: 0.75rem;
-    color: #777777;
-    margin-top: 6px;
-    font-style: italic;
-}
-
-/* ==========================================================================
-   SPECIAL NOTE BOX
-   ========================================================================== */
 .special-note {
-    margin: 40px auto;
-    padding: 20px;
-    border: 3px solid #87CEEB;
-    border-radius: 8px;
-    background-color: #f0f8ff;
-    text-align: center;
-    max-width: 800px;
+  width: min(100%, 800px);
+  margin: var(--space-3) auto;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--color-note-border);
+  border-radius: var(--radius-small);
+  background-color: var(--color-note-background);
+  text-align: center;
 }
 
 .special-note p {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #333333;
-    margin: 0;
+  margin: 0;
+  color: var(--color-secondary);
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 0.5vw + 1rem, 1.18rem);
+  font-weight: 400;
+  line-height: 1.55;
 }
 
+
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
+
+footer {
+  padding: 2.25rem 1.25rem;
+  text-align: center;
+}
+
+.footer-box p {
+  margin: 0 0 0.3rem;
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.footer-box p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   11. DESKTOP ENHANCEMENTS
+   ========================================================================== */
+
+@media (min-width: 900px) {
+  .header-brand-block {
+    padding-top: 1.35rem;
+  }
+
+  .section-nav {
+    padding-bottom: 1rem;
+  }
+
+  .approach-content-grid .media-container,
+  .movement-freedom-environments-grid .media-container,
+  .collaboration-content-grid .media-container,
+  .founder-content-grid .video-wrapper {
+    position: sticky;
+    top: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #problem {
+    padding-top: clamp(5rem, 10vw, 10rem);
+  }
+
+  #lines-of-inquiry {
+    width: min(100%, var(--site-width));
+  }
+
+  #lines-of-inquiry .section-lead {
+    width: 100%;
+    max-width: none;
+  }
+
+  .lines-of-inquiry-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(3rem, 6vw, 4.5rem);
+    width: 100%;
+    max-width: none;
+    margin-top: var(--space-3);
+  }
+
+  .line-of-inquiry {
+    width: 100%;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .line-of-inquiry h3 {
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  }
+
+  .line-of-inquiry .media-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 var(--space-2);
+  }
+
+  .line-of-inquiry .media-container img {
+    width: 100%;
+    height: clamp(230px, 24vw, 320px);
+    object-fit: cover;
+  }
+
+  .line-of-inquiry .audio-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 var(--space-2);
+  }
+}
+
+
+/* ==========================================================================
+   12. MOBILE AND TABLET
+   ========================================================================== */
+
+@media (max-width: 899px) {
+  section {
+    scroll-margin-top: 10rem;
+  }
+
+  .approach-content-grid,
+  .movement-freedom-environments-grid,
+  .collaboration-content-grid,
+  .founder-content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .approach-content-grid .media-container,
+  .movement-freedom-environments-grid .media-container,
+  .collaboration-content-grid .media-container,
+  .founder-content-grid .video-wrapper {
+    width: min(100%, 680px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .founder-content-grid .video-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  main > section,
+  .special-note {
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+}
+
+@media (max-width: 520px) {
+  .wip-banner {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  .section-nav {
+    gap: 0.55rem 0.9rem;
+    font-size: 0.67rem;
+  }
+
+  .premium-contact-layout .contact-card {
+    padding: 1.25rem;
+  }
+
+  main h2 {
+    letter-spacing: -0.025em;
+  }
+}
+
+
+/* ==========================================================================
+   13. REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .approach-content-grid .media-container,
+  .movement-freedom-environments-grid .media-container,
+  .collaboration-content-grid .media-container,
+  .founder-content-grid .video-wrapper {
+    position: static;
+  }
+
+  .email-link {
+    transition: none;
+  }
+}
 
