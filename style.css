@@ -105,8 +105,8 @@ main {
   display: block;
   margin: 0;
   padding: 0.55rem 1.25rem;
-  background-color: var(--color-wip-banner);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 600;
@@ -115,6 +115,7 @@ main {
   text-align: center;
   text-transform: uppercase;
 }
+
 
 .sticky-header-container {
   position: sticky;
