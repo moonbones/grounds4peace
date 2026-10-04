@@ -65,40 +65,230 @@
 
   <link rel="stylesheet" href="style.css?v=2026.4">
   <style>
-    /* Media size reduction by 3/4 (scaling containers to 25% width/max-width) */
-    .media-container {
-      max-width: 25%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .media-container img {
-      width: 100%;
-      height: auto;
-    }
-    .video-wrapper {
-      position: relative;
-      width: 25%;
-      padding-bottom: 14.0625%; /* Maintains 16:9 aspect ratio relative to 25% width */
-      height: 0;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .approach-content-grid .media-container,
-    .MOVEMENT-FREEDOM-ENVIRONMENTS-grid .media-container,
-    .collaboration-content-grid .media-container,
-    .founder-content-grid .video-wrapper {
-      max-width: 25%;
-      width: 25%;
-    }
+  /* =========================================
+   CONTENT RHYTHM + MEDIA HIERARCHY
+   ========================================= */
 
-    /* Section delineation dividers */
+:root {
+  --page-gutter: clamp(1rem, 4vw, 3.5rem);
+  --reading-width: 72ch;
+  --standard-media-width: 760px;
+  --feature-media-width: 1120px;
+
+  --space-1: clamp(0.75rem, 1.25vw, 1rem);
+  --space-2: clamp(1.25rem, 2.5vw, 2rem);
+  --space-3: clamp(2.5rem, 5vw, 4.5rem);
+  --space-4: clamp(4rem, 8vw, 7rem);
+
+  --rule-color: rgba(63, 72, 67, 0.22);
+}
+
+/* Prevent images and embedded content from overflowing narrow screens. */
+img,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+/* A comfortable reading measure is essential for long-form text. */
+main > section,
+.special-note {
+  padding-inline: var(--page-gutter);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--rule-color);
+}
+
+/* Keep normal text narrow enough to remain readable. */
+main > section > p,
+.text-block,
+.poetry-layout,
+.lines-of-inquiry-grid,
+.line-of-inquiry {
+  max-width: var(--reading-width);
+  margin-inline: auto;
+}
+
+/* Headings may be slightly wider than body copy. */
+main h2,
+main h3,
+.section-lead {
+  max-width: min(900px, 100%);
+  margin-inline: auto;
+}
+
+/* Consistent paragraph rhythm. */
+main p {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  line-height: 1.7;
+}
+
+/* Preserve the spoken / poetic formatting, while keeping it readable. */
+.poetry-layout {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-size: clamp(1rem, 0.4vw + 0.94rem, 1.14rem);
+}
+
+/* -----------------------------------------
+   STANDARD MEDIA
+   Use for most photographs and artwork.
+   ----------------------------------------- */
+
+.media-container {
+  width: min(100%, var(--standard-media-width));
+  margin: var(--space-3) auto;
+}
+
+.media-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.35rem;
+}
+
+/* -----------------------------------------
+   FEATURE MEDIA
+   Use for diagrams and images that need
+   more space than the reading column.
+   ----------------------------------------- */
+
+.media-container--feature,
+.video-wrapper--feature {
+  width: min(100%, var(--feature-media-width));
+}
+
+/* -----------------------------------------
+   VIDEO / AUDIO EMBEDS
+   Standard video is deliberately larger
+   than a small image thumbnail.
+   ----------------------------------------- */
+
+.video-wrapper {
+  position: relative;
+  width: min(100%, 900px);
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin: var(--space-3) auto;
+  overflow: hidden;
+  border-radius: 0.35rem;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* SoundCloud's visual player benefits from a shallower, fixed-height frame. */
+.audio-wrapper {
+  width: min(100%, 760px);
+  height: clamp(210px, 30vw, 360px);
+  margin: var(--space-3) auto;
+  overflow: hidden;
+  border-radius: 0.35rem;
+}
+
+.audio-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* -----------------------------------------
+   TWO-COLUMN EDITORIAL SECTIONS
+   The image should be present but not
+   overpower the words on wide screens.
+   ----------------------------------------- */
+
+.approach-content-grid,
+.MOVEMENT-FREEDOM-ENVIRONMENTS-grid,
+.collaboration-content-grid,
+.founder-content-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.35fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 1240px;
+  margin: var(--space-3) auto 0;
+}
+
+/* In a two-column section, media belongs to its grid column. */
+.approach-content-grid .media-container,
+.MOVEMENT-FREEDOM-ENVIRONMENTS-grid .media-container,
+.collaboration-content-grid .media-container,
+.founder-content-grid .video-wrapper {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+/* Avoid overly wide lines inside the text side of a split layout. */
+.approach-content-grid .text-block,
+.MOVEMENT-FREEDOM-ENVIRONMENTS-grid .text-block,
+.collaboration-content-grid .text-block,
+.founder-content-grid .text-block {
+  max-width: 68ch;
+  margin: 0;
+}
+
+/* The founder video works best as a portrait-oriented visual anchor. */
+.founder-content-grid .video-wrapper {
+  aspect-ratio: 4 / 5;
+}
+
+/* Image stays visible while the reader moves through a desktop section. */
+@media (min-width: 900px) {
+  .approach-content-grid .media-container,
+  .MOVEMENT-FREEDOM-ENVIRONMENTS-grid .media-container,
+  .collaboration-content-grid .media-container,
+  .founder-content-grid .video-wrapper {
+    position: sticky;
+    top: 7rem;
+  }
+}
+
+/* Mobile: text and media become one calm vertical sequence. */
+@media (max-width: 899px) {
+  .approach-content-grid,
+  .MOVEMENT-FREEDOM-ENVIRONMENTS-grid,
+  .collaboration-content-grid,
+  .founder-content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .approach-content-grid .media-container,
+  .MOVEMENT-FREEDOM-ENVIRONMENTS-grid .media-container,
+  .collaboration-content-grid .media-container,
+  .founder-content-grid .video-wrapper {
+    width: min(100%, 680px);
+    margin-inline: auto;
+  }
+
+  .founder-content-grid .video-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  main > section,
+  .special-note {
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+}
+
+/* Respect a visitor's motion-reduction preference. */
+@media (prefers-reduced-motion: reduce) {
+  .approach-content-grid .media-container,
+  .MOVEMENT-FREEDOM-ENVIRONMENTS-grid .media-container,
+  .collaboration-content-grid .media-container,
+  .founder-content-grid .video-wrapper {
+    position: static;
+  }
+}
     main > section,
     .special-note {
       border-bottom: 1px solid #dcdcdc;
