@@ -1,553 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Grounds 4 Peace - Redesigning Infrastructures to Reduce Somatic Harm and Lay the Groundwork for Peace</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Grounds 4 Peace: A transdisciplinary humanitarian and technological Line of Inquiry re-engineering public infrastructure to upgrade and support somatic and planetary health.">
-    <link rel="canonical" href="https://grounds4peace.org">
+  <title>Grounds 4 Peace — Redesigning Infrastructure for Somatic and Planetary Health</title>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://grounds4peace.org/#person",
-          "name": "Milandi M. Madiba",
-          "description": "Conceptual originator, ethical steward, cultural steward / cultural minister, and systems facilitator. Principal of QNT LLC and steward and lead facilitator of Grounds 4 Peace, a program of QNT LLC.",
-          "url": "https://grounds4peace.org",
-          "jobTitle": [
-            "Systems Facilitator"
-          ],
-          "affiliation": {
-            "@type": "Organization",
-            "@id": "https://grounds4peace.org/#qnt-llc",
-            "name": "QNT LLC",
-            "url": "https://grounds4peace.org"
-          },
-          "knowsAbout": [
-            "Systems facilitation",
-            "Somatic facilitation",
-            "Movement-based practices",
-            "Cultural stewardship",
-            "Ethical systems design",
-            "Ecological and infrastructural frameworks",
-            "Community-based continuity models"
-          ],
-          "sameAs": [
-            "https://www.youtube.com/@grounds4peace"
-          ]
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://grounds4peace.org/#grounds-for-peace",
-          "name": "Grounds 4 Peace",
-          "description": "A transdisciplinary Line of Inquiry focused on somatic facilitation, ethical systems design, and ecological and infrastructural imagination.",
-          "parentOrganization": {
-            "@type": "Organization",
-            "@id": "https://grounds4peace.org/#qnt-llc",
-            "name": "QNT LLC"
-          },
-          "url": "https://grounds4peace.org"
-        },
-        {
+  <meta
+    name="description"
+    content="Grounds 4 Peace is a transdisciplinary humanitarian and technological Line of Inquiry re-engineering public infrastructure to support somatic and planetary health."
+  >
+  <link rel="canonical" href="https://grounds4peace.org">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css?v=2026.7">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://grounds4peace.org/#person",
+        "name": "Milandi M. Madiba",
+        "description": "Conceptual originator, ethical steward, cultural steward / cultural minister, and systems facilitator. Principal of QNT LLC and steward and lead facilitator of Grounds 4 Peace, a program of QNT LLC.",
+        "url": "https://grounds4peace.org",
+        "jobTitle": [
+          "Systems Facilitator"
+        ],
+        "affiliation": {
           "@type": "Organization",
           "@id": "https://grounds4peace.org/#qnt-llc",
           "name": "QNT LLC",
           "url": "https://grounds4peace.org"
-        }
-      ]
-    }
-    </script>
-
-  <link rel="stylesheet" href="style.css?v=2026.4">
-  <style>
-  /* =========================================
-   CONTENT RHYTHM + MEDIA HIERARCHY
-   ========================================= */
-
-:root {
-  --page-gutter: clamp(1rem, 4vw, 3.5rem);
-  --reading-width: 72ch;
-  --standard-media-width: 760px;
-  --feature-media-width: 1120px;
-
-  --space-1: clamp(0.75rem, 1.25vw, 1rem);
-  --space-2: clamp(1.25rem, 2.5vw, 2rem);
-  --space-3: clamp(2.5rem, 5vw, 4.5rem);
-  --space-4: clamp(4rem, 8vw, 7rem);
-
-  --rule-color: rgba(63, 72, 67, 0.22);
-}
-
-/* Prevent images and embedded content from overflowing narrow screens. */
-img,
-iframe {
-  display: block;
-  max-width: 100%;
-}
-
-/* A comfortable reading measure is essential for long-form text. */
-main > section,
-.special-note {
-  padding-inline: var(--page-gutter);
-  padding-bottom: var(--space-4);
-  margin-bottom: var(--space-4);
-  border-bottom: 1px solid var(--rule-color);
-}
-
-/* Keep normal text narrow enough to remain readable. */
-main > section > p,
-.text-block,
-.poetry-layout,
-.lines-of-inquiry-grid,
-.line-of-inquiry {
-  max-width: var(--reading-width);
-  margin-inline: auto;
-}
-
-/* Headings may be slightly wider than body copy. */
-main h2,
-main h3,
-.section-lead {
-  max-width: min(900px, 100%);
-  margin-inline: auto;
-}
-
-/* Consistent paragraph rhythm. */
-main p {
-  margin-top: 0;
-  margin-bottom: var(--space-2);
-  line-height: 1.7;
-}
-
-/* Preserve the spoken / poetic formatting, while keeping it readable. */
-.poetry-layout {
-  white-space: pre-wrap;
-  line-height: 1.7;
-  font-size: clamp(1rem, 0.4vw + 0.94rem, 1.14rem);
-}
-
-/* -----------------------------------------
-   STANDARD MEDIA
-   Use for most photographs and artwork.
-   ----------------------------------------- */
-
-.media-container {
-  width: min(100%, var(--standard-media-width));
-  margin: var(--space-3) auto;
-}
-
-.media-container img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 0.35rem;
-}
-
-/* -----------------------------------------
-   FEATURE MEDIA
-   Use for diagrams and images that need
-   more space than the reading column.
-   ----------------------------------------- */
-
-.media-container--feature,
-.video-wrapper--feature {
-  width: min(100%, var(--feature-media-width));
-}
-
-/* -----------------------------------------
-   VIDEO / AUDIO EMBEDS
-   Standard video is deliberately larger
-   than a small image thumbnail.
-   ----------------------------------------- */
-
-.video-wrapper {
-  position: relative;
-  width: min(100%, 900px);
-  aspect-ratio: 16 / 9;
-  height: auto;
-  margin: var(--space-3) auto;
-  overflow: hidden;
-  border-radius: 0.35rem;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* SoundCloud's visual player benefits from a shallower, fixed-height frame. */
-.audio-wrapper {
-  width: min(100%, 760px);
-  height: clamp(210px, 30vw, 360px);
-  margin: var(--space-3) auto;
-  overflow: hidden;
-  border-radius: 0.35rem;
-}
-
-.audio-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* -----------------------------------------
-   TWO-COLUMN EDITORIAL SECTIONS
-   The image should be present but not
-   overpower the words on wide screens.
-   ----------------------------------------- */
-
-.approach-content-grid,
-.MOVEMENT-FREEDOM-ENVIRONMENTS-grid,
-.collaboration-content-grid,
-.founder-content-grid {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.35fr);
-  align-items: start;
-  gap: clamp(2rem, 5vw, 5rem);
-  max-width: 1240px;
-  margin: var(--space-3) auto 0;
-}
-
-/* In a two-column section, media belongs to its grid column. */
-.approach-content-grid .media-container,
-.MOVEMENT-FREEDOM-ENVIRONMENTS-grid .media-container,
-.collaboration-content-grid .media-container,
-.founder-content-grid .video-wrapper {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-}
-
-/* Avoid overly wide lines inside the text side of a split layout. */
-.approach-content-grid .text-block,
-.MOVEMENT-FREEDOM-ENVIRONMENTS-grid .text-block,
-.collaboration-content-grid .text-block,
-.founder-content-grid .text-block {
-  max-width: 68ch;
-  margin: 0;
-}
-
-/* The founder video works best as a portrait-oriented visual anchor. */
-.founder-content-grid .video-wrapper {
-  aspect-ratio: 4 / 5;
-}
-
-/* Image stays visible while the reader moves through a desktop section. */
-@media (min-width: 900px) {
-  .approach-content-grid .media-container,
-  .MOVEMENT-FREEDOM-ENVIRONMENTS-grid .media-container,
-  .collaboration-content-grid .media-container,
-  .founder-content-grid .video-wrapper {
-    position: sticky;
-    top: 7rem;
+        },
+        "knowsAbout": [
+          "Systems facilitation",
+          "Somatic facilitation",
+          "Movement-based practices",
+          "Cultural stewardship",
+          "Ethical systems design",
+          "Ecological and infrastructural frameworks",
+          "Community-based continuity models"
+        ],
+        "sameAs": [
+          "https://www.youtube.com/@grounds4peace"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://grounds4peace.org/#grounds-for-peace",
+        "name": "Grounds 4 Peace",
+        "description": "A transdisciplinary Line of Inquiry focused on somatic facilitation, ethical systems design, and ecological and infrastructural imagination.",
+        "parentOrganization": {
+          "@type": "Organization",
+          "@id": "https://grounds4peace.org/#qnt-llc",
+          "name": "QNT LLC"
+        },
+        "url": "https://grounds4peace.org"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://grounds4peace.org/#qnt-llc",
+        "name": "QNT LLC",
+        "url": "https://grounds4peace.org"
+      }
+    ]
   }
-}
-
-/* Mobile: text and media become one calm vertical sequence. */
-@media (max-width: 899px) {
-  .approach-content-grid,
-  .MOVEMENT-FREEDOM-ENVIRONMENTS-grid,
-  .collaboration-content-grid,
-  .founder-content-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
-  }
-
-  .approach-content-grid .media-container,
-  .MOVEMENT-FREEDOM-ENVIRONMENTS-grid .media-container,
-  .collaboration-content-grid .media-container,
-  .founder-content-grid .video-wrapper {
-    width: min(100%, 680px);
-    margin-inline: auto;
-  }
-
-  .founder-content-grid .video-wrapper {
-    aspect-ratio: 16 / 9;
-  }
-
-  main > section,
-  .special-note {
-    padding-bottom: var(--space-3);
-    margin-bottom: var(--space-3);
-  }
-}
-
-/* Respect a visitor's motion-reduction preference. */
-@media (prefers-reduced-motion: reduce) {
-  .approach-content-grid .media-container,
-  .MOVEMENT-FREEDOM-ENVIRONMENTS-grid .media-container,
-  .collaboration-content-grid .media-container,
-  .founder-content-grid .video-wrapper {
-    position: static;
-  }
-}
-    main > section,
-    .special-note {
-      border-bottom: 1px solid #dcdcdc;
-      padding-bottom: 3rem;
-      margin-bottom: 3rem;
-    }
-  </style>
+  </script>
 </head>
+
 <body>
-
- <div class="wip-banner">
-    WORK IN PROGRESS: Re-infrastructure civilization to reduce somatic harm!
-
+  <div class="wip-banner">
+    Work in Progress: Re-infrastructure civilization to reduce somatic harm.
   </div>
 
-  <div class="sticky-header-container">
+  <header class="sticky-header-container">
     <div class="header-brand-block">
       <h1>Grounds 4 Peace</h1>
     </div>
-    
-    <nav class="section-nav">
+
+    <nav class="section-nav" aria-label="Primary navigation">
       <a href="#">Home</a>
       <a href="#problem">Problem Statement</a>
+      <a href="#mission">Mission</a>
+      <a href="#approach">Approach</a>
       <a href="#lines-of-inquiry">Lines of Inquiry</a>
       <a href="Reports.html" class="site-link">Reports</a>
       <a href="#collaboration">Partnerships</a>
       <a href="#contact">Contact</a>
       <a href="#founder">Founder</a>
-    <a href="https://milandimadiba.notion.site/Milandi-Madiba-Ceremonial-Ritual-Medicine-Woman-3ed758c5c4e880d8929bf1adf2edd7eb" target="_blank" rel="noopener noreferrer">Medicine Woman</a>
+      <a
+        href="https://milandimadiba.notion.site/Milandi-Madiba-Ceremonial-Ritual-Medicine-Woman-3ed758c5c4e880d8929bf1adf2edd7eb"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Medicine Woman
+      </a>
     </nav>
-  </div>
+  </header>
 
-
-<main>
+  <main>
     <section id="problem">
       <h2>Problem Statement</h2>
+
       <div class="media-container">
-        <img src="images/IMG_9529.jpeg" alt="Problem Statement Visual">
+        <img
+          src="images/IMG_9529.jpeg"
+          alt="Visual accompanying the Grounds 4 Peace problem statement"
+        >
       </div>
 
-<style>
-  .poetry-layout { 
-white-space: pre-wrap;
-    line-height: 1.5;
-  }
-</style>
+      <div class="poetry-layout"><i>Baby Ms. Madiba:
+Do yo' momma serve you poison food 'cause the non-poison food is too expensive? Haaaaaayl nawwwwwww! The world ain’t right.
+Is you alive? Is you maintaining this shit? You ain’t right.
 
-<div class="poetry-layout"><i>Baby Ms.Madiba:
-Do yo' momma serve you poison food 'cause the non-poison food is too expensive?  Haaaaaayl nawwwwwww!  The world ain’t right.  
-Is you alive?  Is you maintaining this shit?  You ain’t right.
+Adults, the world is fucked up as hell! Everything hurts, like don’t nobody love nobody! Folks be collapsing they spleens sittin’ driving cars asymmetrically and fuckin’ up they hips. Walkin’ on sidewalks and concrete floors with hardly no cushion, breaking they bones a little bit at a time and cramming they feet into shoes that ain’t even shaped like feet, makin’ erebody cuhraaaaazy.
 
-Adults, the world is fucked up as hell! Everything hurts, like don’t nobody love nobody!  Folks be collapsing they spleens sittin’ driving cars asymmetrically and fuckin’ up they hips.  Walkin’ on sidewalks and concrete floors with hardly no cushion, breaking they bones a little bit at a time and cramming they feet into shoes that ain’t even shaped like feet, makin’ erebody cuhraaaaazy.  
+Noise pollution stressin’ women to bleed nearly to death every month and doctors cuttin’ out they wombs instead of tellin’ the world we got the wrong sounds goin’ ‘round. Do you expect me to be with you on this—to conform to this? Hell Naw!
 
-Noise pollution stressin’ women to bleed nearly to death every month and doctors cuttin’ out they wombs instead of tellin’ the world we got the wrong sounds goin’ ‘round.  Do you expect me to be with you on this–to conform to this? Hell Naw!
+Physicists backwards as hell, using high-tech machines to imitate the muthafuckin’ sun, making plasma fields when we still don’t have access to healthy un-poisoned H₂O through our tap systems. You betta believe I don’t want none a y’all to be my parents. You ok with this shit?
 
-Physicists backwards as hell, using high-tech machines to imitate the muthafuckin’ sun, making plasma fields when we still don’t have access to healthy un-poisoned H₂O through our tap systems.  You betta believe I don’t want none a y’all to be my parents.  You ok with this shit?
+No! Haaaaaaaayl nawwwwww!
+And woman, do you even like that man you fuckin? Unun. Capitalism is not ok. If it’s some economics shit stopping us from makin’ things right for humanity then we need to leave economies of currency to the annals of history.
 
-No!  Haaaaaaaayl nawwwwww!
-And woman, do you even like that man you fuckin?  Unun.  Capitalism is not ok.  If it’s some economics shit stopping us from makin’ things right for humanity then we need to leave economies of currency to the annals of history. 
-
-I 
-am valuable.  
-You 
-are valuable.  
-Them hoes over there 
-are valuable.  
-This shit y’all be makin’ and maintaining to abuse every body 
+I
+am valuable.
+You
+are valuable.
+Them hoes over there
+are valuable.
+This shit y’all be makin’ and maintaining to abuse every body
 is not valuable.
 
-Adults, y’all been makin’ believe that this shit is ok.  It is not! </i>
+Adults, y’all been makin’ believe that this shit is ok. It is not!</i>
 
 (Code switch)
 
-Our current infrastructures hurt. Walking on concrete hurts. Lack of consistent, free, and easeful access to water hurts. Educational systems and work environments which require postural misalignments through prolonged sitting, and use of mis-designed consoles for the human body normalize physical harm as essential to living. Sonic environments of loud sirens, high pitched beeping sounds, screeching railroad trains and loud power tool sounds are neurologically disregulating-not good.
+Our current infrastructures hurt. Walking on concrete hurts. Lack of consistent, free, and easeful access to water hurts. Educational systems and work environments which require postural misalignments through prolonged sitting, and use of mis-designed consoles for the human body normalize physical harm as essential to living. Sonic environments of loud sirens, high pitched beeping sounds, screeching railroad trains and loud power tool sounds are neurologically disregulating—not good.
 
 Infrastructures which underlie the quality of our daily lives such as sidewalks, roads, schools, workplaces, water dispensation and emergency/alarm signaling systems—have been designed around mechanical efficiency, not biological integrity. These factors injure spines, compress lungs, distort gait, overload nervous systems, and contribute to war through toxifying people relationally.
-This is not accidental. It reflects an inherited design paradigm rooted in eugenics influenced capitalistic notions of human expendability which normalize harm. The result is a civilization whose built environments reproduce trauma at every level, from cellular to planetary scales.
 
-</div>
-  </section>   
-    
-<section id="mission">
-    <h2>Mission</h2>
-    <div class="media-container">
-      <img src="images/ <div class="media-container">
-          <img src="images/lines%20of%20inquiry.JPG" alt="Milandi Madiba Prototype">
-    </div>
-    <p>Milandi Madiba is founding Grounds4Peace to reverse extractive and exploitative logic by facilitating the development of infrastructural elements designed with the healthy body as the fundamental priority. G4P's aim is to restore somatic coherence at the infrastructural level, to upgrade human settlements, customs, tools, and materials for life support rather than degradation.
-</p>
-    <p>Grounds4Peace is an artist-led, transdisciplinary humanitarian Line of Inquiry to facilitate the re-infrastructuring of civilization around the health, dignity, pleasure, and ecological belonging of living bodies.
-</p>
-  </section>
+This is not accidental. It reflects an inherited design paradigm rooted in eugenics influenced capitalistic notions of human expendability which normalize harm. The result is a civilization whose built environments reproduce trauma at every level, from cellular to planetary scales.</div>
+    </section>
 
-  <section id="approach" class="full-width-layout">
-    <h2>HOW WE WORK: Transdisciplinary Approach
-</h2>
-    <div class="approach-content-grid">
-      <div class="media-container">
-        <img src="images/IMG_0619.jpeg" alt="Transdisciplinary Approach Conceptual Map">
+    <section id="mission">
+      <h2>Mission</h2>
+
+      <div class="media-container media-container--feature">
+        <img
+          src="images/lines%20of%20inquiry.JPG"
+          alt="Visual overview of the Grounds 4 Peace lines of inquiry"
+          loading="lazy"
+        >
       </div>
+
       <div class="text-block">
-        <p>Grounds4Peace begins with the embodied intelligence of living people. Bodies are not abstract users, productivity units, data points, or burdens to be accommodated after decisions are made. Bodies sense, remember, adapt, resist, seek relief, and carry information about whether an environment supports life.
-</p>
-  <p>Through somatic facilitation, honest movement, honest talking, honest music, honest visual marking, site-based inquiry, and collective reflection; Grounds4Peace founder Milandi Madiba makes perceptible what ordinary infrastructures ask bodies and ecosystems to endure: impact, vigilance, sensory assault, constraint, fatigue, toxic exposure, disconnection, and the loss of pleasure.</p>
- <p>Grounds4Peace will convene artists, communities, scientists, engineers, designers, ecologists, educators, disability advocates, public-health practitioners, fabricators, public institutions, and public policymakers. The Line of Inquiry does not ask any one field to solve civilization alone. It will create conditions in which embodied knowledge can meet technical expertise, ecological wisdom, political responsibility, and material possibility.</p>
- <p>From that meeting, Grounds4Peace will facilitate the development of research questions, public encounters, artistic works, prototypes, design criteria, community-based inquiries, and—in collaboration with those responsible for implementation—pathways toward material and institutional change.</p>
- <p>We hold technology accountable to life. A sidewalk, a sound signal, a classroom, a water station, a workplace console, or a public system is not successful merely because it is efficient, profitable, or technically functional. It must also be evaluated by whether it supports the health, dignity, movement, pleasure, access, and ecological belonging of living bodies.</p>
+        <p>
+          Milandi Madiba is founding Grounds4Peace to reverse extractive and exploitative logic by facilitating the development of infrastructural elements designed with the healthy body as the fundamental priority. G4P's aim is to restore somatic coherence at the infrastructural level, to upgrade human settlements, customs, tools, and materials for life support rather than degradation.
+        </p>
 
-     </div>
-    </div>
-  </section>
+        <p>
+          Grounds4Peace is an artist-led, transdisciplinary humanitarian Line of Inquiry to facilitate the re-infrastructuring of civilization around the health, dignity, pleasure, and ecological belonging of living bodies.
+        </p>
+      </div>
+    </section>
 
-  <section id="lines-of-inquiry">
-    <h2>Lines of Inquiry
-</h2>
-    <p class="section-lead">Let’s get our infrastructural basics in order!</p>
+    <section id="approach" class="full-width-layout">
+      <h2>How We Work: Transdisciplinary Approach</h2>
 
-        <div class="lines-of-inquiry-grid">
-              <h3>LIVING GROUNDS / SOFTWALKS:  An inquiry into body-supportive, ecologically regenerative public grounds
-</h3>
+      <div class="approach-content-grid">
         <div class="media-container">
-          <img src="images/living%20grounds.jpg" alt="Milandi Madiba Prototype">
+          <img
+            src="images/IMG_0619.jpeg"
+            alt="Transdisciplinary approach conceptual map"
+            loading="lazy"
+          >
         </div>
-        <p>Grounds4Peace seeks to facilitate collaboration among somatic practitioners, communities, materials scientists, pavement and civil engineers, landscape architects, arborists, accessibility specialists, biomechanists, ecologists, and fabricators to investigate pedestrian and public-ground materials that better support life.
-</p>
-        <p>The inquiry includes surfaces for sidewalks, paths, plazas, floors, and gathering grounds that may be stable, navigable, evenly leveled, slip-resistant, durable, repairable, water-conductive, thermally considerate, supportive of roots and soil, and more responsive to bodily movement than conventional hardscape.
-</p>
-        <p>Softwalks are not merely a proposal for a “softer sidewalk.” It asks how ground might support movement, rest, variability, access, play, water, roots, temperature regulation, repair, ecological relationship, and pleasure. Eventual material development must be pursued with rigorous testing for accessibility, durability, safety, toxicity, maintenance, climate effects, and ecological consequences.
-</p>
-      </div>
 
-      <div class="Line of Inquiry">
-        <h3>AUDITORY ECOLOGY: An inquiry into alert systems and soundscapes that protect rather than overwhelm
-</h3>
-        <div class="media-container video-wrapper">
-          <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-747733498/a-way&color=%236a8e7f&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>
+        <div class="text-block">
+          <p>
+            Grounds4Peace begins with the embodied intelligence of living people. Bodies are not abstract users, productivity units, data points, or burdens to be accommodated after decisions are made. Bodies sense, remember, adapt, resist, seek relief, and carry information about whether an environment supports life.
+          </p>
+
+          <p>
+            Through somatic facilitation, honest movement, honest talking, honest music, honest visual marking, site-based inquiry, and collective reflection; Grounds4Peace founder Milandi Madiba makes perceptible what ordinary infrastructures ask bodies and ecosystems to endure: impact, vigilance, sensory assault, constraint, fatigue, toxic exposure, disconnection, and the loss of pleasure.
+          </p>
+
+          <p>
+            Grounds4Peace will convene artists, communities, scientists, engineers, designers, ecologists, educators, disability advocates, public-health practitioners, fabricators, public institutions, and public policymakers. The Line of Inquiry does not ask any one field to solve civilization alone. It will create conditions in which embodied knowledge can meet technical expertise, ecological wisdom, political responsibility, and material possibility.
+          </p>
+
+          <p>
+            From that meeting, Grounds4Peace will facilitate the development of research questions, public encounters, artistic works, prototypes, design criteria, community-based inquiries, and—in collaboration with those responsible for implementation—pathways toward material and institutional change.
+          </p>
+
+          <p>
+            We hold technology accountable to life. A sidewalk, a sound signal, a classroom, a water station, a workplace console, or a public system is not successful merely because it is efficient, profitable, or technically functional. It must also be evaluated by whether it supports the health, dignity, movement, pleasure, access, and ecological belonging of living bodies.
+          </p>
         </div>
-        <p>Grounds4Peace seeks to investigate how alarms, sirens, vehicle signals, machinery, rail systems, appliances, digital alerts, and public sound environments shape sensory experience, stress, attention, sleep, communication, and community life.
-</p>
-        <p>Future collaboration may include sound artists, acousticians, engineers, emergency-service professionals, disability advocates, audiologists, public-health researchers, and people with direct experience of sensory sensitivity. The goal is not to compromise emergency response. It is to develop and advocate for alert systems that remain effective while reducing unnecessary startling, high-intensity, high-frequency, repetitive, or otherwise harmful sonic exposure.
-</p>
-        <p>The Hague, Netherlands, has already implemented auditory safety upgrades to stop traumatizing their public with harmful neurologically dysregulating sounds and it is time for North America to catch up.  "Safety" signals are actually destroying the health of the public and are not truly safe. Sonic equipment which harms public health must be banned and replaced with tools considerately engineered for biological human health--actual safety.</p>
-<p>The question is: <b>What would public safety sound like if it were designed to preserve the integrity of the nervous system?</b></p>
-
-
       </div>
+    </section>
 
-      <div class="Lines of Inquiry">
-        <h3>WATER DIGNITY AND ACCESS:
-An inquiry into freely available, safe, life-supporting public water
-</h3>
+    <section id="lines-of-inquiry">
+      <h2>Lines of Inquiry</h2>
+      <p class="section-lead">Let’s get our infrastructural basics in order!</p>
+
+      <div class="lines-of-inquiry-grid">
+        <article class="line-of-inquiry">
+          <h3>
+            Living Grounds / Softwalks: An inquiry into body-supportive,
+            ecologically regenerative public grounds
+          </h3>
+
+          <div class="media-container">
+            <img
+              src="images/living%20grounds.jpg"
+              alt="Living grounds concept illustrating body-supportive public surfaces"
+              loading="lazy"
+            >
+          </div>
+
+          <p>
+            Grounds4Peace seeks to facilitate collaboration among somatic practitioners, communities, materials scientists, pavement and civil engineers, landscape architects, arborists, accessibility specialists, biomechanists, ecologists, and fabricators to investigate pedestrian and public-ground materials that better support life.
+          </p>
+
+          <p>
+            The inquiry includes surfaces for sidewalks, paths, plazas, floors, and gathering grounds that may be stable, navigable, evenly leveled, slip-resistant, durable, repairable, water-conductive, thermally considerate, supportive of roots and soil, and more responsive to bodily movement than conventional hardscape.
+          </p>
+
+          <p>
+            Softwalks are not merely a proposal for a “softer sidewalk.” It asks how ground might support movement, rest, variability, access, play, water, roots, temperature regulation, repair, ecological relationship, and pleasure. Eventual material development must be pursued with rigorous testing for accessibility, durability, safety, toxicity, maintenance, climate effects, and ecological consequences.
+          </p>
+        </article>
+
+        <article class="line-of-inquiry">
+          <h3>
+            Auditory Ecology: An inquiry into alert systems and soundscapes
+            that protect rather than overwhelm
+          </h3>
+
+          <div class="audio-wrapper">
+            <iframe
+              title="A Way — SoundCloud audio player"
+              loading="lazy"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-747733498/a-way&color=%236a8e7f&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+            ></iframe>
+          </div>
+
+          <p>
+            Grounds4Peace seeks to investigate how alarms, sirens, vehicle signals, machinery, rail systems, appliances, digital alerts, and public sound environments shape sensory experience, stress, attention, sleep, communication, and community life.
+          </p>
+
+          <p>
+            Future collaboration may include sound artists, acousticians, engineers, emergency-service professionals, disability advocates, audiologists, public-health researchers, and people with direct experience of sensory sensitivity. The goal is not to compromise emergency response. It is to develop and advocate for alert systems that remain effective while reducing unnecessary startling, high-intensity, high-frequency, repetitive, or otherwise harmful sonic exposure.
+          </p>
+
+          <p>
+            The Hague, Netherlands, has already implemented auditory safety upgrades to stop traumatizing their public with harmful neurologically dysregulating sounds and it is time for North America to catch up. “Safety” signals are actually destroying the health of the public and are not truly safe. Sonic equipment which harms public health must be banned and replaced with tools considerately engineered for biological human health—actual safety.
+          </p>
+
+          <p class="question">
+            The question is:
+            <strong>What would public safety sound like if it were designed to preserve the integrity of the nervous system?</strong>
+          </p>
+        </article>
+
+        <article class="line-of-inquiry">
+          <h3>
+            Water Dignity and Access: An inquiry into freely available, safe,
+            life-supporting public water
+          </h3>
+
+          <div class="media-container">
+            <img
+              src="images/IMG_0283.jpeg"
+              alt="Prototype related to self-generating water autonomy technologies"
+              loading="lazy"
+            >
+          </div>
+
+          <p>
+            Grounds4Peace holds that dependable access to clean drinking water is a basic condition of dignity and public health. The Line of Inquiry seeks dialogue with water-system workers, environmental engineers, public-health practitioners, hydrologists, ecologists, communities, and water-justice advocates about infrastructure that makes safe water more available, accessible, regenerative, and free from unnecessary extraction or exclusion.
+          </p>
+
+          <p>
+            Possible future questions include public refill systems, resilient water access during emergencies, water-quality transparency, watershed restoration, water-conductive ground systems, and emerging material or energy technologies that may support low-impact water provision.
+          </p>
+
+          <p class="question">
+            The question is:
+            <strong>What would it mean for public water to be treated as a living right rather than a commodity?</strong>
+          </p>
+        </article>
+
+        <article class="line-of-inquiry">
+          <h3>
+            Somatic Co-regulation Hubs: Gatherings for embodied awareness,
+            collective reflection, and humane futures
+          </h3>
+
+          <div class="media-container">
+            <img
+              src="images/POC Somatics on the River.png"
+              alt="Somatic co-regulation gathering outdoors near a river"
+              loading="lazy"
+            >
+          </div>
+
+          <p>
+            Grounds4Peace envisions in-person, nature-based gatherings for families, couples, groups, and communities. Led through somatic facilitation, movement, speech, music, attention, and collective reflection, these hubs would offer space to recognize the relationship between individual experience and the environmental conditions of daily life.
+          </p>
+
+          <p>
+            Our somatic co-regulation sessions reject pathologizing models of emotional and behavioral health with the understanding that there is nothing wrong with you. You are being responsive to the physical elements of your environment. Materially and sonically toxic environments adversely affect our emotions and behaviors and bodies. We center each participant in their inherent wisdom, sensory intelligence, and right to feel good. You are not broken. You are responding. Let’s respond together.
+          </p>
+
+          <p>
+            With clear consent practices and protection of participants’ privacy, the gatherings may also inform broader artistic and infrastructural inquiry. They are not clinical treatment, diagnosis, or medical advice. They are invitations to remember that people are responsive beings, and that a humane world must attend to the stimulus to which bodies are responding.
+          </p>
+
+          <p class="question">
+            The question is:
+            <strong>What becomes possible when people can listen to themselves and one another without first being required to endure harm?</strong>
+          </p>
+
+          <p>
+            <a
+              href="https://www.grounds4peace.org/somatics-coregulation.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn more.
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="movement-freedom-environments" class="full-width-layout">
+      <h2>
+        Movement-Freedom Environments: An inquiry into spaces for learning,
+        labor, rest, nourishment, and relation that do not require bodily harm
+      </h2>
+
+      <div class="movement-freedom-environments-grid">
         <div class="media-container">
-          <img src="images/IMG_0283.jpeg" alt="Self-Generating Water Autonomy Technologies Prototype">
+          <img
+            src="images/IMG_9744.jpeg"
+            alt="Educational biodesign frameworks diagram showing multiple intelligences"
+            loading="lazy"
+          >
         </div>
-        <p>Grounds4Peace holds that dependable access to clean drinking water is a basic condition of dignity and public health. The Line of Inquiry seeks dialogue with water-system workers, environmental engineers, public-health practitioners, hydrologists, ecologists, communities, and water-justice advocates about infrastructure that makes safe water more available, accessible, regenerative, and free from unnecessary extraction or exclusion.
-</p>
-        <p>Possible future questions include public refill systems, resilient water access during emergencies, water-quality transparency, watershed restoration, water-conductive ground systems, and emerging material or energy technologies that may support low-impact water provision.
-</p>
-         <p>The question is: <b>What would it mean for public water to be treated as a living right rather than a commodity?</b></p>
- </div>
-       
-     <section id="MOVEMENT-FREEDOM-ENVIRONMENTS
-" class="full-width-layout">
-    <h2>MOVEMENT-FREEDOM-ENVIRONMENTS:
-An inquiry into spaces for learning, labor, rest, nourishment, and relation that do not require bodily harm
-</h2>
-    <div class="MOVEMENT-FREEDOM-ENVIRONMENTS-grid">
-      <div class="media-container">
-        <img src="images/IMG_9744.jpeg" alt="Educational Biodesign Frameworks Diagram - Multiple Intelligences">
+
+        <div class="text-block">
+          <p>
+            Grounds4Peace proposes classrooms, offices, studios, laboratories, clinics, homes, transit systems, and public spaces designed for movement, postural freedom, environmental responsiveness, sensory integrity, fresh air, rest, access, and ecological contact.
+          </p>
+
+          <p>
+            Reimagine learning environments that support postural freedom, somatic learning, and sensory-responsive spaces for proprioceptive safety. Work with educational designers to develop classrooms and studios which integrate movement, ergonomics, and environmental responsiveness.
+          </p>
+
+          <p>
+            The work will facilitate reform of learning and work environments to support somatic learning for multiply intelligent people rather than demanding forced stiffness, chronic sitting, restrictive furniture, misdesigned work consoles, sensory overload, or indoor conditions without consistent access to fresh air through operable windows.
+          </p>
+
+          <p>
+            <strong>Abolish physical harm as a basis for education and work.</strong>
+            No child nor adult should be required to sacrifice posture, movement, breath, sensory integrity, nourishment, nor relationship to living land in order to participate in school or make a living. Grounds4Peace proposes movement-supportive, sensory-responsive, well-ventilated learning and work environments with biodynamic food gardens as a basic part of healthy education, healthy productivity, and humane social life.
+          </p>
+
+          <p>
+            <strong>Biodynamic food gardens are essential to this vision.</strong>
+            Grounds4Peace proposes gardens as living sites of nourishment, movement, soil relationship, sensory learning, ecological literacy, community care, and practical freedom. Children and adults should be able to grow, touch, smell, prepare, share, and understand food as part of ordinary life—not be separated from land and then expected to learn, work, and thrive on nutritionally impoverished or chemically burdened food.
+          </p>
+
+          <p>
+            As the initiative develops, Grounds4Peace will seek collaboration with students, families, educators, gardeners and farmers, food-service workers, occupational and physical therapists, disability advocates, architects, environmental-health practitioners, ergonomic specialists, school and workplace leaders, and ecological designers.
+          </p>
+
+          <p class="question">
+            The question is:
+            <strong>What can people learn, create, love, and become when our environments no longer require us to override bodily sensation—and instead provide movement, fresh air, living food, land relationship, and room to grow?</strong>
+          </p>
+        </div>
       </div>
-      <div class="text-block">
-        <p>Grounds4Peace proposes classrooms, offices, studios, laboratories, clinics, homes, transit systems, and public spaces designed for movement, postural freedom, environmental responsiveness, sensory integrity, fresh air, rest, access, and ecological contact.
-</p>
-        <p>Reimagine learning environments that support postural freedom, somatic learning, and sensory-responsive spaces for proprioceptive safety. Work with educational designers to develop classrooms and studios which integrate movement, ergonomics, and environmental responsiveness.</p>
-        <p>The work will facilitate reform of learning and work environments to support somatic learning for multiply intelligent people rather than demanding forced stiffness, chronic sitting, restrictive furniture, misdesigned work consoles, sensory overload, or indoor conditions without consistent access to fresh air through operable windows.
-</p>
-       <p><b>Abolish physical harm as a basis for education and work.</b> No child nor adult should be required to sacrifice posture, movement, breath, sensory integrity, nourishment, nor relationship to living land in order to participate in school or make a living. Grounds4Peace proposes movement-supportive, sensory-responsive, well-ventilated learning and work environments with biodynamic food gardens as a  basic part of healthy education, healthy productivity, and humane social life.</p>
-       <p><b>Biodynamic food gardens are essential to this vision. </b>Grounds4Peace proposes gardens as living sites of nourishment, movement, soil relationship, sensory learning, ecological literacy, community care, and practical freedom. Children and adults should be able to grow, touch, smell, prepare, share, and understand food as part of ordinary life—not be separated from land and then expected to learn, work, and thrive on nutritionally impoverished or chemically burdened food.</p>
-      <p>As the initiative develops, Grounds4Peace will seek collaboration with students, families, educators, gardeners and farmers, food-service workers, occupational and physical therapists, disability advocates, architects, environmental-health practitioners, ergonomic specialists, school and workplace leaders, and ecological designers.</p>
-     <p>The question is: <b>What can people learn, create, love, and become when our environments no longer require us to override bodily sensation—and instead provide movement, fresh air, living food, land relationship, and room to grow?</b></p>
-</div>
-    </div> </section>
+    </section>
 
+    <section id="collaboration" class="full-width-layout">
+      <h2>Collaboration &amp; Partnership</h2>
 
-
-<div class="Line of Inquiry">
-        <h3>Somatic Co-regulation Hubs Gatherings for embodied awareness, collective reflection, and humane futures</h3>
+      <div class="collaboration-content-grid">
         <div class="media-container">
-          <img src="images/POC Somatics on the River.png" alt="Somatic regulation outdoors near a river.">
+          <img
+            src="images/Transdisciplinary Approach.PNG"
+            alt="Visual representing transdisciplinary collaboration"
+            loading="lazy"
+          >
         </div>
-        <p>Grounds4Peace envisions in-person, nature-based gatherings for families, couples, groups, and communities. Led through somatic facilitation, movement, speech, music, attention, and collective reflection, these hubs would offer space to recognize the relationship between individual experience and the environmental conditions of daily life.
-</p>
-        <p>Our somatic co-regulation sessions reject pathologizing models of emotional and behavioral health with the understanding that there is nothing wrong with you. You are being responsive to the physical elements of your environment. Materially and sonically toxic environments adversely affect our emotions and behaviors and bodies.  We center each participant in their inherent wisdom, sensory intelligence, and right to feel good. You are not broken. You are responding. Let’s respond together.  </p>
-        <p>With clear consent practices and protection of participants’ privacy, the gatherings may also inform broader artistic and infrastructural inquiry. They are not clinical treatment, diagnosis, or medical advice. They are invitations to remember that people are responsive beings, and that a humane world must attend to the stimulus to which bodies are responding.</p>
-        <p>The question is: </b>What becomes possible when people can listen to themselves and one another without first being required to endure harm?</b>
-</p>
-<p> <a
-href="https://www.grounds4peace.org/somatics-coregulation.html" target="_blank" rel="noopener noreferrer">Learn more.</a></p>
-      </div>
-  </section>
 
-  
-  <section id="collaboration" class="full-width-layout">
-    <h2>Collaboration & Partnership</h2>
-    <div class="collaboration-content-grid">
-      <div class="media-container">
-        <img src="images/Transdisciplinary Approach.PNG" alt="Team Collaboration or Lab Space">
-      </div>
-      <div class="text-block">
-        <p class="section-lead"><strong>Building the Ecosystem: A Call for Collaboration</strong></p>
-        <p>Grounds4Peace is in formation and seeks collaborators who understand that no single discipline can repair the harmful infrastructures of civilization alone. The initiative begins with a question:  <b>What might become possible if the embodied intelligence of living people were treated as essential knowledge in the making of our shared world? </b> </p>
-        <p>Milandi Madiba brings somatic facilitation, multidisciplinary artistic practice, humanitarian urgency, and an uncompromising commitment to bodily dignity. Grounds4Peace seeks people and institutions who can bring their expertise into respectful relationship with this work.</p>
-       <p>We welcome conversation and potential collaboration with people working in materials science, pavement and civil engineering, environmental engineering, water systems, biomechanics, physical and occupational therapy, public health, acoustics, sound art, landscape architecture, ecology, botany, arboriculture, accessibility, disability justice, architecture, education, food-growing, fabrication, public policy, public institutions, community organizing, land stewardship, philanthropy, and experimental arts.</p>
-      <p>Potential forms of collaboration include artist residencies within labs and/or institutions, somatic and site-based inquiry, co-developed research processes, public conversations, artistic works, feasibility studies, material or spatial prototyping, community-rooted pilot projects, policy dialogues, exhibitions/performances, and long-term partnerships.</p>
-        <p>Grounds4Peace does not seek extraction of ideas, unpaid labor, nor token inclusion; but rather mutual respect, appropriate resourcing, technical rigor, imagination, and a shared willingness to hold technology and public systems accountable to living bodies and ecologies.</p>
-<p><b>If your work touches ground, water, air, sound, food, movement, learning, shelter, access, or public life, you may have a place in this process.</b></p>    </div></section>
+        <div class="text-block">
+          <p class="section-lead">
+            <strong>Building the Ecosystem: A Call for Collaboration</strong>
+          </p>
 
-  <section id="contact" class="premium-contact-layout">
-    <div class="contact-card">
-      <h2>Contact & Invitation</h2>
-      <p>Grounds4Peace is seeking thoughtful correspondence, conversation, and materially supported collaboration with people prepared to help build conditions of life that honor bodies, land, descendants, pleasure, access, and ecological reciprocity.
-</p>
-      <div class="contact-action-block">
-        <p>For collaboration proposals, institutional invitations, artist residencies, speaking engagements, research conversations, commissions, or resource partnership inquiries, contact:</p>
-        <a href="mailto:grounds4peace.org@gmail.com" class="email-link">grounds4peace.org@gmail.com</a>
+          <p>
+            Grounds4Peace is in formation and seeks collaborators who understand that no single discipline can repair the harmful infrastructures of civilization alone. The initiative begins with a question:
+            <strong>What might become possible if the embodied intelligence of living people were treated as essential knowledge in the making of our shared world?</strong>
+          </p>
+
+          <p>
+            Milandi Madiba brings somatic facilitation, multidisciplinary artistic practice, humanitarian urgency, and an uncompromising commitment to bodily dignity. Grounds4Peace seeks people and institutions who can bring their expertise into respectful relationship with this work.
+          </p>
+
+          <p>
+            We welcome conversation and potential collaboration with people working in materials science, pavement and civil engineering, environmental engineering, water systems, biomechanics, physical and occupational therapy, public health, acoustics, sound art, landscape architecture, ecology, botany, arboriculture, accessibility, disability justice, architecture, education, food-growing, fabrication, public policy, public institutions, community organizing, land stewardship, philanthropy, and experimental arts.
+          </p>
+
+          <p>
+            Potential forms of collaboration include artist residencies within labs and/or institutions, somatic and site-based inquiry, co-developed research processes, public conversations, artistic works, feasibility studies, material or spatial prototyping, community-rooted pilot projects, policy dialogues, exhibitions/performances, and long-term partnerships.
+          </p>
+
+          <p>
+            Grounds4Peace does not seek extraction of ideas, unpaid labor, nor token inclusion; but rather mutual respect, appropriate resourcing, technical rigor, imagination, and a shared willingness to hold technology and public systems accountable to living bodies and ecologies.
+          </p>
+
+          <p>
+            <strong>If your work touches ground, water, air, sound, food, movement, learning, shelter, access, or public life, you may have a place in this process.</strong>
+          </p>
+        </div>
       </div>
+    </section>
+
+    <section id="contact" class="premium-contact-layout">
+      <div class="contact-card">
+        <h2>Contact &amp; Invitation</h2>
+
+        <p>
+          Grounds4Peace is seeking thoughtful correspondence, conversation, and materially supported collaboration with people prepared to help build conditions of life that honor bodies, land, descendants, pleasure, access, and ecological reciprocity.
+        </p>
+
+        <div class="contact-action-block">
+          <p>
+            For collaboration proposals, institutional invitations, artist residencies, speaking engagements, research conversations, commissions, or resource partnership inquiries, contact:
+          </p>
+
+          <a href="mailto:grounds4peace.org@gmail.com" class="email-link">
+            grounds4peace.org@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="founder" class="full-width-layout founder-layout">
+      <h2>Grounds 4 Peace Founder: Milandi Madiba</h2>
+
+      <div class="founder-content-grid">
+        <div class="video-wrapper">
+          <iframe
+            src="https://player.vimeo.com/video/1212747208?muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1"
+            title="Founder video featuring Milandi Madiba"
+            loading="lazy"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="text-block">
+          <p>
+            Indigenous and Black North American survivor of ancestral human trafficking, mass rape, forced labor, and other forms of torture, attempted genocide, tearing apart of families from one another and our ancestral lands; as well as intersectional brutal traumas of North America today; Medicine Woman, Transdisciplinary Artist, Master Somaticist, and Facilitator Milandi Madiba (born 1980) has been traveling North America for the past several years searching for health and safety. Walking her lands, she encounters people responding toxically to injuriously hazardous grounds, musculoskeletally warping building and room designs, scarcity of safe water and food unpoisoned by herbicidal and pesticidal toxins, soundscapes which assault the mammalian nervous system, standardized medical industrial malfeasance, brain damage due to lack of oxygenated airflow, educational and work cultures designed to force bodies into console use and postures that unravel human health, and the resultant violently toxic people—all arising from, and maintaining dehumanizing systems of economic valuation. Unacceptable! In our burgeoning 3rd millennium, the world is not OK and Milandi Madiba has something to say. Catalyze reform now.
+          </p>
+
+          <p>
+            Unwilling to extend her bloodline into inhumane conditions, Ms. Madiba founds Grounds4Peace as an intervention. With 22+ years of experience in somatic consulting, embodied arts, holistic wellness, and ecological advocacy, she brings the intelligence of the living body to the reinvention of infrastructure as her ceremonial medicine. Her work asserts: rather than patterning abuse into our neurology through perpetual harm, what we build must honor the sacredness of the body—or we replicate the conditions of war.
+          </p>
+
+          <p>
+            Her medicine ritual activations have been presented internationally at Jazz Fest Berlin (Germany), NYC’s The Poetry Project, Vision Festival, Festiwal Jazz Jantar (Poland), Crossing Borders Festival (The Hague, Netherlands), and Impuls Tanz as a Dance WEB Artist (Vienna, Austria), as well as nationally at the Vision Festival (NYC), Howard University (DC), Rutgers University (NJ), Museum of Contemporary Art Chicago, DePaul Art Museum, Gallery 400, University of Indiana Bloomington in collaboration with J’Sun Howard, Chicago Cultural Center, and site-specific natural landscape rituals from White Sands to the Atlantic and Pacific Coasts. Her published contributions and discography encompass literary works in Apogee Journal of Literature (Quantum Negress Tantras), Vogue Italia (Poses in the Manner of Butoh), the social justice anthology I Can't Breathe, albums such as Hurt Cult (Rope a Dope), and original sound releases including “Homo Sapiens Breathe” and “Hootie hoo for humanity” (funerary music for the extinction of a U.S. policing institution founded and continuing in the energy of capturing escapees from human trafficking and tortuous forced labor and returning us to our captors). Her transformative vision has been supported by grants and awards from the Chicago Dancemakers Forum (Lab Artist Grant), Illinois Arts Council, Richard H. Driehaus Foundation, Albert P. Weisman Foundation, High Concept Labs, Links Hall, and the Weasel Fund Foundation.
+          </p>
+
+          <p>
+            Ms. Milandi Madiba’s facilitative style is relational, emergent, and iterative. The world needs her now. Madiba: Reinfrastructure society to honor the health of our sacred physical bodies, and peace shifts from aspiration to reality.
+          </p>
+
+          <p>
+            Raised by a psychologist grandmother and trained across physical and intellectual disciplines. After reading through her grandmother’s volumes on psychology throughout her childhood, Ms. Madiba decisively chose to distance herself from a field which patently ignores physical conditions in analyzing people’s issues. She earned her Master of Somatics Certificate from Shirley Mordine, her mentor and the founder of the Dance Center of Columbia College Chicago, where Madiba earlier earned her BFA in Dance Choreography from Columbia College Chicago where she had the honor of learning under master embodied physicist Krenly Guzman and having studied the history of the Civil Rights Movement, intersectional Women's Studies, and African American classical vocal techniques under maestra vocalist Dr. Carren Moham at Illinois Wesleyan University, as well as learning Fulani-based circle singing improvisational vocalization forms from a member of Bobby McFerrin's vocal ensemble while attending Mills College in Oakland, CA; Ms. Madiba holds a Cook County Court Approved Conflict Resolution Certification in Facilitative Mediation from the Center for Conflict Resolution, 267 hours of Zen Shiatsu, Comprehensive Contemporary Pilates Mat and Apparatus certifications, Hatha Yoga teacher Certification, Reiki Energetic Support Mastery, and a Master Somaticist title bestowed by movement education pioneer Shirley Mordine. Ms. Madiba is eternally appreciative of Maestra choral conductor Gloria Brown, who introduced her to somatics of choral singing and group energetic dynamics as a child attending Ted Lenard Regional Gifted Center and later continued this education as the conductor of award-winning Whitney M. Young High School Concert Choir, from which Ms. Madiba graduated in 1998 as section leader for the soprano II section. Through this extensive training, Ms. Madiba has learned that emotions are actually physiologic responses to environmental stimuli to which we sometimes attach memories and stories. Harmful environmental stimuli produce harmful emotions, which lead to harmful relational and group behaviors. Be present and keep your body safe.
+          </p>
+
+          <p>
+            Grounds4Peace is here to convene cross-sector intelligence—grounded in emergent processing from arts settings despite an arts sector that has been chronically devalued and structurally under-resourced—to restore ecological integrity and transform the ways we build, move, relate, and repair our world. Milandi Madiba’s approach is grounded in a deep administrative and leadership foundation, having previously served as Founder &amp; President of QNT LLC to provide performance and well-being consulting for senior executives, as well as conducting institutional legal-financial documentation analysis that supported the underwriting and approval of $123.2 Million in community development loan portfolios. She did this to get to understand the banking system better, a system of which she patently disapproves, but interacts with in the paradox of Indigenous American Black life today.
+          </p>
+
+          <p>
+            Much of her expansive body of work, published and performed under her former name, Margaret M. Morris, reflects a lifelong integration of artistic, healing, institutional, and community-based leadership. Collaborating with the musical and literary collective Heroes Are Gang Leaders, she was awarded the 2018 American Book Award for Oral Literature for The Amiri Baraka Sessions. A recipient of competitive residencies at Elastic Arts, Ragdale, the Naropa University Jack Kerouac School of Disembodied Poetics, NYC Community Centers and Chicago Public Schools. Madiba’s ceremonial ritual activations span over 40 original transdisciplinary creations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="special-note">
+      <p>
+        Special Note: If you are able to stand, your health will improve if you stand up and/or squat to urinate and defecate. If the material and social factors of your life do not allow for this, then they are not conducive of your health and you must take the necessary steps to change that.
+      </p>
     </div>
-  </section>
+  </main>
 
-  <section id="founder" class="full-width-layout founder-layout">
-    <h2>Grounds 4 Peace Founder: Milandi Madiba</h2>
-    <div class="founder-content-grid">
-      <div class="video-wrapper">
-    <iframe src="https://player.vimeo.com/video/1212747208?autoplay=1&amp;muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1" title="Founder Video" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen></iframe>
-      </div>
-      <div class="text-block">
-<p>Indigenous and Black North American survivor of ancestral human trafficking, mass rape, forced labor, and other forms of torture, attempted genocide, tearing apart of families from one another and our ancestral lands; as well as intersectional brutal traumas of North America today; Medicine Woman, Transdisciplinary Artist, Master Somaticist, and Facilitator Milandi Madiba (born 1980) has been traveling North America for the past several years searching for health and safety. Walking her lands, she encounters people responding toxically to injuriously hazardous grounds, musculoskeletally warping building and room designs, scarcity of safe water and food unpoisoned by herbicidal and pesticidal toxins, soundscapes which assault the mammalian nervous system, standardized medical industrial malfeasance, brain damage due to lack of oxygenated airflow, educational and work cultures designed to force bodies into console use and postures that unravel human health, and the resultant violently toxic people—all arising from, and maintaining dehumanizing systems of economic valuation. Unacceptable! In our burgeoning 3rd millennium, the world is not OK and Milandi Madiba has something to say. Catalyze reform now. </p> 
-<p>Unwilling to extend her bloodline into inhumane conditions, Ms.Madiba founds Grounds4Peace as an intervention. With 22+ years of experience in somatic consulting, embodied arts, holistic wellness, and ecological advocacy, she brings the intelligence of the living body to the reinvention of infrastructure as her ceremonial medicine. Her work asserts: rather than patterning abuse into our neurology through perpetual harm, what we build must honor the sacredness of the body—or we replicate the conditions of war.</p>
-<p>Her medicine ritual activations have been presented internationally at Jazz Fest Berlin (Germany), NYC’s The Poetry Project, Vision Festival, Festiwal Jazz Jantar (Poland), Crossing Borders Festival (The Hague, Netherlands), and Impuls Tanz as a Dance WEB Artist (Vienna, Austria), as well as nationally at the Vision Festival (NYC), Howard University (DC), Rutgers University (NJ), Museum of Contemporary Art Chicago, DePaul Art Museum, Gallery 400, University of Indiana Bloomington in collaboration with J’Sun Howard, Chicago Cultural Center, and site-specific natural landscape rituals from White Sands to the Atlantic and Pacific Coasts. Her published contributions and discography encompass literary works in Apogee Journal of Literature (Quantum Negress Tantras), Vogue Italia (Poses in the Manner of Butoh), the social justice anthology I Can't Breathe, albums such as Hurt Cult (Rope a Dope), and original sound releases including "Homo Sapiens Breathe" and "Hootie hoo for humanity" (funerary music for the extinction of a U.S. policing institution founded and continuing in the energy of capturing escapees from human trafficking and tortuous forced labor and returning us to our captors). Her transformative vision has been supported by grants and awards from the Chicago Dancemakers Forum (Lab Artist Grant), Illinois Arts Council, Richard H. Driehaus Foundation, Albert P. Weisman Foundation, High Concept Labs, Links Hall, and the Weasel Fund Foundation. </p>
-<p>Ms. Milandi Madiba’s facilitative style is relational, emergent, and iterative. The world needs her now. Madiba: Reinfrastructure society to honor the health of our sacred physical bodies, and peace shifts from aspiration to reality. </p>
-<p>Raised by a psychologist grandmother and trained across physical and intellectual disciplines.  After reading through her grandmother’s volumes on psychology throughout her childhood, Ms.Madiba decisively chose to distance herself from a field which patently ignores physical conditions in analyzing people’s issues.  She earned her Master of Somatics Certificate from Shirley Mordine, her mentor and the founder of the Dance Center of Columbia College Chicago, where Madiba earlier earned her BFA in Dance Choreography from Columbia College Chicago where she had the honor of learning under master embodied physicist Krenly Guzman and Having studied the history of the Civil Rights Movement, intersectional Women's Studies, and African American classical vocal techniques under maestra vocalist Dr. Carren Moham at Illinois Wesleyan University, as well as learning Fulani-based circle singing improvisational vocalization forms from a member of Bobby McFerrin's vocal ensemble while attending Mills College in Oakland, CA; Ms.Madiba holds a Cook County Court Approved Conflict Resolution Certification in Facilitative Mediation from the Center for Conflict Resolution, 267 hours of Zen Shiatsu, Comprehensive Contemporary Pilates Mat and Apparatus certifications, Hatha Yoga teacher Certification, Reiki Energetic Support Mastery, and a Master Somaticist title bestowed by movement education pioneer Shirley Mordine. Ms.Madiba is eternally appreciative of Maestra choral conductor of Gloria Brown, who introduces her to somatics of choral singing and group energetic dynamics as a child attending Ted Lenard Regional Gifted Center and later continuing this education as the conductor of award winning Whitney M. Young Highschool Concert Choir, from which Ms. Madiba graduated in 1998 as section leader for the soprano ii section. Through this extensive training, Ms.Madiba has learned that emotions are actually physiologic responses to environmental stimuli to which we sometimes attach memories and stories. Harmful environmental stimuli produce harmful emotions, which lead to harmful relational and group behaviors. Be present and keep your body safe.</p>
-<p>Grounds4Peace is here to convene cross-sector intelligence—grounded in emergent processing from arts settings despite an arts sector that has been chronically devalued and structurally under-resourced—to restore ecological integrity and transform the ways we build, move, relate, and repair our world. Milandi Madiba’s approach is grounded in a deep administrative and leadership foundation, having previously served as Founder & President of QNT LLC to provide performance and well-being consulting for senior executives, as well as conducting institutional legal-financial documentation analysis that supported the underwriting and approval of $123.2 Million in community development loan portfolios.  She did this to get to understand the banking system better, a system of which she patently disapproves, but interacts with in the paradox of Indigenous American Black life today. </p>
-<p>Much of her expansive body of work, published and performed under her former name, Margaret M. Morris, reflects a lifelong integration of artistic, healing, institutional, and community-based leadership. Collaborating with the musical and literary collective Heroes Are Gang Leaders, she was awarded the 2018 American Book Award for Oral Literature for The Amiri Baraka Sessions. A recipient of competitive residencies at Elastic Arts, Ragdale,  the Naropa University Jack Kerouac School of Disembodied Poetics, NYC Community Centers and Chicago Public Schools. Madiba’s ceremonial ritual activations span over 40 original transdisciplinary creations. 
-</p>
-
-</div>
+  <footer>
+    <div class="footer-box">
+      <p>Grounds 4 Peace is an initiative of Milandi M. Madiba</p>
+      <p>&copy; 2026 Milandi M. Madiba. All rights reserved.</p>
     </div>
-  </section>
-
-<!-- Special Note Section --> <div class="special-note"> 
-<p>Special Note: If you are able to stand, your health will improve if you stand up and/or squat to urinate and defecate.  If the material and social factors of your life do not allow for this, then they are not conducive of your health and you must take the necessary steps to change that.</p> </div>
-    
-<footer>
-  <div class="footer-box">
-    <p>Grounds 4 Peace is an initiative of Milandi M. Madiba</p>
-    <p>&copy; 2026 Milandi M. Madiba. All rights reserved.</p>
-    </div>
-</footer>
+  </footer>
 </body>
 </html>
 
-```
