@@ -6,84 +6,198 @@
 
     <title>Milandi Mahasin Madiba - Somatic Consultant</title>
 
-    <meta name="description" content="Milandi Mahasin Madiba offers expert somatic consulting, medicine work, wellness coaching, and facilitation. Explore somatic awareness, embodied movement, and holistic well-being with over 22 years of experience.">
-    <meta name="keywords" content="therapy, psychology, somatic, wellness, coach, wellness coach, Master Somaticst, Milandi Madiba, somatic consulting, medicine woman, body-mind integration">
+    <meta
+        name="description"
+        content="Milandi Mahasin Madiba offers expert somatic consulting, medicine work, wellness coaching, and facilitation. Explore somatic awareness, embodied movement, and holistic well-being with over 22 years of experience."
+    >
 
-    <meta property="og:title" content="Milandi Mahasin Madiba | Somatic Consultant & Wellness Coach">
-    <meta property="og:description" content="Explore somatic awareness, holistic therapy, wellness coaching, and embodied well-being with Milandi Mahasin Madiba.">
+    <meta
+        name="keywords"
+        content="therapy, psychology, somatic, wellness, coach, wellness coach, Master Somaticst, Milandi Madiba, somatic consulting, medicine woman, body-mind integration"
+    >
+
+    <meta
+        property="og:title"
+        content="Milandi Mahasin Madiba | Somatic Consultant & Wellness Coach"
+    >
+
+    <meta
+        property="og:description"
+        content="Explore somatic awareness, holistic therapy, wellness coaching, and embodied well-being with Milandi Mahasin Madiba."
+    >
+
     <meta property="og:type" content="website">
 
-    <link rel="canonical" href="https://www.grounds4peace.org/somatics-coregulation.html">
+    <link
+        rel="canonical"
+        href="https://www.grounds4peace.org/somatics-coregulation.html"
+    >
+
+    <!-- Matching site fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
+        /* ================================================================
+           1. MATCHING SITE COLORS AND FONTS
+           ================================================================ */
+
         :root {
             color-scheme: dark;
-            --primary-color: #ffffff;
-            --secondary-color: #000000;
-            --text-main: #ffffff;
-            --text-muted: #ffffff;
-            --border-color: #ffffff;
-            --bg-light: #000000;
+
+            --color-primary: #a9c9b8;
+            --color-secondary: #d5e4da;
+            --color-background-light: #111312;
+            --color-paper: #191c1a;
+            --color-text: #f3f4ef;
+            --color-muted: #c4cbc5;
+            --color-rule: #536058;
+            --color-media-background: #202522;
+            --color-link: #c5e5d2;
+            --color-link-hover: #ffffff;
+            --color-note-background: #18221d;
+            --color-note-border: #8fb6a6;
+
+            --font-sans: "Source Sans 3", "Helvetica Neue",
+                Helvetica, Arial, sans-serif;
+
+            --font-serif: "Source Serif 4", Georgia,
+                "Times New Roman", serif;
+
+            --font-reading: "Newsreader", Georgia,
+                "Times New Roman", serif;
+
+            --radius-small: 0.2rem;
+        }
+
+        /* ================================================================
+           2. GLOBAL FOUNDATION
+           ================================================================ */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: var(--color-background-light);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                Roboto, Helvetica, Arial, sans-serif;
-            color: var(--text-main);
-            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-light);
+            background-color: var(--color-background-light);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            font-weight: 400;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: 100%;
+            text-rendering: optimizeLegibility;
         }
 
-        /* Site navigation */
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: var(--color-link);
+            text-underline-offset: 0.25rem;
+            transition: color 0.2s ease;
+        }
+
+        a:visited {
+            color: var(--color-link);
+        }
+
+        a:hover,
+        a:active {
+            color: var(--color-link-hover);
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 4px;
+        }
+
+        strong,
+        b {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        /* ================================================================
+           3. TOP NAVIGATION
+           ================================================================ */
+
         .site-navigation {
-            background-color: #000000;
-            color: #ffffff;
-            border-bottom: 1px solid #ffffff;
-            padding: 18px 20px;
+            background-color: var(--color-background-light);
+            border-bottom: 1px solid var(--color-rule);
         }
 
         .section-nav {
-            max-width: 1100px;
-            margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 10px 22px;
+            gap: 0.65rem 1.25rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.9rem 1rem;
+            font-family: var(--font-sans);
+            font-size: clamp(0.69rem, 0.8vw, 0.82rem);
+            font-weight: 600;
+            letter-spacing: 0.09em;
         }
 
-        .section-nav a {
-            display: inline-block;
-            background-color: #000000;
-            color: #ffffff;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            padding: 6px 0;
+        .section-nav a,
+        .section-nav a:visited {
+            color: var(--color-text);
+            text-decoration: none;
+            text-transform: uppercase;
         }
 
         .section-nav a:hover {
-            text-decoration-thickness: 3px;
+            color: var(--color-primary);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.28rem;
         }
 
-        /* Main page layout */
+        .section-nav a[aria-current="page"] {
+            color: var(--color-primary);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.28rem;
+        }
+
+        /* ================================================================
+           4. PAGE AND PROFILE HEADER
+           ================================================================ */
+
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
-            background: #000000;
-            border-radius: 8px;
+            background-color: var(--color-paper);
+            border: 1px solid var(--color-rule);
+            border-radius: var(--radius-small);
             overflow: hidden;
         }
 
         .profile-header {
-            padding: 40px;
-            border-bottom: 1px solid var(--border-color);
             display: flex;
-            gap: 30px;
             align-items: center;
+            gap: 30px;
+            padding: 40px;
+            border-bottom: 1px solid var(--color-rule);
         }
 
         .profile-img-container {
@@ -92,8 +206,8 @@
             height: 150px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid var(--border-color);
-            background-color: #000000;
+            border: 3px solid var(--color-note-border);
+            background-color: var(--color-media-background);
         }
 
         .profile-img-container img {
@@ -106,32 +220,51 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            min-width: 0;
         }
 
         h1 {
-            font-size: 2.2rem;
             margin: 0;
-            color: #ffffff;
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            font-size: clamp(1.8rem, 3.5vw, 2.45rem);
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
         }
 
         .credentials {
-            font-size: 1.1rem;
+            color: var(--color-muted);
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
             font-weight: 600;
-            color: #ffffff;
+            line-height: 1.5;
         }
 
         .tagline {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: #ffffff;
             margin-top: 5px;
+            color: var(--color-secondary);
+            font-family: var(--font-reading);
+            font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.45;
         }
+
+        /* ================================================================
+           5. CONTENT AND READING TEXT
+           ================================================================ */
 
         .content-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+            align-items: start;
             gap: 40px;
             padding: 40px;
+        }
+
+        main {
+            min-width: 0;
         }
 
         main section {
@@ -139,20 +272,42 @@
         }
 
         h2 {
-            font-size: 1.4rem;
-            color: #ffffff;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-            margin-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--color-rule);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            font-size: clamp(1.45rem, 2.6vw, 1.85rem);
+            font-weight: 600;
+            letter-spacing: -0.035em;
+            line-height: 1.15;
+        }
+
+        p,
+        li,
+        .focus-area {
+            color: var(--color-text);
+            font-family: var(--font-reading);
+            font-size: clamp(1.04rem, 0.35vw + 0.98rem, 1.16rem);
+            font-weight: 400;
+            letter-spacing: 0.002em;
+            line-height: 1.72;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
         }
 
         ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-left: 22px;
         }
 
         li {
@@ -160,94 +315,133 @@
         }
 
         li::marker {
-            color: #ffffff;
-        }
-
-        aside {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            height: fit-content;
-        }
-
-        aside h3 {
-            margin-top: 0;
-            color: #ffffff;
-            font-size: 1.2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-        }
-
-        a,
-        a:visited,
-        a:hover,
-        a:active {
-            color: #ffffff;
-        }
-
-        a:focus-visible {
-            outline: 2px solid #ffffff;
-            outline-offset: 4px;
-        }
-
-        .contact-btn {
-            display: block;
-            background-color: #000000;
-            color: #ffffff;
-            border: 1px solid #ffffff;
-            text-align: center;
-            padding: 12px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-
-        .contact-btn:visited,
-        .contact-btn:hover,
-        .contact-btn:focus,
-        .contact-btn:active {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        .contact-btn:hover,
-        .contact-btn:focus-visible {
-            text-decoration: underline;
-            text-underline-offset: 4px;
+            color: var(--color-primary);
         }
 
         .focus-area,
         .training-item {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .focus-area strong {
-            color: #ffffff;
+            color: var(--color-primary);
+            font-weight: 600;
         }
 
-        .disclaimer {
-            font-size: 0.9rem;
-            color: #ffffff;
-            border-left: 3px solid #ffffff;
-            padding-left: 15px;
+        /* ================================================================
+           6. PRACTICE DETAILS AND CONTACT
+           ================================================================ */
+
+        aside {
+            min-width: 0;
+            height: fit-content;
+            padding: 25px;
+            background-color: var(--color-note-background);
+            border: 1px solid var(--color-rule);
+            border-radius: var(--radius-small);
+        }
+
+        aside h3 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--color-rule);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        aside h3:not(:first-child) {
             margin-top: 30px;
         }
 
+        aside p {
+            font-size: 1.05rem;
+            line-height: 1.65;
+        }
+
+        aside strong {
+            color: var(--color-secondary);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .contact-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 12px 16px;
+            border: 1px solid var(--color-note-border);
+            border-radius: var(--radius-small);
+            background-color: var(--color-paper);
+            color: var(--color-link);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition:
+                color 0.2s ease,
+                background-color 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .contact-btn:visited {
+            color: var(--color-link);
+        }
+
+        .contact-btn:hover,
+        .contact-btn:focus-visible {
+            border-color: var(--color-primary);
+            background-color: var(--color-media-background);
+            color: var(--color-link-hover);
+            text-decoration: underline;
+            text-underline-offset: 0.25rem;
+        }
+
+        /* ================================================================
+           7. PRACTICE NOTE
+           ================================================================ */
+
+        .disclaimer {
+            margin-top: 30px;
+            padding: 18px 20px;
+            border: 1px solid var(--color-rule);
+            border-left: 3px solid var(--color-note-border);
+            border-radius: var(--radius-small);
+            background-color: var(--color-note-background);
+            color: var(--color-muted);
+            font-family: var(--font-reading);
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.65;
+        }
+
+        .disclaimer strong {
+            color: var(--color-secondary);
+            font-family: var(--font-sans);
+            font-weight: 600;
+        }
+
+        /* ================================================================
+           8. MOBILE AND TABLET
+           ================================================================ */
+
+        @media (max-width: 1040px) {
+            .container {
+                margin: 30px 20px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .site-navigation {
-                padding: 14px 16px;
-            }
-
-            .section-nav {
-                gap: 6px 16px;
-            }
-
             .profile-header {
                 flex-direction: column;
+                gap: 22px;
+                padding: 30px 20px;
                 text-align: center;
-                padding: 20px;
             }
 
             .profile-img-container {
@@ -255,8 +449,43 @@
             }
 
             .content-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
+                gap: 30px;
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .section-nav {
+                gap: 0.55rem 0.9rem;
+                font-size: 0.67rem;
+            }
+
+            .container {
+                margin: 20px 12px;
+            }
+
+            .content-grid {
+                padding: 24px 18px;
+            }
+
+            aside {
                 padding: 20px;
+            }
+
+            h2 {
+                letter-spacing: -0.025em;
+            }
+        }
+
+        /* ================================================================
+           9. REDUCED MOTION
+           ================================================================ */
+
+        @media (prefers-reduced-motion: reduce) {
+            a,
+            .contact-btn {
+                transition: none;
             }
         }
     </style>
@@ -265,20 +494,60 @@
 <body>
     <div class="site-navigation">
         <nav class="section-nav" aria-label="Primary navigation">
-            <a href="https://grounds4peace.org/">Home</a>
-            <a href="https://grounds4peace.org/#problem">Problem Statement</a>
-            <a href="https://grounds4peace.org/#mission">Mission</a>
-            <a href="https://grounds4peace.org/#approach">Approach</a>
-            <a href="https://grounds4peace.org/#lines-of-inquiry">Lines of Inquiry</a>
-            <a href="https://grounds4peace.org/Reports.html" class="site-link">Reports</a>
-            <a href="https://grounds4peace.org/#collaboration">Partnerships</a>
-            <a href="https://grounds4peace.org/#contact">Contact</a>
-            <a href="https://grounds4peace.org/#founder">Founder</a>
+            <a href="https://grounds4peace.org/">
+                Home
+            </a>
+
+            <a href="https://grounds4peace.org/#problem">
+                Problem Statement
+            </a>
+
+            <a href="https://grounds4peace.org/#mission">
+                Mission
+            </a>
+
+            <a href="https://grounds4peace.org/#approach">
+                Approach
+            </a>
+
+            <a href="https://grounds4peace.org/#lines-of-inquiry">
+                Lines of Inquiry
+            </a>
+
+            <a
+                href="https://www.grounds4peace.org/somatics-coregulation.html"
+                class="site-link"
+                aria-current="page"
+            >
+                Somatic Co-regulation
+            </a>
+
+            <a
+                href="https://grounds4peace.org/Reports.html"
+                class="site-link"
+            >
+                Reports
+            </a>
+
+            <a href="https://grounds4peace.org/#collaboration">
+                Partnerships
+            </a>
+
+            <a href="https://grounds4peace.org/#contact">
+                Contact
+            </a>
+
+            <a href="https://grounds4peace.org/#founder">
+                Founder
+            </a>
+
             <a
                 href="https://milandimadiba.notion.site/Milandi-Madiba-Ceremonial-Ritual-Medicine-Woman-3ed758c5c4e880d8929bf1adf2edd7eb"
                 target="_blank"
                 rel="noopener noreferrer"
-            >Medicine Woman</a>
+            >
+                Medicine Woman
+            </a>
         </nav>
     </div>
 
@@ -457,7 +726,10 @@
 
                 <p>Ready to Begin?<br>If you are interested in exploring your relationship with your body, your environment, and what supports your well-being, I welcome you to reach out.</p>
 
-                <a href="mailto:ms.milandimadiba@gmail.com" class="contact-btn">
+                <a
+                    href="mailto:ms.milandimadiba@gmail.com"
+                    class="contact-btn"
+                >
                     Email Me
                 </a>
             </aside>
