@@ -1,94 +1,401 @@
-<style>
-    :root {
-        color-scheme: dark;
-        --primary-color: #ffffff;
-        --secondary-color: #000000;
-        --text-main: #ffffff;
-        --text-muted: #ffffff;
-        --border-color: #ffffff;
-        --bg-light: #000000;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-            Roboto, Helvetica, Arial, sans-serif;
-        color: var(--text-main);
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: var(--bg-light);
-    }
+    <title>Milandi Mahasin Madiba - Somatic Consultant</title>
 
-    .container {
-        max-width: 900px;
-        margin: 40px auto;
-        background: #000000;
-        border-radius: 8px;
-        overflow: hidden;
-    }
+    <meta name="description" content="Milandi Mahasin Madiba offers expert somatic consulting, medicine work, wellness coaching, and facilitation. Explore somatic awareness, embodied movement, and holistic well-being with over 22 years of experience.">
+    <meta name="keywords" content="therapy, psychology, somatic, wellness, coach, wellness coach, Master Somaticst, Milandi Madiba, somatic consulting, medicine woman, body-mind integration">
 
-    header {
-        padding: 40px;
-        border-bottom: 1px solid var(--border-color);
-        display: flex;
-        gap: 30px;
-        align-items: center;
-    }
+    <meta property="og:title" content="Milandi Mahasin Madiba | Somatic Consultant & Wellness Coach">
+    <meta property="og:description" content="Explore somatic awareness, holistic therapy, wellness coaching, and embodied well-being with Milandi Mahasin Madiba.">
+    <meta property="og:type" content="website">
 
-    .profile-img-container {
-        flex-shrink: 0;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 3px solid var(--border-color);
-        background-color: #000000;
-    }
+    <link rel="canonical" href="https://www.grounds4peace.org/somatics-coregulation.html">
 
-    .profile-img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    <style>
+        :root {
+            color-scheme: dark;
+            --primary-color: #ffffff;
+            --secondary-color: #000000;
+            --text-main: #ffffff;
+            --text-muted: #ffffff;
+            --border-color: #ffffff;
+            --bg-light: #000000;
+        }
 
-    .header-text {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+        }
 
-    h1 {
-        font-size: 2.2rem;
-        margin: 0;
-        color: #ffffff;
-    }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #000000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
 
-    .credentials {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #ffffff;
-    }
-
-    .tagline {
-        font-style: italic;
-        font-size: 1.2rem;
-        color: #ffffff;
-        margin-top: 5px;
-    }
-
-    .content-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 40px;
-        padding: 40px;
-    }
-
-    @media (max-width: 768px) {
         header {
-            flex-direction: column;
-            text-align: center;
-            padding: 20px;
+            padding: 40px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 30px;
+            align-items: center;
         }
 
         .profile-img-container {
-            margin: 0
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--border-color);
+            background-color: #000000;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .credentials {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .tagline {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-top: 5px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .profile-img-container {
+                margin: 0 auto;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+
+        main section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #ffffff;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        li::marker {
+            color: #ffffff;
+        }
+
+        aside {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        aside h3 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        a,
+        a:visited,
+        a:hover,
+        a:active {
+            color: #ffffff;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 4px;
+        }
+
+        .contact-btn {
+            display: block;
+            background-color: #000000;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .contact-btn:visited,
+        .contact-btn:hover,
+        .contact-btn:focus,
+        .contact-btn:active {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .contact-btn:hover,
+        .contact-btn:focus-visible {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .focus-area,
+        .training-item {
+            margin-bottom: 15px;
+        }
+
+        .focus-area strong {
+            color: #ffffff;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            color: #ffffff;
+            border-left: 3px solid #ffffff;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img-container">
+                <img src="images/headshot for somatics page.jpg" alt="Milandi Mahasin Madiba">
+            </div>
+
+            <div class="header-text">
+                <h1>Milandi Mahasin Madiba</h1>
+
+                <div class="credentials">
+                    Medicine Woman: Master Somaticist | Facilitator | Transdisciplinary Artist
+                </div>
+
+                <div class="tagline">
+                    Your body is always responding. Your relationships with yourself and others follow.
+                </div>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <main>
+                <section>
+                    <p>Stress. Pain. Disconnection. Conflict. Overwhelm. Sometimes the problem is not that something is wrong with you. Sometimes your body is responding intelligently to the conditions around you.</p>
+
+                    <p>I am Milandi Mahasin Madiba, a Master Somaticist, facilitator, transdisciplinary artist, and consultant with more than 22 years of experience working at the intersection of body, movement, relationship, environment, and human well-being.</p>
+
+                    <p>My work begins with a simple understanding: there is nothing inherently wrong with you.</p>
+
+                    <p>Together, we explore what you are sensing, feeling, and responding to—and what your body may need to experience greater comfort, connection, possibility, and vitality.</p>
+                </section>
+
+                <section>
+                    <h2>How I Can Help</h2>
+
+                    <p>I work with people who want to develop a deeper relationship with themselves, their bodies, their environments, and one another. Our work may support you in:</p>
+
+                    <ul>
+                        <li>Understanding stress, tension, discomfort, or overwhelm</li>
+                        <li>Developing greater body awareness</li>
+                        <li>Exploring movement as a source of information and possibility</li>
+                        <li>Feeling more connected to yourself</li>
+                        <li>Understanding how your environment affects your well-being</li>
+                        <li>Navigating relationships and communication</li>
+                        <li>Exploring boundaries, consent, and physical autonomy</li>
+                        <li>Reconnecting with pleasure, joy, and vitality</li>
+                        <li>Exploring individual or collective patterns and conflict</li>
+                        <li>Discovering what conditions genuinely support your well-being</li>
+                    </ul>
+
+                    <p>I do not approach you as someone who needs to be fixed. I approach our work with curiosity, attention, and respect for the intelligence of your living body.</p>
+                </section>
+
+                <section>
+                    <h2>What Sessions Are Like</h2>
+
+                    <p>Sessions are collaborative, responsive, and individualized. Depending on what is relevant to you, our work may include conversation, sensing, movement, breath awareness, attention to your surroundings, relational exercises, creative exploration, or simply taking time to notice what is happening in the present moment.</p>
+
+                    <p>My work is grounded in sensing, feeling, and action. Rather than beginning with a predetermined formula, we begin with what is actually happening for you.</p>
+
+                    <p>When appropriate, I also facilitate sessions outdoors and in natural environments. Nature can offer important opportunities for movement, sensing, spaciousness, and connection.</p>
+                </section>
+
+                <section>
+                    <h2>My Approach</h2>
+
+                    <p>Somatic work recognizes that our experiences are not limited to thoughts alone. Our bodies are continually responding to our relationships, histories, environments, movement patterns, sounds, physical surroundings, and daily conditions. The emotions, mind, and relationships follow.</p>
+
+                    <p>This means that sometimes greater well-being begins not with trying harder to change yourself, but with asking different questions:</p>
+
+                    <ul>
+                        <li>What am I sensing?</li>
+                        <li>What is my body responding to?</li>
+                        <li>What do I actually need?</li>
+                        <li>What conditions help me feel well?</li>
+                        <li>What becomes possible when I tune in?</li>
+                    </ul>
+
+                    <p>These questions can open new possibilities for how we live.</p>
+                </section>
+
+                <section>
+                    <h2>Areas of Focus</h2>
+
+                    <div class="focus-area">
+                        <strong>Somatic Awareness:</strong> Developing greater awareness of sensation, movement, physical responses, and the ways your body communicates information.
+                    </div>
+
+                    <div class="focus-area">
+                        <strong>Movement and Embodiment:</strong> Exploring movement as a way of learning about yourself and expanding possibilities.
+                    </div>
+
+                    <div class="focus-area">
+                        <strong>Stress and Environmental Overwhelm:</strong> Understanding how sound, physical spaces, air, surroundings, and other environmental conditions may affect your experience.
+                    </div>
+
+                    <div class="focus-area">
+                        <strong>Relationships and Communication:</strong> Supporting couples, families, and groups in developing greater awareness, communication, witnessing, and mutual support.
+                    </div>
+
+                    <div class="focus-area">
+                        <strong>Body and Environment:</strong> Exploring the relationship between your physical body and the spaces, systems, and environments in which you live.
+                    </div>
+
+                    <div class="focus-area">
+                        <strong>Boundaries and Consent:</strong> Developing greater awareness of your needs, boundaries, physical autonomy, and communication.
+                    </div>
+
+                    <div class="focus-area">
+                        <strong>Individual and Collective Well-Being:</strong> Recognizing that our individual experiences are connected to our relationships, communities, environments, and larger social conditions.
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Who I Work With</h2>
+
+                    <p>I work with Couples, Families, Groups, and Communities and organizations.</p>
+
+                    <p>My practice welcomes clients from diverse backgrounds and life experiences.</p>
+                </section>
+
+                <section>
+                    <h2>My Background</h2>
+
+                    <p>My work is informed by more than 22 years of experience in somatics, dance and movement, holistic wellness, facilitation, conflict resolution, and transdisciplinary arts.</p>
+
+                    <p>I am a Master Somaticist, bestowed by Shirley Mordine, founder of the Dance Center of Columbia College Chicago and Mordine &amp; Company.</p>
+
+                    <p><strong>My training includes:</strong></p>
+
+                    <ul>
+                        <li>BFA in Dance Choreography, Columbia College Chicago</li>
+                        <li>Extensive study of Anatomy and Kinesiology</li>
+                        <li>200-Hour Yoga Teacher Certification</li>
+                        <li>100-Hour Tantric Yoga Certification</li>
+                        <li>Comprehensive Contemporary Pilates Mat and Apparatus Certification</li>
+                        <li>267 Hours of Zen Shiatsu Training</li>
+                        <li>Reiki Level 1 and Level 2</li>
+                        <li>Cook County Court Approved Conflict Resolution Certification in Facilitative Mediation</li>
+                        <li>Extensive training in movement improvisation, Authentic Movement, Body-Mind Centering, Contact Improvisation, Skinner Releasing, Feldenkrais, Continuum Movement, modern dance, partnering, vocal improvisation, meditation, Neuro Linguistic Programming, and other embodied practices.</li>
+                    </ul>
+
+                    <p>I have worked with individuals, artists, leaders, teams, communities, and organizations and have facilitated individual and group experiences across artistic, wellness, educational, community, nonprofit, and organizational settings.</p>
+                </section>
+
+                <div class="disclaimer">
+                    <strong>A Note About My Practice:</strong><br>
+                    My work is somatic consulting and facilitation. I support clients through body awareness, movement, sensing, relationship, environment, and other embodied practices. Somatic consulting is not a substitute for medical, psychological, psychiatric, or emergency care when those services are needed, but it can mitigate challenges which, detected in time, can prevent those services.
+                </div>
+            </main>
+
+            <aside>
+                <h3>Practice Details</h3>
+
+                <p>
+                    <strong>Sessions:</strong><br>
+                    In-person and by arrangement
+                </p>
+
+                <p>
+                    <strong>Availability:</strong><br>
+                    Weekdays
+                </p>
+
+                <p>
+                    <strong>Accepting Clients:</strong><br>
+                    Currently accepting new clients for couples, family, and group sessions.
+                </p>
+
+                <h3>Contact</h3>
+
+                <p>Ready to Begin?<br>If you are interested in exploring your relationship with your body, your environment, and what supports your well-being, I welcome you to reach out.</p>
+
+                <a href="mailto:ms.milandimadiba@gmail.com" class="contact-btn">
+                    Email Me
+                </a>
+            </aside>
+        </div>
+    </div>
