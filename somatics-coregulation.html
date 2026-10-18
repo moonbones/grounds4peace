@@ -36,6 +36,40 @@
             background-color: var(--bg-light);
         }
 
+        /* Site navigation */
+        .site-navigation {
+            background-color: #000000;
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+            padding: 18px 20px;
+        }
+
+        .section-nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px 22px;
+        }
+
+        .section-nav a {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            padding: 6px 0;
+        }
+
+        .section-nav a:hover {
+            text-decoration-thickness: 3px;
+        }
+
+        /* Main page layout */
         .container {
             max-width: 900px;
             margin: 40px auto;
@@ -44,7 +78,7 @@
             overflow: hidden;
         }
 
-        header {
+        .profile-header {
             padding: 40px;
             border-bottom: 1px solid var(--border-color);
             display: flex;
@@ -98,23 +132,6 @@
             grid-template-columns: 2fr 1fr;
             gap: 40px;
             padding: 40px;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-
-            .profile-img-container {
-                margin: 0 auto;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
         }
 
         main section {
@@ -217,14 +234,61 @@
             padding-left: 15px;
             margin-top: 30px;
         }
+
+        @media (max-width: 768px) {
+            .site-navigation {
+                padding: 14px 16px;
+            }
+
+            .section-nav {
+                gap: 6px 16px;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .profile-img-container {
+                margin: 0 auto;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div class="site-navigation">
+        <nav class="section-nav" aria-label="Primary navigation">
+            <a href="https://grounds4peace.org/">Home</a>
+            <a href="https://grounds4peace.org/#problem">Problem Statement</a>
+            <a href="https://grounds4peace.org/#mission">Mission</a>
+            <a href="https://grounds4peace.org/#approach">Approach</a>
+            <a href="https://grounds4peace.org/#lines-of-inquiry">Lines of Inquiry</a>
+            <a href="https://grounds4peace.org/Reports.html" class="site-link">Reports</a>
+            <a href="https://grounds4peace.org/#collaboration">Partnerships</a>
+            <a href="https://grounds4peace.org/#contact">Contact</a>
+            <a href="https://grounds4peace.org/#founder">Founder</a>
+            <a
+                href="https://milandimadiba.notion.site/Milandi-Madiba-Ceremonial-Ritual-Medicine-Woman-3ed758c5c4e880d8929bf1adf2edd7eb"
+                target="_blank"
+                rel="noopener noreferrer"
+            >Medicine Woman</a>
+        </nav>
+    </div>
+
     <div class="container">
-        <header>
+        <header class="profile-header">
             <div class="profile-img-container">
-                <img src="images/headshot for somatics page.jpg" alt="Milandi Mahasin Madiba">
+                <img
+                    src="images/headshot for somatics page.jpg"
+                    alt="Milandi Mahasin Madiba"
+                >
             </div>
 
             <div class="header-text">
@@ -399,3 +463,5 @@
             </aside>
         </div>
     </div>
+</body>
+</html>
