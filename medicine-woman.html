@@ -326,4 +326,544 @@ permalink: /medicine-woman.html
               </p>
             {% endif %}
 
-            {% if writing != '' or medium != '' or materials != '' or location != '' or audio
+            {% if writing != '' or medium != '' or materials != '' or location != '' or audio != '' or video != '' or document != '' or external != '' or entry.images.size > 0 %}
+              <details class="archive-details">
+                <summary>View entry</summary>
+
+                {% if medium != '' or materials != '' or location != '' %}
+                  <dl class="archive-meta">
+                    {% if medium != '' %}
+                      <div>
+                        <dt>Medium: </dt>
+                        <dd>{{ medium | escape }}</dd>
+                      </div>
+                    {% endif %}
+
+                    {% if materials != '' %}
+                      <div>
+                        <dt>Materials: </dt>
+                        <dd>{{ materials | escape | newline_to_br }}</dd>
+                      </div>
+                    {% endif %}
+
+                    {% if location != '' %}
+                      <div>
+                        <dt>Location: </dt>
+                        <dd>{{ location | escape }}</dd>
+                      </div>
+                    {% endif %}
+                  </dl>
+                {% endif %}
+
+                {% if writing != '' %}
+                  <div class="archive-writing">
+                    {{ writing | markdownify }}
+                  </div>
+                {% endif %}
+
+                {% if entry.images.size > 0 %}
+                  <div class="archive-gallery">
+                    {% for image in entry.images %}
+                      {% assign image_url = image | default: '' | strip %}
+
+                      {% if image_url != '' %}
+                        <a href="{{ image_url | escape }}">
+                          <img
+                            src="{{ image_url | escape }}"
+                            alt="Additional image for {{ title | escape }}"
+                            loading="lazy"
+                          >
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                {% if audio != '' %}
+                  <audio
+                    controls
+                    preload="none"
+                    aria-label="Audio for {{ title | escape }}"
+                  >
+                    <source src="{{ audio | escape }}">
+                    Your browser does not support this audio player.
+                  </audio>
+
+                  <p>
+                    <a href="{{ audio | escape }}">Open audio file</a>
+                  </p>
+                {% endif %}
+
+                {% if video != '' %}
+                  <div class="archive-video-slot"></div>
+                {% endif %}
+
+                {% if video != '' or document != '' or external != '' %}
+                  <div class="archive-links">
+                    {% if video != '' %}
+                      <a
+                        href="{{ video | escape }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Open video (new tab)
+                      </a>
+                    {% endif %}
+
+                    {% if document != '' %}
+                      <a
+                        href="{{ document | escape }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Open document (new tab)
+                      </a>
+                    {% endif %}
+
+                    {% if external != '' %}
+                      <a
+                        href="{{ external | escape }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Related website (new tab)
+                      </a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </details>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if entries.size == 0 %}
+      <p class="archive-empty">
+        Archive entries will appear here as they are added.
+      </p>
+    {% endif %}
+  </main>
+
+  <footer>
+    <div class="footer-box">
+      <p>Grounds 4 Peace is an initiative of Milandi M. Madiba</p>
+      <p>
+        &copy; {{ 'now' | date: '%Y' }} Milandi M. Madiba.
+        All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const header = document.querySelector('.sticky-header-container');
+
+      const updateOffset = () => {
+        const offset = Math.ceil(header.getBoundingClientRect().height) + 20;
+
+        document.documentElement.style.setProperty(
+          '--anchor-offset',
+          `${offset}px`
+        );
+      };
+
+      updateOffset();
+
+      if ('ResizeObserver' in window) {
+        new ResizeObserver(updateOffset).observe(header);
+      }
+
+      window.addEventListener('resize', updateOffset);
+
+      if (document.fonts) {
+        document.fonts.ready.then(updateOffset);
+      }
+
+      const videoInfo = (value) => {
+        try {
+          const url = new URL(value);
+
+          if (!['https:', 'http:'].includes(url.protocol)) {
+            return null;
+          }
+
+          const host = url.hostname.toLowerCase().replace(/^www\./, '');
+          let id = '';
+
+          if (host === 'youtu.be') {
+            id = url.pathname.split('/')[1] || '';
+          } else if (
+            ['youtube.com', 'm.youtube.com', 'youtube-nocookie.com']
+              .includes(host)
+          ) {
+            id = url.searchParams.get('v') || '';
+
+            const parts = url.pathname.split('/').filter(Boolean);
+
+            if (['shorts', 'embed', 'live'].includes(parts[0])) {
+              id = parts[1] || '';
+            }
+          }
+
+          if (/^[A-Za-z0-9_-]{11}$/.test(id)) {
+            return {
+              type: 'youtube',
+              id,
+              embed: `https://www.youtube-nocookie.com/embed/${id}`
+            };
+          }
+
+          if (host === 'vimeo.com' || host === 'player.vimeo.com') {
+            const parts = url.pathname.split('/').filter(Boolean);
+            const index = parts.findIndex(part => /^\d+$/.test(part));
+
+            if (index < 0) {
+              return null;
+            }
+
+            id = parts[index];
+
+            const hash = url.searchParams.get('h') ||
+              parts[index + 1] ||
+              '';
+
+            const embed = new URL(
+              `https://player.vimeo.com/video/${id}`
+            );
+
+            if (/^[A-Za-z0-9]+$/.test(hash)) {
+              embed.searchParams.set('h', hash);
+            }
+
+            return {
+              type: 'vimeo',
+              id,
+              embed: embed.href,
+              url: url.href
+            };
+          }
+        } catch {
+          return null;
+        }
+
+        return null;
+      };
+
+      const showThumbnail = (card, source) => {
+        return new Promise(resolve => {
+          const image = new Image();
+
+          image.className = 'archive-cover archive-cover-image';
+          image.alt = '';
+          image.referrerPolicy = 'strict-origin-when-cross-origin';
+
+          image.onload = () => {
+            if (image.naturalWidth < 120) {
+              resolve(false);
+              return;
+            }
+
+            const preview = card.querySelector('.archive-preview');
+
+            preview.querySelectorAll('.archive-cover-image')
+              .forEach(oldImage => oldImage.remove());
+
+            preview.prepend(image);
+            preview.querySelector('.archive-fallback').hidden = true;
+
+            resolve(true);
+          };
+
+          image.onerror = () => resolve(false);
+          image.src = source;
+        });
+      };
+
+      const autoThumbnail = async (card, info) => {
+        if (info.type === 'youtube') {
+          await showThumbnail(
+            card,
+            `https://i.ytimg.com/vi/${info.id}/hqdefault.jpg`
+          );
+
+          return;
+        }
+
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 8000);
+
+        try {
+          const endpoint = new URL(
+            'https://vimeo.com/api/oembed.json'
+          );
+
+          endpoint.searchParams.set('url', info.url);
+          endpoint.searchParams.set('width', '640');
+
+          const response = await fetch(endpoint.href, {
+            signal: controller.signal,
+            credentials: 'omit'
+          });
+
+          if (!response.ok) {
+            return;
+          }
+
+          const data = await response.json();
+          const thumbnail = new URL(data.thumbnail_url);
+
+          if (thumbnail.protocol === 'https:') {
+            await showThumbnail(card, thumbnail.href);
+          }
+        } catch {
+          // Keep the default panel if the video thumbnail cannot load.
+        } finally {
+          clearTimeout(timer);
+        }
+      };
+
+      document.querySelectorAll('.archive-entry').forEach(card => {
+        const cover = card.querySelector('.archive-cover-image');
+
+        if (cover) {
+          const showFallback = () => {
+            cover.hidden = true;
+            card.querySelector('.archive-fallback').hidden = false;
+          };
+
+          cover.addEventListener('error', showFallback);
+
+          if (cover.complete && cover.naturalWidth === 0) {
+            showFallback();
+          }
+        }
+
+        const info = videoInfo(card.dataset.video || '');
+
+        if (!info) {
+          return;
+        }
+
+        const details = card.querySelector('details');
+        const slot = card.querySelector('.archive-video-slot');
+
+        const loadPlayer = () => {
+          if (!slot || slot.firstChild || !details.open) {
+            return;
+          }
+
+          const wrapper = document.createElement('div');
+          wrapper.className = 'video-wrapper';
+
+          const frame = document.createElement('iframe');
+          frame.src = info.embed;
+          frame.title = `${card.querySelector('h3').textContent} — video`;
+          frame.allow = 'fullscreen; picture-in-picture';
+          frame.allowFullscreen = true;
+          frame.referrerPolicy = 'strict-origin-when-cross-origin';
+
+          wrapper.append(frame);
+          slot.append(wrapper);
+        };
+
+        if (details) {
+          details.addEventListener('toggle', loadPlayer);
+        }
+
+        // Custom images and audio artwork take priority over video.
+        if (
+          card.dataset.customCover === 'no' &&
+          !(card.dataset.audio || '').trim()
+        ) {
+          autoThumbnail(card, info);
+        }
+      });
+
+      const openLinkedEntry = () => {
+        const entry = document.getElementById(
+          location.hash.slice(1)
+        );
+
+        if (entry) {
+          const details = entry.querySelector('details');
+
+          if (details) {
+            details.open = true;
+          }
+        }
+      };
+
+      window.addEventListener('hashchange', openLinkedEntry);
+      openLinkedEntry();
+    })();
+  </script>
+
+  <script type="module">
+    const PDF_BASE =
+      'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/';
+
+    let libraryPromise;
+
+    function getPdfLibrary() {
+      if (!libraryPromise) {
+        libraryPromise = import(
+          PDF_BASE + 'legacy/build/pdf.min.mjs'
+        ).then(library => {
+          library.GlobalWorkerOptions.workerSrc =
+            PDF_BASE + 'legacy/build/pdf.worker.min.mjs';
+
+          return library;
+        });
+      }
+
+      return libraryPromise;
+    }
+
+    async function makePdfPreview(card, url) {
+      let loadingTask;
+      let timeout;
+
+      try {
+        const library = await getPdfLibrary();
+
+        loadingTask = library.getDocument({
+          url,
+          withCredentials: false,
+          isEvalSupported: false,
+          cMapUrl: PDF_BASE + 'cmaps/',
+          cMapPacked: true,
+          standardFontDataUrl: PDF_BASE + 'standard_fonts/'
+        });
+
+        loadingTask.onPassword = () => {
+          void loadingTask.destroy();
+        };
+
+        timeout = setTimeout(() => {
+          void loadingTask.destroy();
+        }, 30000);
+
+        const pdf = await loadingTask.promise;
+        const page = await pdf.getPage(1);
+        const original = page.getViewport({ scale: 1 });
+
+        const scale = Math.min(
+          720 / original.width,
+          1000 / original.height
+        );
+
+        const viewport = page.getViewport({ scale });
+        const canvas = document.createElement('canvas');
+
+        canvas.width = Math.ceil(viewport.width);
+        canvas.height = Math.ceil(viewport.height);
+
+        const context = canvas.getContext('2d');
+
+        if (!context) {
+          throw new Error('Canvas rendering is unavailable.');
+        }
+
+        await page.render({
+          canvasContext: context,
+          viewport,
+          background: 'rgb(255,255,255)'
+        }).promise;
+
+        const title = card.querySelector('h3')
+          ?.textContent.trim() || 'document';
+
+        canvas.className = 'archive-cover archive-pdf-cover';
+        canvas.setAttribute('role', 'img');
+        canvas.setAttribute('aria-label', `First page of ${title}`);
+
+        const preview = card.querySelector('.archive-preview');
+
+        if (!preview) {
+          return;
+        }
+
+        preview.prepend(canvas);
+
+        const fallback = preview.querySelector('.archive-fallback');
+
+        if (fallback) {
+          fallback.hidden = true;
+        }
+
+        card.dataset.pdfPreview = 'ready';
+      } catch (error) {
+        card.dataset.pdfPreview = 'failed';
+
+        console.warn(
+          'PDF preview could not be generated:',
+          url,
+          error
+        );
+      } finally {
+        clearTimeout(timeout);
+
+        if (loadingTask) {
+          try {
+            await loadingTask.destroy();
+          } catch {
+            // The document link remains available if cleanup fails.
+          }
+        }
+      }
+    }
+
+    const jobs = [];
+
+    document.querySelectorAll('.archive-entry').forEach(card => {
+      // Preserve custom images, audio artwork, and video previews.
+      if (card.dataset.customCover === 'yes') {
+        return;
+      }
+
+      if ((card.dataset.audio || '').trim()) {
+        return;
+      }
+
+      if ((card.dataset.video || '').trim()) {
+        return;
+      }
+
+      const documentUrl = (card.dataset.document || '').trim();
+
+      if (!documentUrl) {
+        return;
+      }
+
+      try {
+        const url = new URL(documentUrl, location.href);
+
+        if (
+          ['http:', 'https:'].includes(url.protocol) &&
+          /\.pdf$/i.test(url.pathname)
+        ) {
+          jobs.push({ card, url: url.href });
+        }
+      } catch (error) {
+        console.warn('Invalid document URL:', documentUrl, error);
+      }
+    });
+
+    async function processQueue() {
+      while (jobs.length) {
+        const job = jobs.shift();
+        await makePdfPreview(job.card, job.url);
+      }
+    }
+
+    // Generate no more than two PDF previews simultaneously.
+    await Promise.all([
+      processQueue(),
+      processQueue()
+    ]);
+  </script>
+</body>
+</html>
