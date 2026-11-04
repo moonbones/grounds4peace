@@ -1,0 +1,72 @@
+media:
+  input: archive-media
+  output: /archive-media
+
+content:
+  - name: archive
+    label: Medicine Woman Archive
+    type: collection
+    path: archive-posts
+    format: yaml-frontmatter
+
+    filename: "{year}-{month}-{day}-{hour}{minute}{second}-{primary}.md"
+
+    view:
+      primary: title
+      sort: date
+      order: desc
+
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: date
+        label: Date
+        type: date
+
+      - name: description
+        label: Description or writing
+        type: rich-text
+
+      - name: medium
+        label: Medium
+        type: string
+
+      - name: materials
+        label: Materials
+        type: text
+
+      - name: location
+        label: Location
+        type: string
+
+      - name: preview_image
+        label: Preview image
+        type: image
+
+      - name: preview_alt
+        label: Brief description of the preview image
+        type: string
+
+      - name: images
+        label: Additional images
+        type: image
+        list: true
+
+      - name: video_url
+        label: Video link
+        type: string
+
+      - name: audio
+        label: Audio file
+        type: file
+
+      - name: document
+        label: PDF or other document
+        type: file
+
+      - name: external_url
+        label: Additional website link
+        type: string
