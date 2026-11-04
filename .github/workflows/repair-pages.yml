@@ -1,0 +1,22 @@
+name: Repair stuck Pages deployment
+
+on:
+  workflow_dispatch:
+
+permissions:
+  pages: write
+
+jobs:
+  cancel-stuck-deployment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Cancel the blocked Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST \
+            repos/moonbones/grounds4peace/pages/deployments/ba70a94b540c422f61f5b605c50f7d29096f76dd/cancel
+
+          echo "GitHub accepted the cancellation request."
