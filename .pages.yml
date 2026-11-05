@@ -45,6 +45,32 @@ content:
       - name: preview_image
         label: Preview image
         type: image
+        options:
+          extensions:
+            - jpg
+            - JPG
+            - jpeg
+            - JPEG
+            - apng
+            - APNG
+            - png
+            - PNG
+            - gif
+            - GIF
+            - svg
+            - SVG
+            - ico
+            - ICO
+            - avif
+            - AVIF
+            - bmp
+            - BMP
+            - tif
+            - TIF
+            - tiff
+            - TIFF
+            - webp
+            - WEBP
 
       - name: preview_alt
         label: Brief description of the preview image
@@ -54,6 +80,32 @@ content:
         label: Additional images
         type: image
         list: true
+        options:
+          extensions:
+            - jpg
+            - JPG
+            - jpeg
+            - JPEG
+            - apng
+            - APNG
+            - png
+            - PNG
+            - gif
+            - GIF
+            - svg
+            - SVG
+            - ico
+            - ICO
+            - avif
+            - AVIF
+            - bmp
+            - BMP
+            - tif
+            - TIF
+            - tiff
+            - TIFF
+            - webp
+            - WEBP
 
       - name: video_url
         label: Video link
