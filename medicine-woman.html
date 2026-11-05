@@ -65,6 +65,10 @@ permalink: /medicine-woman.html
       scroll-margin-top: var(--anchor-offset, 11rem);
     }
 
+    .archive-preview-link {
+      display: block;
+    }
+
     .archive-cover {
       display: block;
       width: 100%;
@@ -178,9 +182,15 @@ permalink: /medicine-woman.html
       margin: 1rem 0;
     }
 
-    .archive-gallery img {
+    .archive-gallery img,
+    .archive-document-image {
+      display: block;
       width: 100%;
       height: auto;
+    }
+
+    .archive-document-figure {
+      margin: 1rem 0;
     }
 
     .archive-entry audio {
@@ -190,7 +200,20 @@ permalink: /medicine-woman.html
     }
 
     .archive-entry .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       margin: 1rem 0;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .archive-entry .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .archive-links {
@@ -244,9 +267,7 @@ permalink: /medicine-woman.html
 
   <main class="archive-main">
     <div class="archive-intro">
-      <h2>
-        Milandi Mahasin Madiba: Ceremonial Ritual Medicine Woman
-      </h2>
+      <h2>Milandi Mahasin Madiba: Ceremonial Ritual Medicine Woman</h2>
 
       <p>
         Generative Archive of Transdisciplinary Art &amp; Current Resonances
@@ -260,7 +281,6 @@ permalink: /medicine-woman.html
 
     <div class="archive-cards">
       {% for entry in entries %}
-
         {% assign title = entry.title | default: 'Untitled' %}
         {% assign anchor = entry.path | slugify %}
         {% assign cover = entry.preview_image | default: '' | strip %}
@@ -272,6 +292,20 @@ permalink: /medicine-woman.html
         {% assign video = entry.video_url | default: '' | strip %}
         {% assign document = entry.document | default: '' | strip %}
         {% assign external = entry.external_url | default: '' | strip %}
+        {% assign gallery_cover = '' %}
+
+        {% for image in entry.images %}
+          {% assign candidate = image | default: '' | strip %}
+          {% if candidate != '' %}
+            {% assign gallery_cover = candidate %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% assign display_cover = cover %}
+        {% if display_cover == '' and gallery_cover != '' %}
+          {% assign display_cover = gallery_cover %}
+        {% endif %}
 
         <article
           class="archive-entry"
@@ -279,16 +313,23 @@ permalink: /medicine-woman.html
           data-video="{{ video | escape }}"
           data-audio="{{ audio | escape }}"
           data-document="{{ document | escape }}"
-          data-custom-cover="{% if cover != '' %}yes{% else %}no{% endif %}"
+          data-custom-cover="{% if display_cover != '' %}yes{% else %}no{% endif %}"
         >
           <div class="archive-preview">
-            {% if cover != '' %}
-              <img
-                class="archive-cover archive-cover-image"
-                src="{{ cover | escape }}"
-                alt="{{ entry.preview_alt | default: '' | escape }}"
-                loading="lazy"
+            {% if display_cover != '' %}
+              <a
+                class="archive-preview-link"
+                href="{{ display_cover | escape }}"
+                target="_blank"
+                rel="noopener noreferrer"
               >
+                <img
+                  class="archive-cover archive-cover-image"
+                  src="{{ display_cover | escape }}"
+                  alt="{{ entry.preview_alt | default: title | escape }}"
+                  loading="lazy"
+                >
+              </a>
             {% elsif audio != '' %}
               <img
                 class="archive-cover archive-cover-image archive-audio-cover"
@@ -301,7 +342,7 @@ permalink: /medicine-woman.html
             <div
               class="archive-cover archive-fallback"
               aria-hidden="true"
-              {% if cover != '' or audio != '' %}hidden{% endif %}
+              {% if display_cover != '' or audio != '' %}hidden{% endif %}
             >
               Grounds 4 Peace
             </div>
@@ -313,7 +354,6 @@ permalink: /medicine-woman.html
             </h3>
 
             {% assign date_value = entry.date | default: '' | append: '' | strip %}
-
             {% if date_value != '' %}
               <div class="archive-date">
                 {{ entry.date | date: '%B %-d, %Y' }}
@@ -326,7 +366,7 @@ permalink: /medicine-woman.html
               </p>
             {% endif %}
 
-            {% if writing != '' or medium != '' or materials != '' or location != '' or audio != '' or video != '' or document != '' or external != '' or entry.images.size > 0 %}
+            {% if writing != '' or medium != '' or materials != '' or location != '' or audio != '' or video != '' or document != '' or external != '' or display_cover != '' or entry.images.size > 0 %}
               <details class="archive-details">
                 <summary>View entry</summary>
 
@@ -365,9 +405,12 @@ permalink: /medicine-woman.html
                   <div class="archive-gallery">
                     {% for image in entry.images %}
                       {% assign image_url = image | default: '' | strip %}
-
                       {% if image_url != '' %}
-                        <a href="{{ image_url | escape }}">
+                        <a
+                          href="{{ image_url | escape }}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <img
                             src="{{ image_url | escape }}"
                             alt="Additional image for {{ title | escape }}"
@@ -398,8 +441,22 @@ permalink: /medicine-woman.html
                   <div class="archive-video-slot"></div>
                 {% endif %}
 
-                {% if video != '' or document != '' or external != '' %}
+                {% if document != '' %}
+                  <div class="archive-document-slot"></div>
+                {% endif %}
+
+                {% if video != '' or document != '' or external != '' or display_cover != '' %}
                   <div class="archive-links">
+                    {% if display_cover != '' %}
+                      <a
+                        href="{{ display_cover | escape }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Open image (new tab)
+                      </a>
+                    {% endif %}
+
                     {% if video != '' %}
                       <a
                         href="{{ video | escape }}"
@@ -412,6 +469,7 @@ permalink: /medicine-woman.html
 
                     {% if document != '' %}
                       <a
+                        class="archive-document-link"
                         href="{{ document | escape }}"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -462,7 +520,10 @@ permalink: /medicine-woman.html
       const header = document.querySelector('.sticky-header-container');
 
       const updateOffset = () => {
-        const offset = Math.ceil(header.getBoundingClientRect().height) + 20;
+        if (!header) return;
+
+        const offset =
+          Math.ceil(header.getBoundingClientRect().height) + 20;
 
         document.documentElement.style.setProperty(
           '--anchor-offset',
@@ -472,7 +533,7 @@ permalink: /medicine-woman.html
 
       updateOffset();
 
-      if ('ResizeObserver' in window) {
+      if (header && 'ResizeObserver' in window) {
         new ResizeObserver(updateOffset).observe(header);
       }
 
@@ -482,7 +543,7 @@ permalink: /medicine-woman.html
         document.fonts.ready.then(updateOffset);
       }
 
-      const videoInfo = (value) => {
+      const videoInfo = value => {
         try {
           const url = new URL(value);
 
@@ -500,7 +561,6 @@ permalink: /medicine-woman.html
               .includes(host)
           ) {
             id = url.searchParams.get('v') || '';
-
             const parts = url.pathname.split('/').filter(Boolean);
 
             if (['shorts', 'embed', 'live'].includes(parts[0])) {
@@ -520,15 +580,12 @@ permalink: /medicine-woman.html
             const parts = url.pathname.split('/').filter(Boolean);
             const index = parts.findIndex(part => /^\d+$/.test(part));
 
-            if (index < 0) {
-              return null;
-            }
+            if (index < 0) return null;
 
             id = parts[index];
 
-            const hash = url.searchParams.get('h') ||
-              parts[index + 1] ||
-              '';
+            const hash =
+              url.searchParams.get('h') || parts[index + 1] || '';
 
             const embed = new URL(
               `https://player.vimeo.com/video/${id}`
@@ -573,7 +630,6 @@ permalink: /medicine-woman.html
 
             preview.prepend(image);
             preview.querySelector('.archive-fallback').hidden = true;
-
             resolve(true);
           };
 
@@ -588,7 +644,6 @@ permalink: /medicine-woman.html
             card,
             `https://i.ytimg.com/vi/${info.id}/hqdefault.jpg`
           );
-
           return;
         }
 
@@ -596,10 +651,7 @@ permalink: /medicine-woman.html
         const timer = setTimeout(() => controller.abort(), 8000);
 
         try {
-          const endpoint = new URL(
-            'https://vimeo.com/api/oembed.json'
-          );
-
+          const endpoint = new URL('https://vimeo.com/api/oembed.json');
           endpoint.searchParams.set('url', info.url);
           endpoint.searchParams.set('width', '640');
 
@@ -608,9 +660,7 @@ permalink: /medicine-woman.html
             credentials: 'omit'
           });
 
-          if (!response.ok) {
-            return;
-          }
+          if (!response.ok) return;
 
           const data = await response.json();
           const thumbnail = new URL(data.thumbnail_url);
@@ -619,9 +669,31 @@ permalink: /medicine-woman.html
             await showThumbnail(card, thumbnail.href);
           }
         } catch {
-          // Keep the default panel if the video thumbnail cannot load.
+          // Keep the default panel if the thumbnail cannot load.
         } finally {
           clearTimeout(timer);
+        }
+      };
+
+      const documentImageUrl = value => {
+        try {
+          const url = new URL(value, location.href);
+
+          if (!['http:', 'https:'].includes(url.protocol)) return null;
+
+          let path = url.pathname;
+
+          try {
+            path = decodeURIComponent(path);
+          } catch {
+            // Use the original path if decoding fails.
+          }
+
+          return /\.(jpe?g|png|gif|webp|avif|svg|bmp)$/i.test(path)
+            ? url.href
+            : null;
+        } catch {
+          return null;
         }
       };
 
@@ -630,7 +702,14 @@ permalink: /medicine-woman.html
 
         if (cover) {
           const showFallback = () => {
-            cover.hidden = true;
+            const link = cover.closest('.archive-preview-link');
+
+            if (link) {
+              link.hidden = true;
+            } else {
+              cover.hidden = true;
+            }
+
             card.querySelector('.archive-fallback').hidden = false;
           };
 
@@ -641,17 +720,87 @@ permalink: /medicine-woman.html
           }
         }
 
+        const documentUrl = documentImageUrl(
+          (card.dataset.document || '').trim()
+        );
+
+        if (documentUrl) {
+          const title =
+            card.querySelector('h3')?.textContent.trim() || 'archive entry';
+
+          const documentLink = card.querySelector('.archive-document-link');
+
+          if (documentLink) {
+            documentLink.textContent = 'Open image document (new tab)';
+          }
+
+          const slot = card.querySelector('.archive-document-slot');
+
+          if (slot) {
+            const figure = document.createElement('figure');
+            figure.className = 'archive-document-figure';
+
+            const link = document.createElement('a');
+            link.href = documentUrl;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+
+            const image = document.createElement('img');
+            image.className = 'archive-document-image';
+            image.src = documentUrl;
+            image.alt = `Image document for ${title}`;
+            image.loading = 'lazy';
+
+            image.addEventListener('error', () => {
+              figure.hidden = true;
+            });
+
+            link.append(image);
+            figure.append(link);
+            slot.append(figure);
+          }
+
+          if (
+            card.dataset.customCover === 'no' &&
+            !(card.dataset.audio || '').trim() &&
+            !(card.dataset.video || '').trim()
+          ) {
+            const preview = card.querySelector('.archive-preview');
+            const link = document.createElement('a');
+            link.className = 'archive-preview-link';
+            link.href = documentUrl;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+
+            const image = document.createElement('img');
+            image.className = 'archive-cover archive-cover-image';
+            image.alt = `Image document for ${title}`;
+            image.loading = 'lazy';
+
+            image.addEventListener('load', () => {
+              preview.querySelector('.archive-fallback').hidden = true;
+            });
+
+            image.addEventListener('error', () => {
+              link.hidden = true;
+              preview.querySelector('.archive-fallback').hidden = false;
+            });
+
+            link.append(image);
+            preview.prepend(link);
+            image.src = documentUrl;
+          }
+        }
+
         const info = videoInfo(card.dataset.video || '');
 
-        if (!info) {
-          return;
-        }
+        if (!info) return;
 
         const details = card.querySelector('details');
         const slot = card.querySelector('.archive-video-slot');
 
         const loadPlayer = () => {
-          if (!slot || slot.firstChild || !details.open) {
+          if (!slot || slot.firstChild || !details || !details.open) {
             return;
           }
 
@@ -660,7 +809,8 @@ permalink: /medicine-woman.html
 
           const frame = document.createElement('iframe');
           frame.src = info.embed;
-          frame.title = `${card.querySelector('h3').textContent} — video`;
+          frame.title =
+            `${card.querySelector('h3').textContent.trim()} — video`;
           frame.allow = 'fullscreen; picture-in-picture';
           frame.allowFullscreen = true;
           frame.referrerPolicy = 'strict-origin-when-cross-origin';
@@ -671,28 +821,34 @@ permalink: /medicine-woman.html
 
         if (details) {
           details.addEventListener('toggle', loadPlayer);
+          loadPlayer();
         }
 
-        // Custom images and audio artwork take priority over video.
         if (
           card.dataset.customCover === 'no' &&
           !(card.dataset.audio || '').trim()
         ) {
-          autoThumbnail(card, info);
+          void autoThumbnail(card, info);
         }
       });
 
       const openLinkedEntry = () => {
-        const entry = document.getElementById(
-          location.hash.slice(1)
-        );
+        let id = location.hash.slice(1);
+
+        try {
+          id = decodeURIComponent(id);
+        } catch {
+          // Use the original fragment if decoding fails.
+        }
+
+        if (!id) return;
+
+        const entry = document.getElementById(id);
 
         if (entry) {
           const details = entry.querySelector('details');
 
-          if (details) {
-            details.open = true;
-          }
+          if (details) details.open = true;
         }
       };
 
@@ -716,6 +872,9 @@ permalink: /medicine-woman.html
             PDF_BASE + 'legacy/build/pdf.worker.min.mjs';
 
           return library;
+        }).catch(error => {
+          libraryPromise = null;
+          throw error;
         });
       }
 
@@ -773,8 +932,8 @@ permalink: /medicine-woman.html
           background: 'rgb(255,255,255)'
         }).promise;
 
-        const title = card.querySelector('h3')
-          ?.textContent.trim() || 'document';
+        const title =
+          card.querySelector('h3')?.textContent.trim() || 'document';
 
         canvas.className = 'archive-cover archive-pdf-cover';
         canvas.setAttribute('role', 'img');
@@ -782,17 +941,24 @@ permalink: /medicine-woman.html
 
         const preview = card.querySelector('.archive-preview');
 
-        if (!preview) {
-          return;
-        }
+        if (!preview) return;
 
-        preview.prepend(canvas);
+        const link = document.createElement('a');
+        link.className = 'archive-preview-link';
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.setAttribute(
+          'aria-label',
+          `Open ${title} in a new tab`
+        );
+
+        link.append(canvas);
+        preview.prepend(link);
 
         const fallback = preview.querySelector('.archive-fallback');
 
-        if (fallback) {
-          fallback.hidden = true;
-        }
+        if (fallback) fallback.hidden = true;
 
         card.dataset.pdfPreview = 'ready';
       } catch (error) {
@@ -810,7 +976,7 @@ permalink: /medicine-woman.html
           try {
             await loadingTask.destroy();
           } catch {
-            // The document link remains available if cleanup fails.
+            // The document link remains available.
           }
         }
       }
@@ -819,31 +985,27 @@ permalink: /medicine-woman.html
     const jobs = [];
 
     document.querySelectorAll('.archive-entry').forEach(card => {
-      // Preserve custom images, audio artwork, and video previews.
-      if (card.dataset.customCover === 'yes') {
-        return;
-      }
-
-      if ((card.dataset.audio || '').trim()) {
-        return;
-      }
-
-      if ((card.dataset.video || '').trim()) {
-        return;
-      }
+      if (card.dataset.customCover === 'yes') return;
+      if ((card.dataset.audio || '').trim()) return;
+      if ((card.dataset.video || '').trim()) return;
 
       const documentUrl = (card.dataset.document || '').trim();
 
-      if (!documentUrl) {
-        return;
-      }
+      if (!documentUrl) return;
 
       try {
         const url = new URL(documentUrl, location.href);
+        let path = url.pathname;
+
+        try {
+          path = decodeURIComponent(path);
+        } catch {
+          // Use the original path if decoding fails.
+        }
 
         if (
           ['http:', 'https:'].includes(url.protocol) &&
-          /\.pdf$/i.test(url.pathname)
+          /\.pdf$/i.test(path)
         ) {
           jobs.push({ card, url: url.href });
         }
@@ -859,7 +1021,6 @@ permalink: /medicine-woman.html
       }
     }
 
-    // Generate no more than two PDF previews simultaneously.
     await Promise.all([
       processQueue(),
       processQueue()
